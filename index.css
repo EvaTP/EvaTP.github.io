@@ -26,4 +26,8 @@ button{
 		transform: translateX(100%);
 	}
 	}
-	
+	ul li{
+		font-size: 1.20em;
+		list-style-type :square;
+		color :darkolivegreen;
+	}
