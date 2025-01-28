@@ -1,0 +1,19 @@
+h1{
+	font-family : Georgia, 'Times New Roman', Times, serif;
+	color : darkblue;
+}
+h2{
+	font-family : Georgia, 'Times New Roman', Times, serif;
+	color : darkslateblue;
+	border-left : 2px;
+	margin-left: 15px;
+}
+p{
+	font-size: 1.25em;
+}
+button{
+	background-color: darkgoldenrod;
+	color : white;
+	font-size : 1.25em;
+	
+}
