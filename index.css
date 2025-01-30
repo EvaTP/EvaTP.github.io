@@ -1,21 +1,142 @@
+/* RESET */
+/* Nous cassons (reset) l'effet d'héritage pour toutes les balises susceptibles d'être concernées */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+/* POLICES */
+@font-face { /* utilisation d'une police css3 à l'aide d'une url */
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Roboto"), local("Roboto"), url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+}
+
+/* <weight>: Use a value from 100 to 900 */
+.roboto-normal{
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* GENERAL */
+html{
+	box-sizing: border-box;
+}
+body{
+	background-color: black;
+	color: #fff;
+}
+.container{
+	margin-left: 10px;
+}
 h1{
-	font-family : Georgia, 'Times New Roman', Times, serif;
-	color : darkblue;
+	font-family : "Roboto";
+	font-size: 2.5rem;
+	color : #fff;
+	margin: 15px 0 15px 20px;
 }
 h2{
-	font-family : Georgia, 'Times New Roman', Times, serif;
-	color : darkslateblue;
-	border-left : 2px;
-	margin-left: 15px;
+	font-family : "Roboto";
+	color : #ffff;
+	margin-left: 1rem;
+	padding-left : 1em;
+	border-left: 5px solid goldenrod;
+	/* left: -1rem; */
 }
 p{
+	font-family : "Roboto";
 	font-size: 1.25em;
 }
+ul li{
+	list-style-type: disc;
+	font-family: "Roboto";
+}
+.flex{
+	display : flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+/* SECTION 1 */
+#warning{
+	display: inline-block;
+	background-color: crimson;
+	font-size: 3em;
+	text-align: center;
+	color: #000;
+	/* margin: 8px 30px 8px 30px; */
+	padding : 15px;
+	/* animation: defilement-rtl 15s infinite linear; */
+	animation-name: defilement-ltr;       /* référence à la règle @keyframes mise en oeuvre */
+	animation-duration: 20s;              /* valeur à ajuster suivant la longueur du message */
+	animation-iteration-count: infinite;  /* boucle continue */
+	animation-timing-function: linear;    /* pas vraiment utile ici */
+	position: relative;
+}
+
+@keyframes defilement-ltr {
+	0% {
+		background: tomato;
+		color:#3e8e41;
+		left: -100px;
+		top: 0px;
+	  }
+	  50% {
+		background: #16a085;
+		color: orange;
+		left: 200px;
+		top: 0px;
+	  }
+	  100% {
+		background: yellow;
+		left: 0px;
+		top: 200px;
+	  }
+
+
+
+	/* 0% {
+	  transform: translate3d(-80%,0,0);      /* position initiale à gauche
+	}
+	100% {
+	  transform: translate3d(0,0,0);  /* position finale à droite
+	} */
+  }
+
+
+/* SECTION 2 */
+
+/* SECTION 3 */
+
+/* SECTION 4 */
+
 button{
+	font-family : "Roboto";
 	background-color: darkgoldenrod;
 	color : white;
-	font-size : 1.25em;
-	animation : bounce 0 5s infinite;
+	font-size : 1.5em;
+	margin : 2rem;
+	padding: 1rem;
+	border-radius: 4px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+button:hover{
+	background-color: rgb(244, 192, 61);
+}
+.button:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+  }
+	/* animation : bounce 0 5s infinite;
 }
 @keyframes button{
 	from {
@@ -25,9 +146,19 @@ button{
 	to {
 		transform: translateX(100%);
 	}
-	}
+	} 
 	ul li{
 		font-size: 1.20em;
 		list-style-type :square;
 		color :darkolivegreen;
+	}
+	.apropos{
+		border: 8px;
+		background-color: black;
+		margin :20px;
+	}
+	.apropos p{
+		font-size : 2rem;
+		color : #ffff;
+		text-align: center;
 	}

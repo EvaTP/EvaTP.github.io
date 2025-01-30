@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
-	<link rel="stylesheet" href="index.css">
-</head>
-<body>
-	<h1>Portfolio de Eva</h1>
-	<div id="apropos">
-		Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-		Accusantium quaerat ex deleniti dolorem ipsa. Ratione at odio sit expedita tenetur, delectus blanditiis
-		nihil dolorem libero corrupti dignissimos perferendis sed voluptatem.
-	</div>
-	<div id="intro">
-		<p>Développeuse web full stack 👩🏻</p>
-		<h2>Mes compétences</h2>
-		<ul>
-			<li>Front-end</li>
-			<li>Back-end</li>
-			<li>...</li>
-		</ul>
-		<br/>
-
-		<h2>Mon stack</h2>
-	</div>
-	
-	<button>Contactez-moi !</button>
-
-	
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- SECTION 1 -->
+      <section id="first">
+        <h1>Portfolio Eva Tharrats</h1>
+        <br /><br /><br />
+        <div id="apropos" class="flex">
+          
+          <div id="warning">
+            <p> Site en construction  🚧 
+              <em>Work in progress</em>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2 -->
+      <section id="second">
+        <div id="intro">
+          <p>Développeuse web full stack 👩🏻</p>
+          <h2>Mes compétences</h2>
+          <br />
+          <ul>
+            <li>Front-end</li>
+            <li>Back-end</li>
+            <!-- <li>...</li> -->
+          </ul>
+          <br />
+        </div>
+      </section>
+      <!-- SECTION 3 -->
+      <section id=stack class="flex">
+        <h2>Mon stack</h2>
+      </section>
+      <!-- SECTION 4 -->
+      <section id="contact">
+        <br><br>
+        <button>Contactez-moi !</button>
+      </section>
+    </div>
+    <!-- fin container -->
+  </body>
 </html>
