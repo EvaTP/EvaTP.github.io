@@ -1,0 +1,297 @@
+/* RESET */
+/* Nous cassons (reset) l'effet d'héritage pour toutes les balises susceptibles d'être concernées */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+/* POLICES */
+@font-face { /* utilisation d'une police css3 à l'aide d'une url */
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Roboto"), local("Roboto"), url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+}
+
+/* <weight>: Use a value from 100 to 900 */
+.roboto-normal{
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* COULEURS */
+/*
+fond écran : 
+cyan
+gris : rgb(128, 128, 128)
+pink
+*/
+
+
+/* GENERAL SETTINGS */
+html{
+	box-sizing: border-box;
+}
+body{
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #fff;
+}
+.container{
+	margin : O, auto;  /* pour centrer automatiquement mon site */
+}
+
+h1{
+	font-family : "Roboto";
+	font-size: 4rem;
+	color : #fff;
+	margin: 20px 0 15px 20px;
+	text-align: center;
+}
+h2{
+	font-family : "Roboto";
+	font-size : 2.5em;
+	color : #ffff;
+	margin : 1rem 0.5rem 1rem 2rem;
+	padding-left : 0.5em;
+	border-left: 7px solid cyan;
+	text-align: left;
+}
+p{
+	font-family : "Roboto";
+	font-size: 1.25em;
+}
+ul li{
+	list-style-type: disc;
+	font-family: "Roboto";
+}
+.flex-column{
+	display : flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: left;
+}
+.flex-row{
+	display : flex;
+	flex-direction: row;
+	justify-content:left;
+}
+
+
+/* SECTION 1  WARNINGS */
+#warning1, #warning3{
+	display: inline-block;
+	width: 100%;
+	border-bottom: 8px solid blue;
+	border-top: 8px solid green;
+	background-color: crimson;
+	font-size: 1.5em;
+	line-height: 31px;
+	text-align: center;
+	color: #000;
+	padding : 10px 15px;
+	/* animation: defilement-rtl 15s infinite linear; */
+	animation-name: defilement-ltr;       /* référence à la règle @keyframes left-to-right */
+	animation-duration: 18s;               /* valeur à ajuster suivant la longueur du message */
+	animation-iteration-count: infinite;  /* boucle continue */
+	animation-timing-function: linear;    /* pas vraiment utile ici */
+	position: relative;
+	overflow: hidden;
+}
+#warning1{
+	margin-top: 1em;
+	font-size: 2.5em;
+}
+#warning2{
+	display: inline-block;
+	width: 100%;
+	border-bottom: 8px solid blue;
+	border-top: 8px solid crimson;
+	background-color: green;
+	font-size: 2.5em;
+	font-style: italic;
+	line-height: 31px;
+	text-align: center;
+	color: #000;
+	/* margin: 8px 30px 8px 30px; */
+	padding : 10px 15px;
+	/* animation: defilement-rtl 15s infinite linear; */
+	animation-name: defilement-rtl;       /* référence à la règle @keyframes right-to-left */
+	animation-duration: 15s;               /* valeur à ajuster suivant la longueur du message */
+	animation-iteration-count: infinite;  /* boucle continue */
+	animation-timing-function: linear;    /* pas vraiment utile ici */
+	position: relative;
+	overflow: hidden;
+}
+
+@keyframes defilement-ltr {
+	0% {
+		transform : translateX(-100%);  /* commence hors de l'écran à gauche */
+		/* background: tomato;
+		color:#3e8e41;
+		left: -100px;
+		top: 0px; */
+	  }
+	  100% {
+		transform : translateX(100%);  /* termine hors de l'écran à droite */
+		/* background: yellow;
+		left: 0px; */
+		/* top: 200px; */
+	  }
+  }
+
+  @keyframes defilement-rtl {
+	0% {
+		transform: translateX(100%);  /* commence hors de l'écran à droite */
+		/* background: #16a085;
+		color: orange;
+		right: -200px;
+		top: 0px; */
+	  }
+	  100% {
+		transform : translateX(-100%);  /* termine hors de l'écran à gauche */
+		/* background: yellow;
+		right: 100px; */
+		/* top: 200px; */
+	  }
+  }
+
+/* SECTION 2 A PROPOS */
+
+.apropos {
+    transition: opacity 0.5s ease; /* Ajoute une transition sur l'opacité */
+}
+.hidden{
+	display: none;
+}
+.show{
+	display: flex;
+	flex-direction: row;
+	justify-content: left;  /* Aligne les éléments à gauche de l'axe horizontal (row) */
+	align-items:flex-start; /* Aligne les éléments au début de l'axe vertical */
+}
+
+#second > p:first-of-type{
+	font-size: 2.5em;
+	text-align: center;
+	margin: 0.25em 0 1em 0;
+	color: rgb(128, 128, 128);
+}
+#second p{
+	font-size: 2.5em;
+	text-align: left;
+	margin: 1em 0 1em 1em;
+}
+#photo{
+	width: 15%;
+	padding: 0.10em;
+}
+#photo img{
+	height : 8rem;
+	margin: 1.75em 0 0 3.25em;
+}
+#texteapropos{
+	width: 85%;
+	font-size: 0.5em;
+	align-items: left;
+	padding-right: 1.5em;
+}
+#texteapropos span:first-of-type{
+	color : cyan;
+	font-size: 2.5em;
+}
+#texteapropos span{
+	color: pink;
+	font-weight: bold;
+}
+
+
+/* SECTION 3 COMPETENCES & STACK */
+
+#third{
+	margin-top: 2em;
+	justify-content: space-evenly;
+}
+#third ul{
+	text-align: left;
+	font-size: 1.25em;
+	margin: 0.5em 0 0.5em 3.75em;
+}
+/* SECTION 4 PORTFOLIO */
+
+
+/* SECTION 5 CONTACT */
+#contact{
+	justify-content: center;
+	align-items: center;
+}
+#contact p{
+	font-size: 1.5em;
+}
+
+button{
+	width : 16rem;
+	font-family: "Roboto";
+	background-color : slateblue;
+	color : white;
+	font-size : 1.5em;
+	/* margin : 1rem 10rem 1rem 10rem; */
+	padding: 1.5rem;
+	border-radius: 4px;
+	transition: ease 1s;
+}
+
+button:hover{
+	/* box-shadow : 0 0 5px cyan, O O 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan; */
+	box-shadow : 7px 7px 10px 5px cyan;
+	background-color: rgb(44, 244, 244);
+	color: #000;
+	font-size: 1.75em;
+	opacity: 0.7;
+}
+button:active {
+	background-color: cyan;
+	box-shadow: 0 5px #666;
+	transform: translateY(10px);
+  }
+
+
+
+
+
+
+
+	/* animation : bounce 0 5s infinite;
+}
+@keyframes button{
+	from {
+		transform: translateX(0%);
+	}
+	
+	to {
+		transform: translateX(100%);
+	}
+	} 
+	ul li{
+		font-size: 1.20em;
+		list-style-type :square;
+		color :darkolivegreen;
+	}
+	.apropos{
+		border: 8px;
+		background-color: black;
+		margin :20px;
+	}
+	.apropos p{
+		font-size : 2rem;
+		color : #ffff;
+		text-align: center;
+	}

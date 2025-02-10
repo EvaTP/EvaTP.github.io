@@ -4,48 +4,104 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
   </head>
   <body>
+  
     <div class="container">
-      <!-- SECTION 1 -->
+      <!-- SECTION 1 WARNINGS -->
       <section id="first">
+          <div id="warning1">
+            <p> Site en construction 🚧</p>
+          </div>
+          <div id="warning2">
+            <p>  👷🏻‍♀️ Work in progress... </p>
+          </div>
+          <div id="warning3">
+            <p>Je vous souhaite la bienvenue sur mon site.</p>
+            <p>Il est en constante évolution car d'autres projets sont à venir,</p>
+            <p>aussi, n'hésitez pas à le revisiter régulièrement.</p>
+          </div>
+            <!-- A FAIRE Autres bandeaux VALEURS : Clean Code , Beautiful Design , Sustainable code -->
+      </section>
+
+      <!-- SECTION 2  A PROPOS -->
+      <section id="second" class="">
         <h1>Portfolio Eva Tharrats</h1>
-        <br /><br /><br />
-        <div id="apropos" class="flex">
+        <p>Développeuse web full stack</p>
+        <div class="apropostitre flex-column">
+          <h2 id="apropos">A propos</h2>
+        </div>
+        <div class="apropos flex-row hidden">
+          <div class="apropos" id="photo">
+            <img src="img/Eva-cercle-fond-brique.png" alt="photoEva">
+          </div>
+          <div class = "apropos" id="texteapropos">
+            <p><span id="quotes">❝</span><br>Après 30+ années d'expérience professionnelle en tant qu'assistante et assistante de direction trilingue, j'ai décidé en 2023 de faire une <strong>reconversion professionnelle dans le développement web.</strong>
+              <br><br>
+              Dans mon antérieure vie professionnelle, j’ai occupé le poste d’assistante puis d'assistante de direction trilingue.
+              Avec le temps, mon intérêt pour l’informatique et la technologie, ainsi que l'envie d'apprendre, m’ont motivée à entreprendre une reconversion.
+              <br>
+              J’ai suivi une formation de développeur/intégrateur web dans l’organisme IFOCOP à Paris, dont j'ai obtenu le diplôme.
+              <br>
+              Lors de ma formation théorique d’une durée de 4 mois, j’ai appris les langages d'intégration et de programmation Javascript/JQuery, ainsi que les langages back-end. Nous avons également abordé l'UX/UI et le SEO (référencement naturel).
+              J'ai également appris le CMS Wordpress, que j’ai pratiqué lors de mon stage.
+              <br>
+              Dans un marché de l'emploi très compétitif et exigeant il m'est apparu nécessaire d'étoffer mes connaissances, j'ai donc décidé de poursuivre ma formation.
+              <br><br>
+              Pour cela j'ai fait le choix de rejoindre l'école <span>ADA TECH SCHOOL</span>, première école de tech inclusive en France. 
+              Je suis en formation chez <span>ADA</span> depuis janvier 2025.
+              <br>
+              <strong>Pour mener à bien ma formation, je recherche une alternance de 12 mois à partir d'octobre 2025.</strong>
+              <br>
+              Vous trouverez le détail de mes compétences plus bas.
+              <br><br>
+
+              A très bientôt !</p>
+          </div>
           
-          <div id="warning">
-            <p> Site en construction  🚧 
-              <em>Work in progress</em>
-            </p>
+        </div>
+      </section>
+
+      <!-- SECTION 3 COMPETENCES & STACK -->
+      <section id="third" class="flex-row">
+        <div class="flex-column">
+          <div class="">
+            <h2>Mes compétences</h2>
+            <br>
+            <ul>
+              <li>Front-end</li>
+              <li>Back-end</li>
+              <!-- <li>...</li> -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="">
+            <h2>Mon stack</h2>
+            <br>
+            <ul>
+              <li>HTML/CSS</li>
+              <li>Javascript</li>
+              <li>Git / GitHub</li>
+              <li>Librairies & Frameworks : ...</li>
+            </ul>
           </div>
         </div>
       </section>
-      <!-- SECTION 2 -->
-      <section id="second">
-        <div id="intro">
-          <p>Développeuse web full stack 👩🏻</p>
-          <h2>Mes compétences</h2>
-          <br />
-          <ul>
-            <li>Front-end</li>
-            <li>Back-end</li>
-            <!-- <li>...</li> -->
-          </ul>
-          <br />
-        </div>
-      </section>
-      <!-- SECTION 3 -->
-      <section id=stack class="flex">
-        <h2>Mon stack</h2>
-      </section>
-      <!-- SECTION 4 -->
-      <section id="contact">
-        <br><br>
-        <button>Contactez-moi !</button>
+      <!-- SECTION 4 PORTFOLIO -->
+
+      <!-- SECTION 5 CONTACT -->
+      <section id="contact" class="flex-column">
+        <br><br><br>
+        <p>Un message, une question, envie d'échanger ... ? </p><br><br>
+        <button id="contactezmoi">Contactez-moi !</button>
+        <br><br><br><br>
       </section>
     </div>
     <!-- fin container -->
