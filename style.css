@@ -1,4 +1,4 @@
-/* RESET */
+/* RESET CSS */
 /* Nous cassons (reset) l'effet d'héritage pour toutes les balises susceptibles d'être concernées */
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -6,6 +6,7 @@ small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldse
 	padding: 0;
 	border: 0;
 	font-size: 100%;
+	/* font-family:; */
 	font: inherit;
 	vertical-align: baseline;
 	text-decoration: none;
@@ -32,8 +33,13 @@ small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldse
 /*
 fond écran : 
 cyan
-gris : rgb(128, 128, 128)
+gris (texte): rgb(128, 128, 128)
 pink
+white : #ffff
+solid gold (hover on nav bar)
+goldenrod : rgb(218, 165, 32) / #daa520
+
+footer : bg color : gris rgb(128, 128, 128)
 */
 
 
@@ -48,7 +54,6 @@ body{
 .container{
 	margin : O, auto;  /* pour centrer automatiquement mon site */
 }
-
 h1{
 	font-family : "Roboto";
 	font-size: 4rem;
@@ -69,7 +74,7 @@ p{
 	font-family : "Roboto";
 	font-size: 1.25em;
 }
-ul li{
+.ulsection3 li{
 	list-style-type: disc;
 	font-family: "Roboto";
 }
@@ -84,7 +89,44 @@ ul li{
 	flex-direction: row;
 	justify-content:left;
 }
+/* HEADER */
+/* NAV BAR */
+.navbar{
+	/* position: absolute; */
+	/* left: 0;
+	right: 0; */
+	width: 100%;
+    margin: 0px auto 40px auto;
+    position: sticky;
+    top: 0px;
+	padding: 40px 0 50px;
+}
+.navbarul{
+	list-style-type: none;
+}
+.navbarul li{
+	float: left;
+    width: 33%;/*100% divisé par le nombre d'éléments de menu*/
+    text-align: center;/*Centre le texte dans les éléments de menu*/
+	font-size: 1.25em;
+}
+.navbar li a{
+	display: inline-block; /*Toute la surface sera cliquable*/
+    text-decoration: none;
+	color:#fff;
+	font-family: 'Roboto';
+	border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+    padding: 10px 0px;/*Agrandit le menu et espace la bordure du texte*/
+}
 
+.navbar li a:hover{
+    color: cyan;
+    border-bottom: 2px solid gold;
+}
+
+/* ******************** */
+/* PAGE INDEX - ACCUEIL */
+/* ******************** */
 
 /* SECTION 1  WARNINGS */
 #warning1, #warning3{
@@ -113,10 +155,10 @@ ul li{
 #warning2{
 	display: inline-block;
 	width: 100%;
-	border-bottom: 8px solid blue;
-	border-top: 8px solid crimson;
-	background-color: green;
-	font-size: 2.5em;
+	border-bottom: 8px solid cyan;
+	border-top: 8px solid cyan;
+	background-color: goldenrod;
+	font-size: 2em;
 	font-style: italic;
 	line-height: 31px;
 	text-align: center;
@@ -204,10 +246,10 @@ ul li{
 	align-items: left;
 	padding-right: 1.5em;
 }
-#texteapropos span:first-of-type{
+/* #texteapropos span:first-of-type{
 	color : cyan;
 	font-size: 2.5em;
-}
+} */
 #texteapropos span{
 	color: pink;
 	font-weight: bold;
@@ -225,8 +267,39 @@ ul li{
 	font-size: 1.25em;
 	margin: 0.5em 0 0.5em 3.75em;
 }
-/* SECTION 4 PORTFOLIO */
 
+/* Mon stack */
+#monstacktitre {
+	position: relative; /* Important : le conteneur doit être positionné */
+};
+
+/* .titre-container {
+	position: relative; /* Le conteneur du titre et de la flèche doit être positionné */
+	/*display: inline-block; /* Pour que le conteneur prenne la largeur du contenu */
+
+
+.titre-container {
+	position: relative;
+	/* display: flex; /* Utiliser flex pour aligner les éléments */
+	/*align-items: center; Aligner verticalement les éléments */
+};
+
+#monstack {
+	position: relative;
+	z-index: 1;
+	/*margin-right: -20px;  Ajuster cette valeur pour rapprocher la flèche */
+};
+
+.flechemauve {
+	position: absolute;
+	z-index: 2;
+	margin-right: 130px;
+	/* margin-top: 10px; */
+};
+
+
+
+/* SECTION 4 PORTFOLIO */
 
 /* SECTION 5 CONTACT */
 #contact{
@@ -235,6 +308,7 @@ ul li{
 }
 #contact p{
 	font-size: 1.5em;
+	text-align: center;
 }
 
 button{
@@ -243,6 +317,7 @@ button{
 	background-color : slateblue;
 	color : white;
 	font-size : 1.5em;
+	align-self:center;
 	/* margin : 1rem 10rem 1rem 10rem; */
 	padding: 1.5rem;
 	border-radius: 4px;
@@ -262,12 +337,6 @@ button:active {
 	box-shadow: 0 5px #666;
 	transform: translateY(10px);
   }
-
-
-
-
-
-
 
 	/* animation : bounce 0 5s infinite;
 }
@@ -295,3 +364,133 @@ button:active {
 		color : #ffff;
 		text-align: center;
 	}
+
+/* SECTION 6 FOOTER */
+
+footer{
+	background-color: rgba(128, 128, 128, 0.5);
+	width: 100%;
+	height: 10vh;
+}
+#carouselstack{
+	display: inline-block;
+	width: 100%;
+	/* background-color: rgba(128, 128, 128, 0.5); */
+	font-size: 1em;
+	line-height: 20px;
+	text-align: center;
+	color: #000;
+	/* margin: 8px 30px 8px 30px; */
+	padding : 5px 5px;
+	/* animation: defilement-rtl 15s infinite linear; */
+	animation-name: defilement-rtl;       /* référence à la règle @keyframes right-to-left */
+	animation-duration: 35s;               /* valeur à ajuster suivant la longueur du message */
+	animation-iteration-count: infinite;  /* boucle continue */
+	animation-timing-function: linear;    /* pas vraiment utile ici */
+	position: relative;
+	overflow: hidden;
+}
+@keyframes defilement-rtl {
+	0% {
+		transform: translateX(100%);  /* commence hors de l'écran à droite */
+		right: -80px;
+	  }
+	  100% {
+		transform : translateX(-100%);  /* termine hors de l'écran à gauche */
+		right: 80px;
+	  }
+  }
+  #iconescarousel{
+	color : #fff;
+	font-style: normal;
+  }
+  #copyright{
+	text-align: center;
+	font-size: 1em;
+	margin-bottom: 10%;
+  }
+
+
+
+/* ******************** */
+/*    PAGE PORTFOLIO    */
+/* ******************** */
+
+/**
+* Background Image
+*/
+.bg-image {
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	padding: 35px 0 40px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #2d2d2d;
+}
+.h2portfolio{
+	font-family : "Roboto";
+	font-size : 2.5em;
+	color : #ffff;
+	margin : 3rem 0.5rem 3rem 2rem;
+	padding-left : 0.5em;
+	border-left: 7px solid cyan;
+	text-align: left;
+}
+.h2portfolio span{
+	color:  pink;
+}
+/* styles mosaique */
+.mosaique{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items:center;
+}
+.row {
+	width: 75%;
+	display: flex;
+	flex-direction: row; /* Pour organiser les colonnes en lignes */
+	justify-content: space-evenly;
+	/* align-items: stretch; */
+  };
+  
+  .column {
+	flex: 1; /* Chaque colonne occupe la même largeur */
+	padding: 5px; /* Espacement entre les images */
+	position: relative; /* Pour positionner le titre */
+	overflow: hidden; /* Pour gérer l'effet de focus */
+  }
+  
+  .image-container {
+	position: relative; /* Pour positionner le titre */
+	
+  }
+  
+  .mosaique img {
+	width: 100%;
+	height: auto;
+	transition: transform 0.3s ease; /* Animation pour l'effet de focus */
+  }
+  
+  .titre-tuile {
+	position: absolute;
+	align-items: center;
+	top: 8px;
+	left: 0;
+	width: 95%;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 2em;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+	color: white;
+	padding: 10px;
+	text-align: center;
+  }
+  
+  .column:hover img {
+	transform: scale(1.1); /* Agrandissement de l'image au survol */
+  }
+  /* fin styles mosaique */
+
+
