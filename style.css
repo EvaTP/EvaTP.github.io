@@ -576,4 +576,9 @@ footer{
 }
 #download a:hover {
     text-decoration: underline;
-  }
+}
+/* p#downloadCV{
+    background-color: #000;
+    margin: 0 15em;
+    padding: 1em;
+} */
