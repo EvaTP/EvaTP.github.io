@@ -2,27 +2,26 @@
 /* Nous cassons (reset) l'effet d'héritage pour toutes les balises susceptibles d'être concernées */
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	/* font-family:; */
-	font: inherit;
-	vertical-align: baseline;
-	text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
 }
 
 /* POLICES */
 @font-face { /* utilisation d'une police css3 à l'aide d'une url */
-	font-family: "Roboto";
-	font-style: normal;
-	font-weight: 400;
-	src: local("Roboto"), local("Roboto"), url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto"), url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 }
 
 /* <weight>: Use a value from 100 to 900 */
 .roboto-normal{
-  font-family: "Roboto", serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -31,7 +30,7 @@ small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldse
 
 /* COULEURS */
 /*
-fond écran : 
+fond écran :
 cyan
 gris (texte): rgb(128, 128, 128)
 pink
@@ -43,455 +42,538 @@ footer : bg color : gris rgb(128, 128, 128)
 */
 
 
+/* COLORS */
+:root {
+    --primary-color: #fafafa;
+    --secondary-color:  #00FFFF;
+    --third-color: #7d1af0;
+    --fourth-color: #F56263;
+  
+    --heading-color: #333;
+    --light-color: #f9f9f9;
+    --dark-color: #333;
+    --text-grey-color: #808080;
+    --medium-grey-color: #F0F0F2;
+    --golden-color:#FFD700;
+    --goldenrod-color: #daa520;
+  
+    --btn-primary-bg: #333;
+    --btn-secondary-bg: #00FFFF;
+    --btn-accent-bg: #ffc412;
+    --btn-primary-hover-bg: #e74c3c;
+    --btn-secondary-hover-bg: #333;
+    --btn-accent-hover-bg: #8584ff;
+    --btn-disabled: #595959;
+  
+    /* FONTS */
+    --font-family-body: "Roboto", sans-serif;
+    --border-radius: 8px;
+  
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 3px 10px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 5px 15px rgba(0, 0, 0, 0.2);
+  
+    --section-margin: 2rem 0;
+    --container-width: 90%;
+  }
+  
+
 /* GENERAL SETTINGS */
 html{
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 body{
-	background-color: rgba(0, 0, 0, 0.8);
-	color: #fff;
-	
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+
 }
 .container{
-	margin : O, auto;  /* pour centrer automatiquement mon site */
+    display: flex; /* Ajout de Flexbox pour le conteneur principal */
+    margin : 0 auto;  /* pour centrer automatiquement mon site */
+    padding: 0 1.5em 0 2em; /* Ajout de padding pour espacer le contenu des bords */
 }
+/* .main-content {
+    flex-grow: 1; /* Le contenu principal prend l'espace disponible */
+    /* margin-right: 50px; Ajoute un espace entre le contenu principal et la sidebar 
+}*/
+
+/*.sidebar {
+    width: 400px; /* Largeur fixe pour la sidebar */
+    /* padding: 15px;
+    background-color: #2d2d2d; Couleur de fond pour la sidebar 
+    box-shadow : 4px 8px 10px 5px grey; */
+/* } */
+.main-content {
+    width: 75%; /* réduit la largeur du main */
+    margin-right: 2%; /* petit espace entre les deux */
+    padding: 1em;
+}
+
+.sidebar {
+    width: 20%; /* élargit la sidebar */
+      padding: 15px;
+    background-color: #2d2d2d;
+    box-shadow : 4px 8px 10px 5px grey;
+}
+
+
+
 h1{
-	font-family : "Roboto";
-	font-size: 4rem;
-	color : #fff;
-	margin: 20px 0 15px 20px;
-	text-align: center;
+    font-family: var(--font-family-body);
+    font-size: 4rem;
+    color : #fff;
+    margin: 20px 0 15px 0; /* Ajustement de la marge pour le centrage */
+    text-align: center;
 }
 h2{
-	font-family : "Roboto";
-	font-size : 2.5em;
-	color : #ffff;
-	margin : 1rem 0.5rem 1rem 2rem;
-	padding-left : 0.5em;
-	border-left: 7px solid cyan;
-	text-align: left;
+    font-family : var(--font-family-body);
+    font-size : 1.5em;
+    color : #ffff;
+    margin : 1rem 0.5rem 1rem 0; /* Ajustement de la marge pour l'alignement à gauche */
+    padding-left : 0.5em;
+    border-left: 7px solid cyan;
+    text-align: left;
 }
 p{
-	font-family : "Roboto";
-	font-size: 1.25em;
+    font-family : var(--font-family-body);
+    font-size: 1.25em;
 }
-.ulsection3 li{
-	list-style-type: disc;
-	font-family: "Roboto";
+.ulaside li{
+    list-style-type: disc;
+    font-family:var(--font-family-body);
 }
 .flex-column{
-	display : flex;
-	flex-direction: column;
-	justify-content:flex-start;
-	align-items: left;
+    display : flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start; /* Correction pour aligner à gauche */
 }
 .flex-row{
-	display : flex;
-	flex-direction: row;
-	justify-content:left;
+    display : flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center; /* Ajout d'alignement vertical par défaut */
 }
 /* HEADER */
+/* header{
+    box-shadow: 3px 4px 8px grey;
+} */
 /* NAV BAR */
 .navbar{
-	/* position: absolute; */
-	/* left: 0;
-	right: 0; */
-	width: 100%;
-    margin: 0px auto 40px auto;
+    width: 100%;
+    /* margin: 0 auto 40px auto; */
     position: sticky;
-    top: 0px;
-	padding: 40px 0 50px;
+    top: 0;
+    padding: 30px 0 30px;
+    background-color: rgba(0, 0, 0, 0.4); /* Assure que la navbar est visible sur le fond sombre */
+    z-index: 10; /* Assure que la navbar est au-dessus des autres éléments */
 }
 .navbarul{
-	list-style-type: none;
+    list-style-type: none;
+    padding: 0; /* Suppression du padding par défaut de la liste */
+    margin: 0; /* Suppression de la marge par défaut de la liste */
+    display: flex; /* Utilisation de Flexbox pour aligner les éléments horizontalement */
+    justify-content: space-around; /* Espacement égal entre les éléments */
 }
 .navbarul li{
-	float: left;
-    width: 33%;/*100% divisé par le nombre d'éléments de menu*/
-    text-align: center;/*Centre le texte dans les éléments de menu*/
-	font-size: 1.25em;
+    text-align: center;/* Centre le texte dans les éléments de menu */
+    font-size: 1.25em;
 }
 .navbar li a{
-	display: inline-block; /*Toute la surface sera cliquable*/
+    display: block; /* Toute la surface sera cliquable et prendra la largeur de l'élément li */
     text-decoration: none;
-	color:#fff;
-	font-family: 'Roboto';
-	border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
-    padding: 10px 0px;/*Agrandit le menu et espace la bordure du texte*/
+    color:#fff;
+    font-family: 'Roboto';
+    border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+    padding: 10px 15px;/* Agrandit la zone cliquable et espace le texte */
 }
 
 .navbar li a:hover{
     color: cyan;
-    border-bottom: 2px solid gold;
+    border-bottom: 2px solid var(--golden-color);
 }
-
+.navbar a.active {
+    color: cyan;
+    font-weight: bold;
+  }
+  
+  /* .navbar > li.active > a {
+    color: #0097b2;
+  } */
 /* ******************** */
 /* PAGE INDEX - ACCUEIL */
 /* ******************** */
 
 /* SECTION 1  WARNINGS */
 #warning1, #warning3{
-	display: inline-block;
-	width: 100%;
-	border-bottom: 8px solid blue;
-	border-top: 8px solid green;
-	background-color: crimson;
-	font-size: 1.5em;
-	line-height: 31px;
-	text-align: center;
-	color: #000;
-	padding : 10px 15px;
-	/* animation: defilement-rtl 15s infinite linear; */
-	animation-name: defilement-ltr;       /* référence à la règle @keyframes left-to-right */
-	animation-duration: 18s;               /* valeur à ajuster suivant la longueur du message */
-	animation-iteration-count: infinite;  /* boucle continue */
-	animation-timing-function: linear;    /* pas vraiment utile ici */
-	position: relative;
-	overflow: hidden;
+    display: block; /* Correction pour que les warnings prennent toute la largeur */
+    width: 100%;
+    border-bottom: 8px solid blue;
+    border-top: 8px solid green;
+    background-color: crimson;
+    font-size: 1.5em;
+    line-height: 1.3; /* Amélioration de l'interligne */
+    text-align: center;
+    color: #000;
+    padding : 10px 15px;
+    animation-name: defilement-ltr;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1em; /* Ajout de marge en bas pour l'espacement */
 }
 #warning1{
-	margin-top: 1em;
-	font-size: 2.5em;
+    margin-top: 1em;
+    font-size: 2.5em;
 }
 #warning2{
-	display: inline-block;
-	width: 100%;
-	border-bottom: 8px solid cyan;
-	border-top: 8px solid cyan;
-	background-color: goldenrod;
-	font-size: 2em;
-	font-style: italic;
-	line-height: 31px;
-	text-align: center;
-	color: #000;
-	/* margin: 8px 30px 8px 30px; */
-	padding : 10px 15px;
-	/* animation: defilement-rtl 15s infinite linear; */
-	animation-name: defilement-rtl;       /* référence à la règle @keyframes right-to-left */
-	animation-duration: 15s;               /* valeur à ajuster suivant la longueur du message */
-	animation-iteration-count: infinite;  /* boucle continue */
-	animation-timing-function: linear;    /* pas vraiment utile ici */
-	position: relative;
-	overflow: hidden;
+    display: block; /* Correction pour que le warning prenne toute la largeur */
+    width: 100%;
+    border-bottom: 8px solid cyan;
+    border-top: 8px solid cyan;
+    background-color: goldenrod;
+    font-size: 2em;
+    font-style: italic;
+    line-height: 1.3; /* Amélioration de l'interligne */
+    text-align: center;
+    color: #000;
+    padding : 10px 15px;
+    animation-name: defilement-rtl;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1em; /* Ajout de marge en bas pour l'espacement */
 }
 
 @keyframes defilement-ltr {
-	0% {
-		transform : translateX(-100%);  /* commence hors de l'écran à gauche */
-		/* background: tomato;
-		color:#3e8e41;
-		left: -100px;
-		top: 0px; */
-	  }
-	  100% {
-		transform : translateX(100%);  /* termine hors de l'écran à droite */
-		/* background: yellow;
-		left: 0px; */
-		/* top: 200px; */
-	  }
+    0% {
+        transform : translateX(-100%);
+      }
+      100% {
+        transform : translateX(100%);
+      }
   }
 
   @keyframes defilement-rtl {
-	0% {
-		transform: translateX(100%);  /* commence hors de l'écran à droite */
-		/* background: #16a085;
-		color: orange;
-		right: -200px;
-		top: 0px; */
-	  }
-	  100% {
-		transform : translateX(-100%);  /* termine hors de l'écran à gauche */
-		/* background: yellow;
-		right: 100px; */
-		/* top: 200px; */
-	  }
+    0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform : translateX(-100%);
+      }
   }
 
 /* SECTION 2 A PROPOS */
+
+#accueil-container{
+    margin: 2em 0 1em;
+    /* display: flex;
+    flex-direction: column; */
+}
 
 .apropos {
     transition: opacity 0.5s ease; /* Ajoute une transition sur l'opacité */
 }
 .hidden{
-	display: none;
+    display: none;
 }
 .show{
-	display: flex;
-	flex-direction: row;
-	justify-content: left;  /* Aligne les éléments à gauche de l'axe horizontal (row) */
-	align-items:flex-start; /* Aligne les éléments au début de l'axe vertical */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items:flex-start;
+}
+#apropostitre h2{
+	font-size: 3em;
 }
 
 #second > p:first-of-type{
-	font-size: 2.5em;
-	text-align: center;
-	margin: 0.25em 0 1em 0;
-	color: rgb(128, 128, 128);
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0.25em 0 1em 0;
+    padding : 0.5em;
+    color: var(--text-grey-color);
 }
 #second p{
-	font-size: 2.5em;
-	text-align: left;
-	margin: 1em 0 1em 1em;
+    font-size: 1.25em; /* Réduction de la taille de la police pour le texte à propos */
+    text-align: left;
+    margin: 1em 0 1em 0; /* Suppression de la marge à gauche, gérée par .apropos flex-row */
+}
+.apropos.flex-row {
+    align-items: flex-start; /* Alignement des éléments photo et texte en haut */
+    margin-bottom: 5em; /* Ajout de marge en bas pour séparer les sections */
 }
 #photo{
-	width: 15%;
-	padding: 0.10em;
+    width: 15%;
+    padding: 0.20em;
+    margin-right: 20px; /* Ajout de marge à droite pour espacer la photo du texte */
+    margin-top : 1em;
 }
 #photo img{
-	height : 8rem;
-	margin: 1.75em 0 0 3.25em;
+    max-width: 100%; /* L'image ne dépasse pas la largeur de son conteneur */
+    height : auto; /* Garde les proportions de l'image */
+    display: block; /* Supprime l'espace potentiel en bas de l'image */
+    margin: 0; /* Suppression des marges spécifiques à l'image, gérées par le conteneur photo */
 }
 #texteapropos{
-	width: 85%;
-	font-size: 0.5em;
-	align-items: left;
-	padding-right: 1.5em;
+    width: 85%;
+    font-size: 1em; /* Ajustement de la taille de la police du texte à propos */
+    align-items: flex-start;
+    padding-right: 0; /* Suppression du padding à droite, géré par le conteneur principal */
+    margin-top: 1em;
 }
-/* #texteapropos span:first-of-type{
-	color : cyan;
-	font-size: 2.5em;
-} */
 #texteapropos span{
-	color: pink;
-	font-weight: bold;
+    color: pink;
+    font-weight: bold;
 }
 
 
-/* SECTION 3 COMPETENCES & STACK */
-
-#third{
-	margin-top: 2em;
-	justify-content: space-evenly;
-}
-#third ul{
-	text-align: left;
-	font-size: 1.25em;
-	margin: 0.5em 0 0.5em 3.75em;
-}
+/* ASIDE : COMPETENCES & STACK */
 
 /* Mon stack */
 #monstacktitre {
-	position: relative; /* Important : le conteneur doit être positionné */
-};
-
-/* .titre-container {
-	position: relative; /* Le conteneur du titre et de la flèche doit être positionné */
-	/*display: inline-block; /* Pour que le conteneur prenne la largeur du contenu */
-
+    position: relative;
+}
 
 .titre-container {
-	position: relative;
-	/* display: flex; /* Utiliser flex pour aligner les éléments */
-	/*align-items: center; Aligner verticalement les éléments */
+    position: relative;
 };
 
 #monstack {
-	position: relative;
-	z-index: 1;
-	/*margin-right: -20px;  Ajuster cette valeur pour rapprocher la flèche */
+    position: relative;
+    z-index: 1;
 };
 
 .flechemauve {
-	position: absolute;
-	z-index: 2;
-	margin-right: 130px;
-	/* margin-top: 10px; */
+    position: absolute;
+    z-index: 2;
+    right: 10px; /* Positionnement à droite */
+    top: 0.1em; /* Ajustement vertical */
 };
 
+.aside-section {
+    margin-bottom: 2em; /* Espacement entre les sections de l'aside */
+	margin-top: 3em;
+}
+
+.aside-section h2 {
+    margin-left: 0; /* Suppression de la marge à gauche spécifique à h2 dans l'aside */
+}
+
+.aside-section ul {
+    text-align: left;
+    font-size: 1em;
+    margin: 0.5em 0 0.5em 1.5em; /* Ajustement de la marge à gauche pour la liste dans l'aside */
+    padding-left: 0; /* Suppression du padding par défaut de la liste */
+    line-height: 1.75em;
+}
+
+/* #portfolio-button{
+    /* text-align: center;
+    border : none; */
+    /* margin-left: 2em; */
+    /* background-color: #2d2d2d;
+} */
+
+/* VALEURS (Désormais dans l'aside) */
+.valeurs.flex-column h2 {
+    margin-left: 0; /* Suppression de la marge à gauche pour le titre des valeurs */
+}
+.valeurs ul {
+    margin-left: 1.5em; /* Ajustement de la marge à gauche pour la liste des valeurs */
+}
 
 
 /* SECTION 4 PORTFOLIO */
 
+
+
 /* SECTION 5 CONTACT */
 #contact{
-	justify-content: center;
-	align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em; /* Ajout de marge en haut pour l'espacement */
 }
 #contact p{
-	font-size: 1.5em;
-	text-align: center;
+    font-size: 1.5em;
+    text-align: center;
 }
-
+/* Centrer uniquement le bouton dans son propre conteneur */
+#portfolio-button-container {
+    display: flex;
+    justify-content: center;  /* Centrer horizontalement */
+    align-items: center;      /* Centrer verticalement */
+    width: 100%;              /* S'assurer qu'il occupe toute la largeur de son parent */
+    margin-top: -1em;
+}
+#portfolio-button-container img{
+    margin: 0;
+    width: 70%; /* Ajuste cette valeur pour agrandir l'image */
+    height: auto; /* Maintient l'aspect ratio */
+}
+  
 button{
-	width : 16rem;
-	font-family: "Roboto";
-	background-color : slateblue;
-	color : white;
-	font-size : 1.5em;
-	align-self:center;
-	/* margin : 1rem 10rem 1rem 10rem; */
-	padding: 1.5rem;
-	border-radius: 4px;
-	transition: ease 1s;
+    background-color: transparent;
+    border: none;
 }
+/* button{
+    width : 16rem;
+    font-family: "Roboto";
+    background-color : slateblue;
+    color : white;
+    font-size : 1.5em;
+    align-self:center;
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: ease 1s;
+    margin-top: 1em; /* Ajout de marge en haut pour l'espacement
+} */
 
-button:hover{
-	/* box-shadow : 0 0 5px cyan, O O 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan; */
-	box-shadow : 7px 7px 10px 5px cyan;
-	background-color: rgb(44, 244, 244);
-	color: #000;
-	font-size: 1.75em;
-	opacity: 0.7;
-}
-button:active {
-	background-color: cyan;
-	box-shadow: 0 5px #666;
-	transform: translateY(10px);
-  }
-
-	/* animation : bounce 0 5s infinite;
-}
-@keyframes button{
-	from {
-		transform: translateX(0%);
-	}
-	
-	to {
-		transform: translateX(100%);
-	}
-	} 
-	ul li{
-		font-size: 1.20em;
-		list-style-type :square;
-		color :darkolivegreen;
-	}
-	.apropos{
-		border: 8px;
-		background-color: black;
-		margin :20px;
-	}
-	.apropos p{
-		font-size : 2rem;
-		color : #ffff;
-		text-align: center;
-	}
+/* button img:hover{
+    box-shadow : 7px 7px 10px 5px cyan;
+    background-color: rgb(44, 244, 244);
+    color: #000;
+    font-size: 1.75em;
+    opacity: 0.7;
+}  */
+/* button:active {
+    background-color: cyan;
+    box-shadow: 0 5px #666;
+    transform: translateY(10px);
+  } */
 
 /* SECTION 6 FOOTER */
 
 footer{
-	background-color: rgba(128, 128, 128, 0.5);
-	width: 100%;
-	height: 10vh;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 100%;
+    height: auto; /* Ajustement de la hauteur automatique */
+    padding: 10px 0; /* Ajout de padding en haut et en bas */
+    margin-top: 3em; /* Ajout de marge en haut pour l'espacement */
 }
 #carouselstack{
-	display: inline-block;
-	width: 100%;
-	/* background-color: rgba(128, 128, 128, 0.5); */
-	font-size: 1em;
-	line-height: 20px;
-	text-align: center;
-	color: #000;
-	/* margin: 8px 30px 8px 30px; */
-	padding : 5px 5px;
-	/* animation: defilement-rtl 15s infinite linear; */
-	animation-name: defilement-rtl;       /* référence à la règle @keyframes right-to-left */
-	animation-duration: 35s;               /* valeur à ajuster suivant la longueur du message */
-	animation-iteration-count: infinite;  /* boucle continue */
-	animation-timing-function: linear;    /* pas vraiment utile ici */
-	position: relative;
-	overflow: hidden;
+    display: block; /* Correction pour prendre toute la largeur */
+    width: 100%;
+    font-size: 1em;
+    line-height: 1.3; /* Amélioration de l'interligne */
+    text-align: center;
+    color: #fff; /* Correction de la couleur du texte */
+    padding : 10px 5px;
+    animation-name: defilement-rtl;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    overflow: hidden;
 }
 @keyframes defilement-rtl {
-	0% {
-		transform: translateX(100%);  /* commence hors de l'écran à droite */
-		right: -80px;
-	  }
-	  100% {
-		transform : translateX(-100%);  /* termine hors de l'écran à gauche */
-		right: 80px;
-	  }
+    0% {
+        transform: translateX(100%);
+        right: -80px;
+      }
+      100% {
+        transform : translateX(-100%);
+        right: 80px;
+      }
   }
   #iconescarousel{
-	color : #fff;
-	font-style: normal;
+    color : #fff;
+    font-style: normal;
   }
   #copyright{
-	text-align: center;
-	font-size: 1em;
-	margin-bottom: 10%;
+    text-align: center;
+    font-size: 0.9em; /* Légère réduction de la taille de la police */
+    margin: 5em 0 3em;
   }
 
 
 
 /* ******************** */
-/*    PAGE PORTFOLIO    */
+/* PAGE PORTFOLIO    */
 /* ******************** */
 
 /**
 * Background Image
 */
 .bg-image {
-	background-size: cover;
-	background-position: center center;
-	position: relative;
-	padding: 35px 0 40px;
-	vertical-align: middle;
-	text-align: center;
-	background-color: #2d2d2d;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 35px 0 40px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #2d2d2d;
+}
+#portfolio-container{
+    margin: 2em 0 1em;
+    display: flex;
+    flex-direction: column;
 }
 .h2portfolio{
-	font-family : "Roboto";
-	font-size : 2.5em;
-	color : #ffff;
-	margin : 3rem 0.5rem 3rem 2rem;
-	padding-left : 0.5em;
-	border-left: 7px solid cyan;
-	text-align: left;
+    font-family : "Roboto";
+    font-size : 2.5em;
+    color : #ffff;
+    margin : 3rem 0.5rem 3rem 0; /* Ajustement de la marge à gauche */
+    padding-left : 0.5em;
+    border-left: 7px solid cyan;
+    text-align: left;
 }
 .h2portfolio span{
-	color:  pink;
+    color:  pink;
+}
+#git-next{
+    margin-top: -1em;
 }
 /* styles mosaique */
 .mosaique{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items:center;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    gap: 30px;
+    color : white;
 }
-.row {
-	width: 75%;
-	display: flex;
-	flex-direction: row; /* Pour organiser les colonnes en lignes */
-	justify-content: space-evenly;
-	/* align-items: stretch; */
-  };
-  
-  .column {
-	flex: 1; /* Chaque colonne occupe la même largeur */
-	padding: 5px; /* Espacement entre les images */
-	position: relative; /* Pour positionner le titre */
-	overflow: hidden; /* Pour gérer l'effet de focus */
-  }
-  
-  .image-container {
-	position: relative; /* Pour positionner le titre */
-	
-  }
-  
-  .mosaique img {
-	width: 100%;
-	height: auto;
-	transition: transform 0.3s ease; /* Animation pour l'effet de focus */
-  }
-  
-  .titre-tuile {
-	position: absolute;
-	align-items: center;
-	top: 8px;
-	left: 0;
-	width: 95%;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 2em;
-	font-weight: bold;
-	background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
-	color: white;
-	padding: 10px;
-	text-align: center;
-  }
-  
-  .column:hover img {
-	transform: scale(1.1); /* Agrandissement de l'image au survol */
-  }
-  /* fin styles mosaique */
+.titre-tuile{
+    font-family: 'Courier New', Courier, monospace;
+    color : white;
+
+}
 
 
+
+/* ******************** */
+/*       PAGE CV        */
+/* ******************** */
+
+/**
+* Background Image
+*/
+
+#cv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 3em;
+}
+#download{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 3em;
+}
+#download a{
+    margin-top: 1.5em;
+    color: white;
+    font-family: var(--font-family-body);
+    font-weight: bold;
+}
+#download a:hover {
+    text-decoration: underline;
+  }

@@ -1,5 +1,18 @@
-//Ciblage du titre A propos//
+// Page active
+console.log("Script chargé !");
+const currentPage = window.location.href;
 
+document.querySelectorAll("a").forEach(link => {
+  const href = link.getAttribute("href");
+  if (href && currentPage.includes(href)) {
+    link.classList.add("active");
+  }
+});
+
+
+
+
+//Ciblage du titre A propos//
 let titreApropos = document.querySelector('#apropostitre');
 let divApropos = document.querySelector('.apropos.hidden');
 
@@ -26,6 +39,35 @@ titreApropos.addEventListener('click', () => {
       divMonStack.classList.add('hidden');
     }
 });
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   console.log("Script chargé");
+
+//   const links = document.querySelectorAll('.navbar a');
+//   const currentPage = window.location.pathname.split("/").pop();
+//   console.log("Page courante :", currentPage);
+
+//   links.forEach(link => {
+//     console.log("Lien vérifié :", link.getAttribute("href"));
+//     console.log("😆Comparaison :", linkHref, "===", currentPage);
+//     if (link.getAttribute("href") === currentPage) {
+//       link.classList.add("active");
+//     }
+//   });
+// });
+
+
+
+
 
 
 // TOGGLE

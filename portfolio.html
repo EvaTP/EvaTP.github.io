@@ -5,34 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Eva</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+   
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
   </head>
   <body>
-  <header>
-    <nav class="navbar">
-      <ul class="navbarul">
-        <li class="active"><a href="indexaside.html">Accueil</a>
-        </li>
-        <li><a href="portfolio.html" target="_blank">Portfolio</a>
-        </li>
-        <li><a href="#" target="_blank">CV</a>
-        </li>
-        <!-- <li><a href="#" target="_blank">Contact</a>
-        </li> -->
-        <!-- <li><a href="#" target="_blank">🇪🇸 Espagnol</a>
-        </li> -->
-      </ul>
-    </nav>
-  </header>
-
-    <div class="container">
-     
-
-    <!-- BANNIERE PORTFOLIO -->
-    <section class="bg-image" style="background-image: url(img_portfolio/pagePortfolio-bandeau1.png);">
+    <header>
+      <nav class="navbar">
+        <ul class="navbarul">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="https://www.linkedin.com/in/eva-tharrats" target="_blank">LinkedIn</a></li>
+          </ul>
+      </nav>
+    </header>
+  
+     <!-- BANNIERE PORTFOLIO -->
+     <section class="bg-image" style="background-image: url(img_portfolio/pagePortfolio-bandeau1.png);">
       <div class="">
         <h1 class="">PORTFOLIO</h1>
         <p>
@@ -42,24 +34,39 @@
     </section>
     <!-- FIN BANNIERE PORTFOLIO -->
 
+    <div id="portfolio-container" class="container">
+      <!-- SECTION 1 github -->
+     <h2 class="h2portfolio">Projets dans GitHub&nbsp;&nbsp;
+      <a href="https://github.com/EvaTP"> <img src="img_portfolio/github-next.png" alt="icone-github" width="100"></a>
+     </h2>
+     <div class="row">
+      <a href="https://github.com/EvaTP">
+        <div id="git-next" class="image-container">
+          <!-- <img src="icones/icons8-github-48.png" alt="icone-github" width="80"> -->
+          <!-- <img src="img_portfolio/github.png" alt="icone-github" width="80"> -->
+          <!-- <img src="img_portfolio/github-next.png" alt="icone-github" width="100"> -->
+         
+        </div>
+     </div>
+
     <!-- SECTION 1 MOSAIQUE PROJETS ADA -->
-     <h2 class="h2portfolio">Projets école <span>ADA TECH SCHOOL</span></h2>
+    <h2 class="h2portfolio">Projets école <span>ADA TECH SCHOOL</span></h2>
     <section id="mosaique-ada" class="mosaique">
       <div class="row">
         <div class="column">
-          <a href="#">
+          <a href="https://space-quiz-gray.vercel.app">
             <div class="image-container">
-              <img src="img_portfolio/ADA-logo2-440x327.png" alt="Ada-logo2">
-              <div class="titre-tuile">Projet 1</div>
+              <img src="img_portfolio/quiz-espace.png" alt="image-quiz-espace">
+              <div class="titre-tuile">Quiz de l'Espace</div>
             </div>
           </a>
         </div>
 
         <div class="column">
-          <a href="#">
+          <a href="https://a-vos-musees.vercel.app">
             <div class="image-container">
-              <img src="img_portfolio/ADA-logo-440x327.png" alt="ada-logo1">
-              <div class="titre-tuile">Projet 2</div>
+              <img src="img_portfolio/A-vos-musees.png" alt="image-a-vos-musees">
+              <div class="titre-tuile">A vos musées !</div>
             </div>
           </a>
         </div>
@@ -69,7 +76,7 @@
         <div class="column">
           <a href="#">
             <div class="image-container">
-              <img src="img_portfolio/ADA-sticker-main-bleue2.png" alt="ada-main-bleu" width="10" height="10">
+              <img src="img_portfolio/ADA-sticker-main-bleue2.png" alt="ada-main-bleu">
               <div class="titre-tuile">Projet 3</div>
             </div>
           </a>
@@ -78,17 +85,8 @@
         <div class="column">
           <a href="#">
             <div class="image-container">
-              <img src="img_portfolio/ADA-sticker_muscle@2x.png" alt="ada-bras-muscle">
-              <div class="titre-tuile">Projet 4</div>
-            </div>
-          </a>
-        </div>
-
-        <div class="column">
-          <a href="#">
-            <div class="image-container">
               <img src="img_portfolio/ADA-sticker-coeur.png" alt="ada-coeur">
-              <div class="titre-tuile">Projet 5</div>
+              <div class="titre-tuile">Projet 4</div>
             </div>
           </a>
         </div>
@@ -98,23 +96,15 @@
     <!-- FIN SECTION MOSAIQUE PROJETS ADA -->
 
 
-    <!-- SECTION 1 MOSAIQUE PROJETS IFOCOP -->
-    <h2 class="h2portfolio">Projets IFOCOP</h2>
+    <!-- SECTION 1 MOSAIQUE AUTRES PROJETS (IFOCOP...) -->
+    <h2 class="h2portfolio">Autres Projets</h2>
     <section id="mosaique-ifocop" class="mosaique">
-      <div class="row">
+      <div class="mosaique">
+      
         <div class="column">
-          <a href="https://artsquare.evatharrats.fr/">
+          
             <div class="image-container">
-              <img id="tuile_ifocop" src="img_portfolio/Ifocop-logo.png" alt="logo-ifocop">
-              <!-- <div class="titre-tuile">Galerie d'art ART'SQUARE</div> -->
-            </div>
-          </a>
-        </div>
-
-
-        <div class="column">
-          <a href="#">
-            <div class="image-container">
+              <a href="https://artsquare.evatharrats.fr/"></a>
               <img src="img_portfolio/ArtSquare_444x683-min.png" alt="Artsquare">
               <div class="titre-tuile">Galerie d'art ART'SQUARE</div>
             </div>
@@ -143,8 +133,8 @@
         <p>Un message, une question, envie d'échanger ... ? </p><br><br>
         <button id="contactezmoi">Contactez-moi !</button>
         <br><br><br><br>
-      </section>
-    </div> -->
+      </section> -->
+    </div>
     <!-- fin container -->
 
 
@@ -168,5 +158,6 @@
           <p id="copyright">Eva Tharrats | ©2025</p>
         </div>
         </footer>
+        <script src="script.js"></script>
   </body>
 </html>
