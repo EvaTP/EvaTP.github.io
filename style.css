@@ -563,6 +563,9 @@ footer{
     margin-top: -1em;
 }
 /* styles mosaique */
+#mosaique-ada, #mosaique-ifocop{
+    margin-left: 2em;
+}
 .mosaique{
     display: flex;
     flex-direction: row;
@@ -571,10 +574,10 @@ footer{
     color : white;
 }
 .mosaique .row {
-  /* display: flex; */
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 .mosaique .column{
     flex: 1;
@@ -582,13 +585,59 @@ footer{
     align-items: stretch;
     padding : 1em;
     margin: 0;
+    min-height: clamp(200px, 30vh, 400px);
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 .image-container {
+  position: relative;
+  overflow: hidden;
+  box-shadow: var( --shadow-xl);
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  width: 100%;
+  min-height: clamp(300px, 40vh, 400px);
+  /* height: 100%; */
 }
+.image-container img{
+    /* height : 100%; */
+    flex: 1;
+    width: 100%;
+    display : block;
+    object-fit: cover;
+    transition : transform 0.3s ease;
+}
+/* Animation image */
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Cartouche techno */
+.tech-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.75); /* Noir semi-transparent */
+  color: white;
+  font-size: 1em;
+  padding: 8px 14px;
+  font-family: var( --font-family-captions);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+/* Apparition uniquement au survol */
+.image-container:hover .tech-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .titre-tuile{
     font-family: var( --font-family-captions);
     /* font-family: 'Courier New', Courier, monospace; */
@@ -597,6 +646,7 @@ footer{
     margin-top: 0.5em;
     color : white;
 }
+
 
 
 
