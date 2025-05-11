@@ -67,6 +67,7 @@ footer : bg color : gris rgb(128, 128, 128)
   
     /* FONTS */
     --font-family-body: "Roboto", sans-serif;
+    --font-family-captions: "Montserrat", sans-serif;
     --border-radius: 8px;
   
     --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -565,15 +566,36 @@ footer{
 .mosaique{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
-    align-items: center;
+    justify-content:space-evenly;
     gap: 30px;
     color : white;
 }
+.mosaique .row {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.mosaique .column{
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding : 1em;
+    margin: 0;
+}
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 .titre-tuile{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var( --font-family-captions);
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0.5em;
     color : white;
-
 }
 
 
