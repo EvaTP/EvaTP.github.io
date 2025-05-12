@@ -352,11 +352,12 @@ p{
     margin: 0; /* Suppression des marges spécifiques à l'image, gérées par le conteneur photo */
 }
 #texteapropos{
-    width: 85%;
+    width: 75%;
     font-size: 1em; /* Ajustement de la taille de la police du texte à propos */
     align-items: flex-start;
-    padding-right: 0; /* Suppression du padding à droite, géré par le conteneur principal */
+    padding: 3em;
     margin-top: 1em;
+    margin-right: 1em;
     line-height: 2em;
 }
 #texteapropos span{
