@@ -28,20 +28,6 @@ small, strike, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldse
 }
 
 
-/* COULEURS */
-/*
-fond écran :
-cyan
-gris (texte): rgb(128, 128, 128)
-pink
-white : #ffff
-solid gold (hover on nav bar)
-goldenrod : rgb(218, 165, 32) / #daa520
-
-footer : bg color : gris rgb(128, 128, 128)
-*/
-
-
 /* COLORS */
 :root {
     --primary-color: #fafafa;
@@ -56,6 +42,7 @@ footer : bg color : gris rgb(128, 128, 128)
     --medium-grey-color: #F0F0F2;
     --golden-color:#FFD700;
     --goldenrod-color: #daa520;
+    --footer-color: rgba(128, 128, 128, 0.5);
   
     --btn-primary-bg: #333;
     --btn-secondary-bg: #00FFFF;
@@ -80,57 +67,50 @@ footer : bg color : gris rgb(128, 128, 128)
   }
   
 
-/* GENERAL SETTINGS */
+/* ******************** */
+/*    GENERAL SETTINGS  */
+/* ******************** */
+
 html{
     box-sizing: border-box;
 }
 body{
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-     box-sizing: border-box;
+    box-sizing: border-box;
 
 }
 .container{
-    display: flex; /* Ajout de Flexbox pour le conteneur principal */
-    margin : 0 auto;  /* pour centrer automatiquement mon site */
-    padding: 0 1.5em 0 2em; /* Ajout de padding pour espacer le contenu des bords */
+    display: flex;
+    margin : 0 auto; 
+    padding: 0 1.5em 0 2em;
 }
-/* .main-content {
-    flex-grow: 1; /* Le contenu principal prend l'espace disponible */
-    /* margin-right: 50px; Ajoute un espace entre le contenu principal et la sidebar 
-}*/
 
-/*.sidebar {
-    width: 400px; /* Largeur fixe pour la sidebar */
-    /* padding: 15px;
-    background-color: #2d2d2d; Couleur de fond pour la sidebar 
-    box-shadow : 4px 8px 10px 5px grey; */
-/* } */
 .main-content {
-    width: 75%; /* réduit la largeur du main */
-    margin-right: 2%; /* petit espace entre les deux */
+    width: 75%;
+    margin-right: 2%;
     padding: 1em;
 }
 
-.sidebar {
+.aside-desktop {
     width: 20%; /* élargit la sidebar */
-      padding: 15px;
+    padding: 15px;
     background-color: #2d2d2d;
     box-shadow : 4px 8px 10px 5px grey;
+    color: white;
 }
-
 h1{
     font-family: var(--font-family-body);
-    font-size: 4rem;
+    font-size: 4.5rem;
     color : #fff;
-    margin: 20px 0 15px 0; /* Ajustement de la marge pour le centrage */
+    margin: 20px 0 15px 0;
     text-align: center;
 }
 h2{
     font-family : var(--font-family-body);
     font-size : 1.5em;
     color : #ffff;
-    margin : 1rem 0.5rem 1rem 0; /* Ajustement de la marge pour l'alignement à gauche */
+    margin : 1rem 0.5rem 1rem 0;
     padding-left : 0.5em;
     border-left: 7px solid cyan;
     text-align: left;
@@ -138,27 +118,30 @@ h2{
 p{
     font-family : var(--font-family-body);
     font-size: 1.25em;
+    color: white;
 }
 .ulaside li{
     list-style-type: disc;
     font-family:var(--font-family-body);
+    color: white;
 }
 .flex-column{
     display : flex;
     flex-direction: column;
     justify-content:flex-start;
-    align-items: flex-start; /* Correction pour aligner à gauche */
+    align-items: flex-start;
 }
 .flex-row{
     display : flex;
     flex-direction: row;
     justify-content:left;
-    align-items: center; /* Ajout d'alignement vertical par défaut */
+    align-items: center;
 }
 /* HEADER */
 /* header{
     box-shadow: 3px 4px 8px grey;
 } */
+
 /* NAV BAR */
 .navbar{
     width: 100%;
@@ -166,35 +149,43 @@ p{
     position: sticky;
     top: 0;
     padding: 30px 0 30px;
-    background-color: rgba(0, 0, 0, 0.4); /* Assure que la navbar est visible sur le fond sombre */
-    z-index: 10; /* Assure que la navbar est au-dessus des autres éléments */
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10; 
 }
+/* Cacher le bouton burger par défaut */
+/* .burger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color:var(--goldenrod-color);
+  cursor: pointer;
+} */
 .navbarul{
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around; /* Espacement égal entre les éléments */
+    justify-content: space-around;
 }
 .navbarul li{
     display: flex;
-    align-items: center; /* aligne verticalement */
-    height: 100%; /* assure une hauteur uniforme */
-    text-align: center;/* Centre le texte dans les éléments de menu */
+    align-items: center;
+    height: 100%; 
+    text-align: center;
     font-size: 1.25em;
 }
 .navbar li a{
     display: flex;
     align-items: center;
     height: 100%;
-    display: block; /* Toute la surface sera cliquable et prendra la largeur de l'élément li */
+    display: block;
     text-decoration: none;
     color:#fff;
     font-family: 'Roboto';
-    border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
-    padding: 10px 15px;/* Agrandit la zone cliquable et espace le texte */
+    border-bottom: 2px solid transparent;
+    padding: 10px 15px;
 }
-
 .navbar li a:hover{
     color: cyan;
     border-bottom: 2px solid var(--golden-color);
@@ -215,17 +206,55 @@ p{
 .icon-link:hover .linkedin-icon {
   fill: var(--secondary-color);
 }
-
 .github-icon {
   width: 24px;
   height: 24px;
   fill: white;
   transition: fill 0.3s ease;
 }
-
 .icon-link:hover .github-icon {
   fill: var(--secondary-color);
 }
+
+/* NAV BAR MOBILE */
+.navbar-mobile{
+    display: none;
+}
+
+/* .navbar-mobile i{
+    position: fixed;
+    z-index: 9999;
+    top: 9px;
+    right: 15px;
+    font-size: 3rem;
+    color: white;
+}
+.modal{
+    transition: top 0.9s;
+    background-color: #F92995;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    opacity: 0.9;
+} */
+/* .navbar-mobile .navbar-mobile-list{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-mobile .navbar-mobile-list a{
+    font-size: 5rem;
+    font-weight: 800;
+    color: #1E2337;
+    padding: 2rem;
+}
+.change-modal{
+    top:0
+} */
 
 
 /* ******************** */
@@ -234,13 +263,13 @@ p{
 
 /* SECTION 1  WARNINGS */
 #warning1, #warning3{
-    display: block; /* Correction pour que les warnings prennent toute la largeur */
+    display: block;
     width: 100%;
     border-bottom: 8px solid blue;
     border-top: 8px solid green;
     background-color: crimson;
     font-size: 1.5em;
-    line-height: 1.3; /* Amélioration de l'interligne */
+    line-height: 1.3;
     text-align: center;
     color: #000;
     padding : 10px 15px;
@@ -250,21 +279,21 @@ p{
     animation-timing-function: linear;
     position: relative;
     overflow: hidden;
-    margin-bottom: 1em; /* Ajout de marge en bas pour l'espacement */
+    margin-bottom: 1em;
 }
 #warning1{
     margin-top: 1em;
     font-size: 2.5em;
 }
 #warning2{
-    display: block; /* Correction pour que le warning prenne toute la largeur */
+    display: block;
     width: 100%;
     border-bottom: 8px solid cyan;
     border-top: 8px solid cyan;
     background-color: goldenrod;
     font-size: 2em;
     font-style: italic;
-    line-height: 1.3; /* Amélioration de l'interligne */
+    line-height: 1.3;
     text-align: center;
     color: #000;
     padding : 10px 15px;
@@ -274,7 +303,7 @@ p{
     animation-timing-function: linear;
     position: relative;
     overflow: hidden;
-    margin-bottom: 1em; /* Ajout de marge en bas pour l'espacement */
+    margin-bottom: 1em;
 }
 
 @keyframes defilement-ltr {
@@ -299,12 +328,10 @@ p{
 
 #accueil-container{
     margin: 2em 0 1em;
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .apropos {
-    transition: opacity 0.5s ease; /* Ajoute une transition sur l'opacité */
+    transition: opacity 0.5s ease;
 }
 .hidden{
     display: none;
@@ -327,34 +354,35 @@ p{
     color: var(--text-grey-color);
 }
 #second p{
-    font-size: 1.25em; /* Réduction de la taille de la police pour le texte à propos */
+    font-size: 1.25em;
     text-align: left;
-    margin: 1em 0 1em 0; /* Suppression de la marge à gauche, gérée par .apropos flex-row */
+    margin: 1em 0 1em 0;
 }
 .apropos.flex-row {
-    align-items: flex-start; /* Alignement des éléments photo et texte en haut */
-    margin-bottom: 5em; /* Ajout de marge en bas pour séparer les sections */
+    align-items: flex-start; 
+    margin-bottom: 5em;
 }
 #photo{
     width: 15%;
     padding: 0.20em;
-    margin-right: 20px; /* Ajout de marge à droite pour espacer la photo du texte */
+    margin-right: 20px;
     margin-top : 1em;
 }
 #photo img{
-    max-width: 100%; /* L'image ne dépasse pas la largeur de son conteneur */
-    height : auto; /* Garde les proportions de l'image */
-    display: block; /* Supprime l'espace potentiel en bas de l'image */
-    margin: 0; /* Suppression des marges spécifiques à l'image, gérées par le conteneur photo */
+    max-width: 100%;
+    height : auto;
+    display: block;
+    margin: 0;
 }
 #texteapropos{
     width: 75%;
-    font-size: 1em; /* Ajustement de la taille de la police du texte à propos */
+    font-size: 1em;
     align-items: flex-start;
-    padding: 3em;
+    padding: 2em;
     margin-top: 1em;
     margin-right: 1em;
     line-height: 2em;
+    color: white;
 }
 #texteapropos span{
     color: pink;
@@ -381,39 +409,44 @@ p{
 .flechemauve {
     position: absolute;
     z-index: 2;
-    right: 10px; /* Positionnement à droite */
-    top: 0.1em; /* Ajustement vertical */
+    right: 10px; 
+    top: 0.1em;
 };
 
 .aside-section {
-    margin-bottom: 2em; /* Espacement entre les sections de l'aside */
+    margin-bottom: 2em;
 	margin-top: 3em;
 }
 
 .aside-section h2 {
-    margin-left: 0; /* Suppression de la marge à gauche spécifique à h2 dans l'aside */
+    margin-left: 0;
 }
 
 .aside-section ul {
     text-align: left;
     font-size: 1em;
-    margin: 0.5em 0 0.5em 1.5em; /* Ajustement de la marge à gauche pour la liste dans l'aside */
-    padding-left: 0; /* Suppression du padding par défaut de la liste */
+    margin: 0.5em 0 0.5em 1.5em;
+    padding-left: 0; 
     line-height: 1.75em;
 }
 
 .aside-mobile{
    display: none;
+    margin: 0 1em;
 }
 .aside-mobile h3{
-    font-size: 1.75em;
+    font-size: 2em;
      border-left: 5px solid cyan;
      font-family: "Roboto";
      margin: 1em 0;
+     padding-left: 0.5em;
+     color : white;
 }
 .aside-mobile ul{
     margin-left: 1.5em;
     font-size: 1.50em;
+    line-height: 1.5em;
+    color: white;
 }
 .portfolio-button-mobile{
     background-color: cyan;
@@ -426,20 +459,11 @@ p{
     letter-spacing: 1svw;
 }
 
-/* VALEURS (Désormais dans l'aside) */
-/* .valeurs.flex-column h2 {
-    margin-left: 0; /* Suppression de la marge à gauche pour le titre des valeurs */
-/* }
- .valeurs ul {
-    margin-left: 1.5em;  Ajustement de la marge à gauche pour la liste des valeurs
-} */
-
-
 /* SECTION 5 CONTACT */
 #contact{
     justify-content: center;
     align-items: center;
-    margin-top: 3em; /* Ajout de marge en haut pour l'espacement */
+    margin-top: 3em;
 }
 #contact p{
     font-size: 1.5em;
@@ -448,15 +472,15 @@ p{
 /* Centrer uniquement le bouton dans son propre conteneur */
 #portfolio-button-container {
     display: flex;
-    justify-content: center;  /* Centrer horizontalement */
-    align-items: center;      /* Centrer verticalement */
-    width: 100%;              /* S'assurer qu'il occupe toute la largeur de son parent */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin-top: -1em;
 }
 #portfolio-button-container img{
     margin: 0;
-    width: 70%; /* Ajuste cette valeur pour agrandir l'image */
-    height: auto; /* Maintient l'aspect ratio */
+    width: 70%;
+    height: auto;
 }
   
 button{
@@ -492,19 +516,19 @@ button{
 /* SECTION 6 FOOTER */
 
 footer{
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: var(--footer-color);
     width: 100%;
-    height: auto; /* Ajustement de la hauteur automatique */
+    height: auto;
     padding: 0.15em 0;
-    margin-top: 3em; /* Ajout de marge en haut pour l'espacement */
+    margin-top: 3em;
 }
 #carouselstack{
-    display: block; /* Correction pour prendre toute la largeur */
+    display: block; 
     width: 100%;
     font-size: 1em;
-    line-height: 1.3; /* Amélioration de l'interligne */
+    line-height: 1.3; 
     text-align: center;
-    color: #fff; /* Correction de la couleur du texte */
+    color: #fff; 
     padding : 10px 5px;
     animation-name: defilement-rtl;
     animation-duration: 40s;
@@ -535,14 +559,11 @@ footer{
   }
 
 
-
 /* ******************** */
 /* PAGE PORTFOLIO       */
 /* ******************** */
 
-/**
-* Background Image
-*/
+/* background-image */
 .bg-image {
     background-size: cover;
     background-position: center center;
@@ -552,6 +573,9 @@ footer{
     text-align: center;
     background-color: #2d2d2d;
 }
+.paragrapheBanniere{
+    font-size: 2em;
+}
 #portfolio-container{
     margin: 2em 0 1em;
     display: flex;
@@ -559,22 +583,26 @@ footer{
 }
 .h2portfolio{
     font-family : "Roboto";
-    font-size : 2.5em;
+    font-size : 2.75em;
     color : #ffff;
-    margin : 3rem 0.5rem 3rem 0; /* Ajustement de la marge à gauche */
+    margin : 3rem 0.5rem 3rem 1.5rem;
     padding-left : 0.5em;
     border-left: 7px solid cyan;
     text-align: left;
 }
 .h2portfolio span{
     color:  pink;
+    font-weight: bold;
 }
 #git-next{
     margin-top: -1em;
 }
 /* styles mosaique */
-#mosaique-ada, #mosaique-ifocop{
+#mosaique-ada{
     margin-left: 2em;
+}
+#mosaique-ifocop{
+      margin: 0 2em 2em 3em;
 }
 .mosaique{
     display: flex;
@@ -583,12 +611,13 @@ footer{
     gap: 30px;
     color : white;
 }
-.mosaique .row {
-    /* display: flex; */
+/* .mosaique .row { */
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
+    width: 80%;
+    padding: 1.5em; 
+}*/
 .mosaique .column{
     flex: 1;
     display: flex;
@@ -596,6 +625,16 @@ footer{
     padding : 1em;
     margin: 0;
     min-height: clamp(200px, 30vh, 400px);
+    width: 90%;
+}
+.mosaique .column-ifocop{
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding : 1em;
+    margin: 0;
+    min-height: clamp(200px, 30vh, 400px);
+    width: 100%;
 }
 .column{
     display: flex;
@@ -630,11 +669,11 @@ footer{
 /* Cartouche techno */
 .tech-tag {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: rgba(0, 0, 0, 0.75); /* Noir semi-transparent */
+  top: 25px;
+  left: 25px;
+  background-color: rgba(0, 0, 0, 0.65);
   color: white;
-  font-size: 1em;
+  font-size: 2em;
   padding: 8px 14px;
   font-family: var( --font-family-captions);
   opacity: 0;
@@ -650,20 +689,15 @@ footer{
 
 .titre-tuile{
     font-family: var( --font-family-captions);
-    /* font-family: 'Courier New', Courier, monospace; */
     font-size: 2em;
     text-align: center;
-    margin-top: 0.5em;
+    margin-top: 0.75em;
     color : white;
 }
 
 /* ******************** */
 /*       PAGE CV        */
 /* ******************** */
-
-/**
-* Background Image
-*/
 
 #cv{
     display: flex;
@@ -693,7 +727,7 @@ footer{
 /*  RESPONSIVE DESIGN   */
 /* ******************** */
 
-/* Conteneur principal : disposition en colonne sur petits écrans */
+/* DESKTOP (min 1024 max 1280) */
 @media (max-width: 1024px) {
   .container {
     display: flex;
@@ -702,62 +736,168 @@ footer{
     gap: 1rem;
     padding: 1rem;
   }
-
   .section {
     width: 100%;
   }
-
   .section:first-child {
     order: 1;
   }
-
   .section:last-child {
     order: 2;
   }
-}
-
-/* Ajustements typographiques pour tablettes et mobiles */
-
-@media (max-width: 768px) {
-     aside {
+   .aside-desktop {
     display: none;
   }
     .aside-mobile {
     display: block;
+    justify-content: center;
   }
-  body {
-    padding: 1rem;
-  }
+}
+/* ordis PORTABLES (min 992 max 1200) */
 
-  h1, h2 {
+/* TABLETTES (min 768 max 992 ) */
+@media (max-width: 768px) {
+    .aside-desktop {
+    display: none;
+  }
+    .aside-mobile {
+    display: block;
+    justify-content: center;
+  }
+  /* body {
+    padding: 0.10rem;
+  } */
+  h1{
+    font-size: 3rem;
+  }
+  h2 {
     font-size: 1.5rem;
   }
-
   p, label, input, button {
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
-
+  #photo{
+    width: 15%;
+    padding: 0;
+    margin-right: 10px;
+    margin-top : 0.25em;
+}
+  #texteapropos{
+    width: 100%;
+    align-items: flex-start;
+    padding: 1em;
+    margin-top: 1em;
+    margin-right: 1em;
+    line-height: 2em;
+}
   input,
   button {
     width: 100%;
     box-sizing: border-box;
   }
-}
-
-/* Images fluides (si présentes) */
+.bg-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px 0;
+  }
 img{
   max-width: 100%;
   height: auto;
 }
-
 /* Évite les débordements horizontaux */
 body {
   overflow-x: hidden;
 }
+}
 
-
+/* MOBILES */
 @media (max-width: 600px) {
   html {
     font-size: 87.5%; /* = 14px si 100% = 16px */
   }
+  body{
+    padding : 0;
+  }
+
+.navbarul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .navbarul li a {
+    font-size: 18px;
+  }
+  .navbar {
+    padding: 10px 20px;
+  }
+#accueil-container{
+    margin: 0;
+}
+.apropos.flex-row {
+    align-items: flex-start; 
+    margin-bottom: 1em;
+}
+   #photo{
+    width: 15%;
+    padding: 0;
+    margin-right: 10px;
+    margin-top : 0.25em;
+}
+  #texteapropos{
+    width: 100%;
+    align-items: flex-start;
+    padding: 0.25em;
+    margin-top: 0.5em;
+    margin-right: 1em;
+    line-height: 2em;
+}
+.aside-desktop {
+    display: none;
+  }
+.aside-mobile {
+    display: block;
+  }
+  .flex-column{
+    display : flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+}
+.bg-image {
+    padding: 15px 0;
+  }
+h2{
+    font-size : 1em;
+    color : #ffff;
+    margin : 1rem 0.5rem 1rem 0;
+    padding-left : 0.5em;
+    border-left: 7px solid cyan;
+    text-align: left;
+}
+.titre-tuile{
+    font-size: 1em;
+    text-align: center;
+    margin-top: 0.25em;
+    color : white;
+}
+.paragrapheBanniere{
+    display: none;
+}
+.mosaique{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    gap: 15px;
+    color : white;
+}
+footer{
+    background-color: var(--footer-color);
+    width: 100vw;
+    height: auto; /* Ajustement de la hauteur automatique */
+    padding: 0.15em 0;
+    margin: 0;
+}
 }

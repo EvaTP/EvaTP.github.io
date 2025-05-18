@@ -9,7 +9,13 @@ document.querySelectorAll("a").forEach(link => {
   }
 });
 
+// nav bar responsive
+// const burger = document.getElementById('burger');
+// const navLinks = document.getElementById('nav-links');
 
+// burger.addEventListener('click', () => {
+//   navLinks.classList.toggle('active');
+// });
 
 
 //Ciblage du titre A propos//
@@ -49,6 +55,7 @@ titreApropos.addEventListener('click', () => {
 
 
 
+
 // document.addEventListener("DOMContentLoaded", function () {
 //   console.log("Script chargé");
 
@@ -68,31 +75,3 @@ titreApropos.addEventListener('click', () => {
 
 
 
-
-
-// TOGGLE
-// Option avec classList.toggle()
-// 
-// function toggleElement(titre, div) {
-//   titre.addEventListener('click', () => {
-//     div.classList.toggle('show');
-//     div.classList.toggle('hidden');
-//   });
-// }
-
-// toggleElement(titreApropos, divApropos);
-// toggleElement(titreMonStack, divMonStack);
-
-
-
-// if (divApropos.style.display === 'none') {
-  //   // divApropos.classList.remove('hidden');
-  //   // divApropos.classList.add('show');
-  //   divApropos.style.display = 'block';
-  //   // divApropos.style.flexDirection = 'row';
-  // } else {
-  //   // divApropos.classList.remove('show');
-  //   // divApropos.classList.add('hidden');
-  //   divApropos.style.display = 'none';
-  //   // divApropos.style.flexDirection = 'column';
-  // }
