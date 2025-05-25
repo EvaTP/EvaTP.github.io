@@ -90,6 +90,8 @@ body{
     width: 75%;
     margin-right: 2%;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .aside-desktop {
@@ -105,6 +107,7 @@ h1{
     color : #fff;
     margin: 20px 0 15px 0;
     text-align: center;
+    font-weight: bold;
 }
 h2{
     font-family : var(--font-family-body);
@@ -262,7 +265,7 @@ p{
 /* ******************** */
 
 /* SECTION 1  WARNINGS */
-#warning1, #warning3{
+/* #warning1, #warning3{
     display: block;
     width: 100%;
     border-bottom: 8px solid blue;
@@ -322,7 +325,7 @@ p{
       100% {
         transform : translateX(-100%);
       }
-  }
+  } */
 
 /* SECTION 2 A PROPOS */
 
@@ -342,10 +345,11 @@ p{
     justify-content: left;
     align-items:flex-start;
 }
-#apropostitre h2{
+#apropostitre h2, #contacttitre h2{
 	font-size: 3em;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
 }
-
 #second > p:first-of-type{
     font-size: 2.5em;
     text-align: center;
@@ -358,25 +362,35 @@ p{
     text-align: left;
     margin: 1em 0 1em 0;
 }
+#second p span{
+  color: white;
+  font-style: italic;
+  font-size: 1em;
+  text-align: center;
+}
 .apropos.flex-row {
     align-items: flex-start; 
-    margin-bottom: 5em;
+    margin-bottom: 2em;
 }
-#photo{
+#photo-desktop{
     width: 15%;
     padding: 0.20em;
     margin-right: 20px;
     margin-top : 1em;
 }
-#photo img{
+#photo-desktop img{
     max-width: 100%;
     height : auto;
     display: block;
     margin: 0;
 }
+#photo-mobile{
+    display: none;
+}
 #texteapropos{
     width: 75%;
-    font-size: 1em;
+    font-size: 1.10em;
+    letter-spacing: 0.01em;
     align-items: flex-start;
     padding: 2em;
     margin-top: 1em;
@@ -384,55 +398,62 @@ p{
     line-height: 2em;
     color: white;
 }
-#texteapropos span{
+#texteapropos p span{
     color: pink;
     font-weight: bold;
 }
-
-
+#texteapropos p span:last-child{
+  color:var( --goldenrod-color);
+  font-size: 1.25em;
+}
+#contactemail{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  gap: 1.5em;
+  /* background-color: cyan;
+  color: black;*/
+  font-size: 1.75em; 
+  letter-spacing: 0.25em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* border-radius: 10px; */
+  margin : 0 4em;
+  /* box-shadow : 3px 4px 10px 5px grey; */
+}
 /* ASIDE : COMPETENCES & STACK */
 
-/* Mon stack */
-#monstacktitre {
-    position: relative;
-}
 
 .titre-container {
     position: relative;
 };
-
-#monstack {
-    position: relative;
-    z-index: 1;
-};
-
 .flechemauve {
     position: absolute;
     z-index: 2;
     right: 10px; 
     top: 0.1em;
-};
-
+}
 .aside-section {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 	margin-top: 3em;
 }
-
 .aside-section h2 {
     margin-left: 0;
+    font-size: 2em;
 }
-
 .aside-section ul {
     text-align: left;
-    font-size: 1em;
+    font-size: 1.5em;
     margin: 0.5em 0 0.5em 1.5em;
     padding-left: 0; 
     line-height: 1.75em;
 }
 
+/* ASIDE VERSION MOBILE */
 .aside-mobile{
    display: none;
-    margin: 0 1em;
+    /* margin: 0 1em; */
 }
 .aside-mobile h3{
     font-size: 2em;
@@ -449,16 +470,21 @@ p{
     color: white;
 }
 .portfolio-button-mobile{
+    width: 70%; 
     background-color: cyan;
     color: black;
     font-size: 1.50em;
     font-weight: bold;
     border-radius: 5px;
-    margin : 2em 3em;
+    margin : 1.5em 3em;
     padding : 1em;
     letter-spacing: 1svw;
+     box-shadow : 3px 4px 10px 5px grey;
 }
-
+.portfolio-button-mobile:hover{
+   background-color: var(--btn-primary-hover-bg);
+} 
+ 
 /* SECTION 5 CONTACT */
 #contact{
     justify-content: center;
@@ -519,10 +545,10 @@ footer{
     background-color: var(--footer-color);
     width: 100%;
     height: auto;
-    padding: 0.15em 0;
+    padding: 0.25em 0;
     margin-top: 3em;
 }
-#carouselstack{
+/* #carouselstack{
     display: block; 
     width: 100%;
     font-size: 1em;
@@ -550,12 +576,12 @@ footer{
   #iconescarousel{
     color : #fff;
     font-style: normal;
-  }
+  } */
   #copyright{
     text-align: center;
     font-size: 0.9em;
     padding : 1em;
-    margin: 2em;
+    /* margin: 2em; */
   }
 
 
@@ -713,6 +739,9 @@ footer{
     text-align: center;
     margin: 3em;
 }
+#download img{
+  width : 90px;
+}
 #download a{
     margin-top: 1.5em;
     color: white;
@@ -736,6 +765,24 @@ footer{
     gap: 1rem;
     padding: 1rem;
   }
+  .main-content {
+    width: 90%;
+    margin-right: 2%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .apropos.flex-row {
+    margin-bottom: 2em;
+  }
+  #apropostitre h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+	  font-size: 3em;
+    margin-bottom: 0.5em;
+}
   .section {
     width: 100%;
   }
@@ -749,24 +796,42 @@ footer{
     display: none;
   }
     .aside-mobile {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    margin: 2em auto; 
+    width : fit-content;
   }
 }
 /* ordis PORTABLES (min 992 max 1200) */
 
 /* TABLETTES (min 768 max 992 ) */
+/* **************************** */
+
+/* page accueil */
 @media (max-width: 768px) {
     .aside-desktop {
     display: none;
   }
-    .aside-mobile {
-    display: block;
-    justify-content: center;
+  .apropos.flex-row {
+    margin-bottom: 0.25em;
   }
-  /* body {
-    padding: 0.10rem;
-  } */
+   .aside-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.20em auto; 
+    width : fit-content;
+  }
+  .aside-mobile h3{
+    font-size: 3em;
+  }
+  /* Évite les débordements horizontaux */
+  body {
+  overflow-x: hidden;
+  }
   h1{
     font-size: 3rem;
   }
@@ -776,19 +841,40 @@ footer{
   p, label, input, button {
     font-size: 0.5rem;
   }
-  #photo{
-    width: 15%;
-    padding: 0;
-    margin-right: 10px;
+  #photo-desktop{
+    display: none;
+}
+  #photo-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin-top : 0.25em;
 }
+  #photo-mobile img{
+   max-width: 40%;
+   height: auto;
+}
   #texteapropos{
-    width: 100%;
+    width: 90%;
     align-items: flex-start;
     padding: 1em;
     margin-top: 1em;
+    margin-left: 1em;
     margin-right: 1em;
     line-height: 2em;
+}
+#contactemail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.75em; 
+  letter-spacing: 0.15em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin : 0 4em;
+  /* box-shadow : 3px 4px 10px 5px grey; */
 }
   input,
   button {
@@ -805,22 +891,24 @@ img{
   max-width: 100%;
   height: auto;
 }
-/* Évite les débordements horizontaux */
-body {
-  overflow-x: hidden;
-}
 }
 
-/* MOBILES */
+/*  MOBILES  */
+/* ********* */
+
+/* page accueil */
 @media (max-width: 600px) {
   html {
     font-size: 87.5%; /* = 14px si 100% = 16px */
   }
   body{
+    width: 100%;
     padding : 0;
   }
-
-.navbarul {
+  .apropos.flex-row {
+    margin-bottom: 0.25em;
+  }
+  .navbarul {
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -846,12 +934,25 @@ body {
     margin-top : 0.25em;
 }
   #texteapropos{
-    width: 100%;
+    width: 90%;
     align-items: flex-start;
     padding: 0.25em;
     margin-top: 0.5em;
+    margin-left: 1em;
     margin-right: 1em;
     line-height: 2em;
+}
+#contactemail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.75em; 
+  letter-spacing: 0.15em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin : 0 4em;
+  /* box-shadow : 3px 4px 10px 5px grey; */
 }
 .aside-desktop {
     display: none;
@@ -886,18 +987,53 @@ h2{
 .paragrapheBanniere{
     display: none;
 }
-.mosaique{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    gap: 15px;
-    color : white;
-}
+
 footer{
     background-color: var(--footer-color);
     width: 100vw;
     height: auto; /* Ajustement de la hauteur automatique */
     padding: 0.15em 0;
     margin: 0;
+}
+/* page portfolio */
+.mosaique{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    gap: 15px;
+    color : white;
+}
+/* page CV */
+#cv-container{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#cv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 3em;
+}
+#download{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+#download img{
+  width : 80px;
+}
+#download a{
+    margin-top: 1.5em;
+    color: white;
+    font-family: var(--font-family-body);
+    font-size: 2em;
+    font-weight: bold;
 }
 }
