@@ -5,186 +5,286 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eva développeuse web</title>
     <link rel="stylesheet" href="style.css" />
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
   </head>
   <body>
-  <header>
-	<!-- NAV BAR DESKTOP -->
-    <nav class="navbar">
-      <ul class="navbarul">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="cv.html">CV</a></li>
-		<li>
-			<a href="https://www.linkedin.com/in/eva-tharrats" target="_blank" class="icon-link">
-				<!-- SVG LinkedIn intégré -->
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="linkedin-icon">
-				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-5V15.2c0-2.1-.04-4.9-3-4.9-3 0-3.5 2.3-3.5 4.7V24h-5V8z"/>
-				</svg>
-			</a>
-		</li>
-		<li>
-			<a href="https://github.com/EvaTP" target="_blank" class="icon-link">
-				<!-- SVG GitHub intégré -->
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" class="github-icon">
-				<path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"/>
-				</svg>
-			</a>
-		</li>
-    </ul>
-    </nav>
-  </header>
-
+    <header>
+      <!-- NAV BAR DESKTOP -->
+      <nav class="navbar">
+        <ul class="navbarul">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <!-- <li><a href="cv.html">CV</a></li> -->
+          <li>
+            <a
+              href="https://www.linkedin.com/in/eva-tharrats"
+              target="_blank"
+              class="icon-link"
+            >
+              <!-- SVG LinkedIn intégré -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="linkedin-icon"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-5V15.2c0-2.1-.04-4.9-3-4.9-3 0-3.5 2.3-3.5 4.7V24h-5V8z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/EvaTP"
+              target="_blank"
+              class="icon-link"
+            >
+              <!-- SVG GitHub intégré -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="40"
+                height="40"
+                class="github-icon"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <div id="accueil-container" class="container">
-		<main class="main-content">
-			<section id="second" class="">
-				<h1>Eva Tharrats</h1>
-				<p>Développeuse web full-stack<br>
-					Apprenante chez Ada Tech School<br><br>
-					<span>En recherche d'alternance &nbsp;<img src="icones/calendar-days-white.svg" alt="calendar">&nbsp;octobre 2025</span>
-				</p>
-			
-				<div id="apropostitre" class="flex-column">
-					<h2>
-						<!-- <img src="icones/trois-chevrons-rose-cyan.png" alt="chevrons" width="35" height="25">&nbsp; -->
-						A propos</h2>
-				</div>
-					
-				<div id="photo-mobile">
-					<img src="img/Eva-cercle-fond-cyan.png" alt="photoEva-mobile">
-				</div>
-					
-				<div id="" class="apropos flex-row">
-					<div class="apropos" id="photo-desktop">
-						<img src="img/Eva-cercle-fond-goldenrod.png" alt="photoEva">
-					</div>
-					<div class = "apropos" id="texteapropos">
-						<img src="img/quotes-cyan.png" alt="quotes-pixel" width="40" height="40">
-						<p>
-						Après 30+ années d'expérience professionnelle en tant qu'assistante et assistante de direction trilingue, mon intérêt pour l’informatique et la technologie, ainsi que l'envie d'apprendre, m’ont motivée à entreprendre une <strong>reconversion professionnelle dans le développement web.</strong>
-						<br><br>
-						Après une formation de quatre mois dans le centre de formation IFOCOP, j'ai fait le choix de rejoindre l'école <span>ADA TECH SCHOOL</span>, première école de tech inclusive en France.<br>
-						Je suis la formation <strong>développeuse full-stack</strong> chez <span>ADA</span> depuis janvier 2025.
-						<br><br>
-						<strong>Pour mener à bien ma formation, je recherche <span id="alternance">une alternance de 12 mois en contrat de professionnalisation à partir d'octobre 2025.</span>
-						</strong>
-						<br><br>
-						Je reste disponible pour vous rencontrer, me présenter et discuter de vos projets et besoins.
-						<br><br>
-						A très bientôt !</p>
-					</div>
-								
-				</div>
-			</section>
+      <main class="main-content">
+        <section id="second" class="">
+          <h1>Eva Tharrats</h1>
+          <p>
+            Développeuse web full-stack<br />
+            Apprenante chez Ada Tech School<br /><br />
+            <span
+              >En recherche d'alternance &nbsp;<img
+                src="icones/calendar-days-white.svg"
+                alt="calendar"
+              />&nbsp;octobre 2025</span
+            >
+          </p>
 
-			<!-- aside hidden pour mobile -->
-			<div class="aside-mobile">
-				<div class="">
-					<h3>Stack</h3>
-						<ul class="ulaside">
-							<li>HTML / CSS</li>
-							<li>Javascript</li>
-							<li>Frameworks JS : React, Next.js, Express.js</li>
-							<li>Bibliothèques CSS : Bootstrap, Tailwind</li>
-							<li>PHP</li>
-							<li>Langage SQL</li>
-							<li>MySQL, PostgresSQL</li>
-							<li>ORM Prisma</li>
-							<li>Git / GitHub</li>
-						</ul>
-				</div>
-				<br><br>
-				<a href="portfolio.html">
-					<button class="portfolio-button-mobile">Voir portfolio</button>
-				</a>
-			</div>
-		</main>
+          <div id="apropostitre" class="flex-column">
+            <h2>
+              <!-- <img src="icones/trois-chevrons-rose-cyan.png" alt="chevrons" width="35" height="25">&nbsp; -->
+              A propos
+            </h2>
+          </div>
 
-		<!-- ASIDE  -->
-		<aside class="sidebar aside-desktop">
-			<section class="aside-section flex-column">
-				<div class="flex-column">
-					<div class="flex-column">
-						<br><br><br>
-						<h2><img src="icones/deux-chevrons-rose-cyan.png" alt="chevrons" width="25" height="15">&nbsp;Compétences</h2>
-						<br>
-					</div>
-					<div>
-						<ul class="ulaside">
-							<li>Front-end</li>
-							<li>Back-end</li>
-							<li>No-code : CMS WordPress</li>
-							<li>Analyse des besoins client & cahier des charges</li>
-						</ul>
-						<br><br>
-					</div>
-				</div>
-			</section>
+          <div id="photo-mobile">
+            <img src="img/Eva-cercle-fond-cyan.png" alt="photoEva-mobile" />
+          </div>
 
-			<section class="aside-section flex-column">
-				<div class="">
-					<div class="flex-column">
-						<div class="titre-container flex-row">
-							<br><br>
-							<h2>
-								<img src="icones/deux-chevrons-rose-cyan.png" alt="chevrons" width="25" height="15">
-								&nbsp;Stack
-							</h2>
-							<br>
-						</div>
-					</div>
-					<div>
-						<ul class="ulaside">
-							<li>HTML / CSS</li>
-							<li>Javascript</li>
-							<li>Frameworks JS : React, Next.js, Express.js</li>
-							<li>Bibliothèques CSS : Bootstrap, Tailwind</li>
-							<li>PHP</li>
-							<li>Langage SQL</li>
-							<li>MySQL, PostgresSQL</li>
-							<li>ORM Prisma</li>
-							<li>Git / GitHub</li>
-						</ul>
-						<br><br>
-					</div>
-				</div>
-			</section>
+          <div id="" class="apropos flex-row">
+            <div class="apropos" id="photo-desktop">
+              <img src="img/Eva-cercle-fond-goldenrod.png" alt="photoEva" />
+            </div>
+            <div class="apropos" id="texteapropos">
+              <img
+                src="img/quotes-cyan.png"
+                alt="quotes-pixel"
+                width="40"
+                height="40"
+              />
+              <p>
+                Après 30+ années d'expérience professionnelle en tant
+                qu'assistante et assistante de direction trilingue, mon intérêt
+                pour l’informatique et la technologie, ainsi que l'envie
+                d'apprendre, m’ont motivée à entreprendre une
+                <strong
+                  >reconversion professionnelle dans le développement
+                  web.</strong
+                >
+                <br /><br />
+                Après une formation de quatre mois dans le centre de formation
+                IFOCOP, j'ai fait le choix de rejoindre l'école
+                <span>ADA TECH SCHOOL</span>, première école de tech inclusive
+                en France.<br />
+                J'y suis la formation
+                <strong>développeuse full-stack</strong> depuis janvier 2025.
+                <br /><br />
+                <strong
+                  >Pour mener à bien ma formation, je recherche
+                  <span id="alternance"
+                    >une alternance de 12 mois en contrat de
+                    professionnalisation à partir d'octobre 2025.</span
+                  >
+                </strong>
+                <br /><br />
+                Je reste disponible pour vous rencontrer, me présenter et
+                discuter de vos projets et besoins.
+                <br /><br />
+                A très bientôt !
+              </p>
+            </div>
+          </div>
+        </section>
 
-			<section class="aside-section flex-column">
-				<div class="">
-					<div class="flex-column">
-						<div class="titre-container flex-row">
-							<br><br>
-							<h2>
-								<img src="icones/deux-chevrons-rose-cyan.png" alt="chevrons" width="25" height="15">
-								&nbsp;Voir mon portfolio
-							</h2>
-							<br>
-						</div>
-					</div>
-					<div class="monstack flex-row">
-						 <a href="portfolio.html" target="_blank">
-							<button id="portfolio-button-container">
-							<img id="portfolio-button" src="img_portfolio/start.png" alt="bouton-portfolio">
-							</button>
-				  		</a>
-					</div>
-				</div>
-			</section>
-		</aside>
-    </div> <!-- fin du div container -->
+        <!-- aside hidden pour mobile -->
+        <div class="aside-mobile">
+          <div class="">
+            <h3>Stack</h3>
+            <ul class="ulaside">
+              <li>HTML / CSS</li>
+              <li>Javascript</li>
+              <li>Frameworks JS : React, Next.js, Express.js</li>
+              <li>Bibliothèques CSS : Bootstrap, Tailwind</li>
+              <li>PHP</li>
+              <li>Langage SQL</li>
+              <li>MySQL, PostgresSQL</li>
+              <li>ORM Prisma</li>
+              <li>Git / GitHub</li>
+            </ul>
+          </div>
+          <br /><br />
+          <a href="portfolio.html">
+            <button class="portfolio-button-mobile">Voir portfolio</button> </a
+          ><br />
+          <a href="CV-Eva_Tharrats_alternance.pdf">
+            <button class="portfolio-button-mobile">Télécharger CV</button>
+          </a>
+        </div>
+      </main>
 
-	
-	<!-- FOOTER -->
+      <!-- ASIDE  -->
+      <aside class="sidebar aside-desktop">
+        <section class="aside-section flex-column">
+          <div class="flex-column">
+            <div class="flex-column">
+              <br /><br /><br />
+              <h2>
+                <img
+                  src="icones/deux-chevrons-rose-cyan.png"
+                  alt="chevrons"
+                  width="25"
+                  height="15"
+                />&nbsp;Compétences
+              </h2>
+              <br />
+            </div>
+            <div>
+              <ul class="ulaside">
+                <li>Front-end</li>
+                <li>Back-end</li>
+                <li>No-code : CMS WordPress</li>
+                <li>Analyse des besoins client & cahier des charges</li>
+              </ul>
+              <br /><br />
+            </div>
+          </div>
+        </section>
+
+        <section class="aside-section flex-column">
+          <div class="">
+            <div class="flex-column">
+              <div class="titre-container flex-row">
+                <br /><br />
+                <h2>
+                  <img
+                    src="icones/deux-chevrons-rose-cyan.png"
+                    alt="chevrons"
+                    width="25"
+                    height="15"
+                  />
+                  &nbsp;Stack
+                </h2>
+                <br />
+              </div>
+            </div>
+            <div>
+              <ul class="ulaside">
+                <li>HTML / CSS</li>
+                <li>Javascript</li>
+                <li>Frameworks JS : React, Next.js, Express.js</li>
+                <li>Bibliothèques CSS : Bootstrap, Tailwind</li>
+                <li>PHP</li>
+                <li>Langage SQL</li>
+                <li>MySQL, PostgreSQL</li>
+                <li>ORM Prisma</li>
+                <li>Git / GitHub</li>
+              </ul>
+              <br /><br />
+            </div>
+          </div>
+        </section>
+
+        <section class="aside-section flex-column">
+          <div class="">
+            <div class="flex-column">
+              <div class="titre-container flex-row">
+                <br /><br />
+                <h2>
+                  <img
+                    src="icones/deux-chevrons-rose-cyan.png"
+                    alt="chevrons"
+                    width="25"
+                    height="15"
+                  />
+                  &nbsp;Voir mon portfolio
+                </h2>
+                <br />
+              </div>
+            </div>
+            <div class="monstack flex-row">
+              <a href="portfolio.html" target="_blank">
+                <button id="portfolio-button-container">
+                  <img
+                    id="portfolio-button"
+                    src="img_portfolio/start.png"
+                    alt="bouton-portfolio"
+                  />
+                </button>
+              </a>
+            </div>
+
+            <div class="flex-column">
+              <div class="titre-container flex-row">
+                <br />
+                <h2>
+                  <img
+                    src="icones/deux-chevrons-rose-cyan.png"
+                    alt="chevrons"
+                    width="25"
+                    height="15"
+                  />
+                  &nbsp;Télécharger mon CV
+                </h2>
+              </div>
+            </div>
+            <div id="download">
+
+              <a href="CV-Eva_Tharrats_alternance.pdf" target="_blank"
+              >
+              <img
+              src="icones/download.png"
+              alt="download-icon" 
+              width="55"
+              height="90"/>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+    <!-- fin du div container -->
+
+    <!-- FOOTER -->
     <footer>
       <div id="copyrightDiv">
-        <p id="copyright">Eva Tharrats  |  ©2025</p>
+        <p id="copyright">Eva Tharrats | ©2025</p>
       </div>
     </footer>
-	  <script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

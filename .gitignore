@@ -1,0 +1,13 @@
+# MAC OS
+.DS_Store
+
+# Répertoire à ignorer
+img-a-trier/
+
+.vscode/
+
+# anciens fichiers
+style-old.css
+index-old.html
+old-indexresponsive.html
+
