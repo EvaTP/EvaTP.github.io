@@ -1016,7 +1016,8 @@ footer {
     padding: 10px;
   }
   .navbarul li a {
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 1, 25em;
   }
   .navbar {
     padding: 10px 20px;
@@ -1051,6 +1052,7 @@ footer {
     margin-left: 1em;
     margin-right: 1em;
     line-height: 2em;
+    font-size: 1.5em;
   }
   /* #contactemail{
   display: flex;
