@@ -708,6 +708,7 @@ footer {
 }
 #mosaique-ifocop {
   margin: 0 2em 2em 3em;
+  gap: 6em;
 }
 .mosaique {
   display: flex;
@@ -720,12 +721,12 @@ footer {
   padding: 0 1em;
 }
 .mosaique .row {
-  display: flex; /* Active Flexbox pour les colonnes dans cette ligne */
-  flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne sur les petits écrans */
-  gap: 35px; /* Espace entre les colonnes */
-  justify-content: center; /* Centre les colonnes horizontalement dans la ligne */
-  width: 100%; /* S'assure que la ligne prend toute la largeur disponible */
-  /* padding: 1.5em; */ /* Tu peux le garder si tu veux de l'espace autour des lignes, sinon le retirer */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+  width: 100%;
+  padding: 0 2em;
 }
 /* .mosaique .row { */
 /* display: flex;
@@ -734,25 +735,19 @@ footer {
     width: 80%;
     padding: 1.5em; 
 }*/
-/* Utilisons une seule règle pour .column et .column-ifocop si elles doivent être identiques */
-/* Si tu veux des différences, applique ces changements à chaque règle individuellement */
 .mosaique .column,
 .mosaique .column-ifocop {
   flex: 1; /* Chaque colonne prendra une part égale de l'espace disponible */
   min-width: 360px; /* <-- NOUVEAU : Largeur minimale pour éviter qu'elles ne soient trop petites */
   max-width: 490px; /* <-- NOUVEAU : Largeur maximale pour qu'elles ne soient pas trop grandes */
   display: flex;
-  flex-direction: column; /* Le contenu (image, titre, etc.) s'empile verticalement */
-  justify-content: space-between; /* Aide à espacer le contenu verticalement dans la tuile */
-  /* padding: 1em; */ /* Tu peux supprimer le padding ici car il sera géré par l'image-container */
-  margin: 0; /* Pas de marge externe pour ces colonnes */
-  /* min-height: clamp(200px, 30vh, 400px); */ /* Tu peux supprimer ou ajuster cette min-height si la hauteur de l'image suffit */
-  /* width: 90%; */ /* Supprimez ceci car flex: 1 et min/max-width gèrent la largeur */
-  /* NOUVEAU : Ajout de styles pour la tuile elle-même pour un meilleur rendu */
-  background-color: #333; /* Couleur de fond de la tuile */
-  overflow: hidden; /* Cache le contenu qui dépasse (utile pour les bords arrondis) */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour les tuiles */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition au survol */
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  background-color: #333;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Ajoute un effet au survol de la tuile */
