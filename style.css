@@ -482,6 +482,16 @@ p {
   color: var(--goldenrod-color);
   font-size: 1.25em;
 }
+#second p span.golden {
+  color: var(--golden-color);
+  font-weight: bold;
+  font-size: 1.25em;
+}
+span.golden {
+  color: goldenrod;
+  /* color: var(--goldenrod-color); */
+}
+
 #contactemail {
   display: flex;
   flex-direction: row;
