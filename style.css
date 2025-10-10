@@ -446,7 +446,7 @@ p {
 }
 .apropos.flex-row {
   align-items: flex-start;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 }
 #photo-desktop {
   width: 15%;
