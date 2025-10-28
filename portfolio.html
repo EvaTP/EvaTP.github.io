@@ -139,8 +139,8 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
-        height: 580px; /* HAUTEUR FIXE pour uniformité */
-        max-width: 490px; /* AJOUT : Largeur maximale pour chaque carte */
+        height: 690px; /* HAUTEUR FIXE pour uniformité */
+        max-width: 550px; /* AJOUT : Largeur maximale pour chaque carte */
         width: 100%; /* Prend toute la largeur disponible dans sa colonne */
       }
 
@@ -211,6 +211,13 @@
         line-height: 1.6;
         color: #ddd;
         margin-bottom: 1.5em;
+        flex-grow: 1;
+      }
+      .project-description-second {
+        font-size: 0.9;
+        color: #daa520;
+        font-style: italic;
+        margin-bottom: 1em;
         flex-grow: 1;
       }
 
@@ -304,6 +311,7 @@
         .projects-grid {
           grid-template-columns: 1fr;
           gap: 2em;
+          justify-items: center;
         }
 
         .project-card {
@@ -669,7 +677,7 @@
       </div>
 
       <!-- SECTION AUTRES PROJETS -->
-      <h2 class="h2portfolio">Projets Personnels</h2>
+      <h2 class="h2portfolio">Projets <span>Personnels</span></h2>
 
       <div class="projects-grid">
         <!-- ART'SQUARE -->
@@ -793,10 +801,20 @@
           <div class="project-content">
             <h3 class="project-title">🏄‍♂️ The Wave</h3>
             <p class="project-description">
-              Application web international permettant aux passionnés de surf de
-              découvrir et partager les spots à travers le monde.<br />
-              Authentification, CRUD page admin, responsive design, carte
-              interactive.
+              Application web internationale permettant aux passionnés de surf
+              de découvrir et partager les spots à travers le monde. Carte
+              interactive, favoris, Authentification, CRUD page admin,
+              responsive design.
+            </p>
+            <!-- <p class="project-description">
+              Créez votre propre compte pour surfer dans toutes les
+              fonctionnalités, ou loggez-vous avec le profil de Bodhi, 🧔<strong
+                >Username: bodhi et Password: 1234xz</strong
+              >
+              pour accéder à la page Administrateur.
+            </p> -->
+            <p class="project-description-second">
+              🚧 En cours de refactorisation : filtres de recherche, page Admin.
             </p>
             <div class="project-buttons">
               <a
@@ -841,7 +859,9 @@
         <!-- FONDU AU NOIR -->
         <div class="project-card">
           <div class="project-image">
-            <div class="tech-tag">React, Vite, TypeScript, Vanilla CSS</div>
+            <div class="tech-tag">
+              React, Vite, TypeScript, Vanilla CSS, PWA
+            </div>
             <img
               src="img_portfolio/fondu-au-noir-440x327.png"
               alt="Projet en cours"
@@ -850,9 +870,9 @@
           <div class="project-content">
             <h3 class="project-title">🎬 Fondu au noir</h3>
             <p class="project-description">
-              Quiz interactif avec des flashcards pour explorer l'histoire du
-              cinéma noir de manière ludique sur une timeline chronologique.
-              Projet personnel.
+              Progressive Web App de quiz interactif avec des flashcards pour
+              explorer l'histoire du cinéma noir de manière ludique sur une
+              timeline chronologique. <br />Projet personnel.
             </p>
             <div class="project-buttons">
               <a

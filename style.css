@@ -556,12 +556,10 @@ span.golden {
 }
 .portfolio-button-mobile {
   width: 70%;
-  /* background-color: cyan; */
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: #000;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: bold;
-  /* border-radius: 5px; */
   margin: 1.5em 3em;
   padding: 1em;
   letter-spacing: 1svw;
@@ -570,11 +568,13 @@ span.golden {
   transition: transform 0.3s ease;
 }
 .portfolio-button-mobile:hover {
+  background-color: #00cccc;
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
-  /* background-color: var(--btn-primary-hover-bg); */
+  border: 2px solid #000;
 }
 
+   
 /* SECTION 5 CONTACT */
 #contact {
   justify-content: center;
@@ -695,8 +695,8 @@ footer {
   margin: 2em auto 1em auto;
   display: flex;
   flex-direction: column;
-  max-width: 1400px; /* <--- NOUVEAU : Définit une largeur maximale pour ton portfolio */
-  width: 95%; /* <--- NOUVEAU : Assure qu'il prenne 95% de la largeur disponible sur les petits écrans */
+  max-width: 1400px; /* <---  Définit une largeur maximale pour ton portfolio */
+  width: 95%; /* <--- Assure qu'il prenne 95% de la largeur disponible sur les petits écrans */
 }
 .h2portfolio {
   font-family: "Roboto";
@@ -1042,7 +1042,6 @@ footer {
     color: black;
     font-size: 1.3em;
     font-weight: bold;
-    border-radius: 5px;
     margin: 1em auto;
     padding: 1em;
     letter-spacing: 0.05em;
@@ -1087,7 +1086,175 @@ footer {
   }
 }
 
-/* MOBILES (500px - 767px) */
+/* ************************************** */
+/* NOUVEAU RESPONSIVE — MOBILES (≤ 767px) */
+/* ************************************** */
+/* @media (max-width: 767px) {
+  body {
+    width: 100%;
+    padding: 0;
+  }
+
+  .container {
+    padding: 0.5em;
+  }
+
+  /* NAVBAR */
+  /* .navbar {
+    padding: 10px 8px;
+  }
+
+  .navbarul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6em;
+    padding: 8px;
+  }
+
+  .navbarul li a {
+    font-size: 1em;
+    padding: 8px 10px;
+  } */
+
+  /* TITRES & TEXTES */
+  /* h1 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  #second {
+    margin: 0 0.4em;
+  }
+
+  #second > p:first-of-type {
+    font-size: 1.4em;
+    padding: 0.3em;
+    margin: 0.5em 0;
+  }
+
+  #second p {
+    font-size: 1em;
+    margin: 0.6em 0;
+  }
+
+  #second p span {
+    font-size: 0.85em;
+  } */
+
+  /* SECTION À PROPOS */
+  /* .apropos.flex-row {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  #photo-desktop {
+    display: none;
+  }
+
+  #photo-mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  #photo-mobile img {
+    max-width: 65%;
+    height: auto;
+  }
+
+  #texteapropos {
+    width: 100%;
+    padding: 0.9em;
+    margin: 0.5em 0;
+    line-height: 1.6em;
+    font-size: 1em;
+  } */
+
+  /* ASIDE MOBILE */
+  /* .aside-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2em;
+    width: 100%;
+  } */
+
+  /* .aside-mobile h3 {
+    font-size: 1.6em;
+    margin: 0.8em 0 0.3em 0;
+    text-align: center;
+  }
+
+  .aside-mobile ul {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    margin-left: 1.2em;
+  } */
+
+  /* BOUTONS PORTFOLIO */
+  /* .portfolio-button-mobile {
+    width: 90%;
+    max-width: 400px;
+    font-size: 1.1em;
+    padding: 0.9em;
+    margin: 0.8em auto;
+    background-color: cyan;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    box-shadow: 3px 4px 10px 5px grey;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  } */
+
+  /* .portfolio-button-mobile:hover {
+    transform: scale(1.05);
+  } */
+
+  /* FOOTER */
+  /* footer {
+    width: 100%;
+    padding: 0.5em 0;
+    margin-top: 2em;
+  }
+
+  #copyright {
+    font-size: 0.8em;
+    text-align: center;
+  } */
+
+  /* BANNIÈRE */
+  /* .bg-image {
+    padding: 10px 0;
+  } */
+
+  /* .paragrapheBanniere {
+    display: none;
+  } *
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* A SUPPRIMER MOBILES (500px - 767px) */
 @media (min-width: 500px) and (max-width: 767px) {
   body {
     width: 100%;
@@ -1146,6 +1313,7 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-bottom: 1em;
+    padding : 0 1.5em;
   }
 
   #photo-desktop {
@@ -1167,7 +1335,7 @@ footer {
   #texteapropos {
     width: 100%;
     padding: 1em;
-    margin: 0.5em 0;
+    margin: 0.3em 0 0 0;
     line-height: 1.7em;
     font-size: 1.1em;
   }
@@ -1176,9 +1344,9 @@ footer {
   .aside-mobile {
     display: flex;
     flex-direction: column;
-    padding: 1.5em;
+    padding: 0.2em;
     width: 100%;
-  }
+  } 
 
   .aside-mobile h3 {
     font-size: 1.8em;
@@ -1196,7 +1364,7 @@ footer {
     font-size: 1.2em;
     padding: 0.9em;
     margin: 0.8em auto;
-  }
+  } */
 
   /* Footer */
   footer {
@@ -1207,11 +1375,11 @@ footer {
 
   #copyright {
     font-size: 0.85em;
-  }
-}
+  } 
+} */
 
-/* PETITS MOBILES (jusqu'à 499px) */
-@media (max-width: 499px) {
+/* A SUPPRIMER PETITS MOBILES (jusqu'à 499px) */
+/* @media (max-width: 499px) {
   body {
     width: 100%;
     padding: 0;
@@ -1320,7 +1488,7 @@ footer {
   .paragrapheBanniere {
     display: none;
   }
-}
+} */
 
 /* ===================================== */
 /* FIXES SUPPLÉMENTAIRES                 */
@@ -1520,7 +1688,7 @@ a {
     max-width: 100%;
     height: auto;
   }
-} */ */ */
+} */ 
 
 /*  MOBILES  */
 /* ********* */
@@ -1738,7 +1906,7 @@ a {
     width: 100%;
     margin: 0;
   }
-} */ */
+} */ 
 
 /* PETITS MOBILES */
 /* @media (min-width: 300px) and (max-width: 499px) {
