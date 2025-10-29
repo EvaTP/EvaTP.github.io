@@ -1,77 +1,49 @@
-// Page active
-console.log("Script chargé !");
-const currentPage = window.location.href;
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script chargé !");
 
-document.querySelectorAll("a").forEach(link => {
-  const href = link.getAttribute("href");
-  if (href && currentPage.includes(href)) {
-    link.classList.add("active");
-  }
-});
-
-// nav bar responsive
-// const burger = document.getElementById('burger');
-// const navLinks = document.getElementById('nav-links');
-
-// burger.addEventListener('click', () => {
-//   navLinks.classList.toggle('active');
-// });
-
-
-//Ciblage du titre A propos//
-let titreApropos = document.querySelector('#apropostitre');
-let divApropos = document.querySelector('.apropos.hidden');
-
-
-titreApropos.addEventListener('click', () => {
-  if(divApropos.classList.contains('hidden')){
-    divApropos.classList.remove('hidden');
-    divApropos.classList.add('show');
-    }else{
-      divApropos.classList.remove('show');
-      divApropos.classList.add('hidden');
+  // Montrer la page active
+  const currentPage = window.location.href;
+  document.querySelectorAll("a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href && currentPage.includes(href)) {
+      link.classList.add("active");
     }
   });
 
-  let titreMonStack = document.querySelector('#monstacktitre');
-  let divMonStack = document.querySelector('.monstack.hidden');
-  
-  titreMonStack.addEventListener('click', () =>{
-    if(divMonStack.classList.contains('hidden')){
-      divMonStack.classList.remove('hidden');
-      divMonStack.classList.add('show');
-    }else{
-      divMonStack.classList.remove('show');
-      divMonStack.classList.add('hidden');
-    }
+  // Ciblage du titre "A propos"
+  const titreApropos = document.querySelector("#apropostitre");
+  const divApropos = document.querySelector(".apropos.hidden");
+  if (titreApropos && divApropos) {
+    titreApropos.addEventListener("click", () => {
+      if (divApropos.classList.contains("hidden")) {
+        divApropos.classList.remove("hidden");
+        divApropos.classList.add("show");
+      } else {
+        divApropos.classList.remove("show");
+        divApropos.classList.add("hidden");
+      }
+    });
+  }
+
+  // Ciblage du titre "Mon stack"
+  const titreMonStack = document.querySelector("#monstacktitre");
+  const divMonStack = document.querySelector(".monstack.hidden");
+  if (titreMonStack && divMonStack) {
+    titreMonStack.addEventListener("click", () => {
+      if (divMonStack.classList.contains("hidden")) {
+        divMonStack.classList.remove("hidden");
+        divMonStack.classList.add("show");
+      } else {
+        divMonStack.classList.remove("show");
+        divMonStack.classList.add("hidden");
+      }
+    });
+  }
+
+  // Footer automatisation date
+  const year = new Date().getFullYear();
+  const copyright = document.getElementById("copyright");
+  if (copyright) {
+    copyright.textContent = `© ${year} Eva Tharrats | Tous droits réservés.`;
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   console.log("Script chargé");
-
-//   const links = document.querySelectorAll('.navbar a');
-//   const currentPage = window.location.pathname.split("/").pop();
-//   console.log("Page courante :", currentPage);
-
-//   links.forEach(link => {
-//     console.log("Lien vérifié :", link.getAttribute("href"));
-//     console.log("😆Comparaison :", linkHref, "===", currentPage);
-//     if (link.getAttribute("href") === currentPage) {
-//       link.classList.add("active");
-//     }
-//   });
-// });
-
-
-
-
