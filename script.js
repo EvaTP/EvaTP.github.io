@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script chargé !");
 
-  // Montrer la page active
-  const currentPage = window.location.href;
-  document.querySelectorAll("a").forEach((link) => {
+  // Montrer la page active dans la navbar
+  const currentPage = window.location.pathname;
+  const currentFile = currentPage.split("/").pop() || "index.html"; // Récupère le nom du fichier
+
+  document.querySelectorAll(".navbar a").forEach((link) => {
     const href = link.getAttribute("href");
-    if (href && currentPage.includes(href)) {
-      link.classList.add("active");
+    if (href) {
+      const linkFile = href.split("/").pop() || "index.html";
+      if (currentFile === linkFile) {
+        link.classList.add("active");
+      }
     }
   });
 

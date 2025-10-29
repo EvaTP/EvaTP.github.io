@@ -44,14 +44,12 @@
         background-color: rgba(0, 0, 0, 0.4);
         z-index: 10;
       }
-
       .navbarul {
         list-style-type: none;
         display: flex;
         justify-content: space-around;
         align-items: center;
       }
-
       .navbarul li a {
         display: flex;
         align-items: center;
@@ -62,12 +60,14 @@
         border-bottom: 2px solid transparent;
         transition: all 0.3s ease;
       }
-
       .navbarul li a:hover {
         color: var(--primary-color);
         border-bottom: 2px solid var(--golden-color);
       }
-
+      .navbar a.active {
+        color: cyan;
+        font-weight: bold;
+      }
       .linkedin-icon,
       .github-icon {
         width: 24px;
@@ -75,7 +75,6 @@
         fill: white;
         transition: fill 0.3s ease;
       }
-
       .icon-link:hover .linkedin-icon,
       .icon-link:hover .github-icon {
         fill: var(--primary-color);
@@ -304,7 +303,7 @@
         }
 
         .navbarul {
-          flex-direction: column;
+          flex-direction: row;
           gap: 1em;
         }
 
