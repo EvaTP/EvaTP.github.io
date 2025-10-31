@@ -406,7 +406,6 @@ p {
 #accueil-container {
   margin: 2em 0 1em;
 }
-
 .apropos {
   transition: opacity 0.5s ease;
 }
@@ -422,7 +421,8 @@ p {
 #apropostitre h2,
 #contacttitre h2 {
   font-size: 3em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   margin-left: 1em;
 }
 #second > p:first-of-type {
@@ -507,8 +507,80 @@ span.golden {
   margin: 0 4em;
   box-shadow : 3px 4px 10px 5px grey;
 } */
-/* ASIDE : COMPETENCES & STACK */
 
+/* SECTION 3 LIENS PORTFOLIO & CV */
+/* Section principale : les 2 blocs CÔTE À CÔTE */
+#third{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4em;
+  margin: 2em auto;
+  width: 100%;
+  max-width: 1200px;
+}
+/* Chaque bloc (portfolio et CV) en colonne */
+#third .bloc-action {
+  display: flex;
+  flex-direction: column; /* Image SOUS le titre */
+  align-items: center;
+  justify-content: flex-start; /* Alignement en haut */
+  text-align: center;
+  gap: 0.3em; /* Espace entre le h2 et l'image */
+  flex: 1; /* Les deux blocs prennent la même largeur */
+}
+#third h2{
+  font-size: 2.5em;
+  margin-right: 1em;
+  border-left: 7px solid cyan;
+  padding-left: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* Espace entre l'icône et le texte */
+  white-space: nowrap; /* Empêche le retour à la ligne du titre */
+}
+
+/* Centrer uniquement le bouton dans son propre conteneur */
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  margin-top: -2em;
+  background-color: var(--primary-color);
+  color: #000;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0.5em 3em;
+  padding: 1em;
+  letter-spacing: 3px;
+  box-shadow: 3px 4px 10px 5px grey;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background: transparent;
+  border: none;
+}
+.action-button:hover {
+  background-color: #00cccc;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
+  border: 2px solid #000;
+}
+
+.action-button img {
+  margin: 0;
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+
+
+
+/* ASIDE : COMPETENCES & STACK */
 .titre-container {
   position: relative;
 }
@@ -525,6 +597,11 @@ span.golden {
 .aside-section h2 {
   margin-left: 0;
   font-size: 2em;
+  display: flex;
+  flex-direction: row; /* Alignement horizontal */
+  align-items: center; /* Centre verticalement l'icône et le texte */
+  gap: 0.5em; /* Espacement entre l'image et le texte */
+  
 }
 .aside-section ul {
   text-align: left;
@@ -585,19 +662,7 @@ span.golden {
   text-align: center;
 } */
 
-/* Centrer uniquement le bouton dans son propre conteneur */
-#portfolio-button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: -1em;
-}
-#portfolio-button-container img {
-  margin: 0;
-  width: 70%;
-  height: auto;
-}
+
 
 button {
   background-color: transparent;
@@ -635,7 +700,7 @@ footer {
   background-color: var(--footer-color);
   width: 100%;
   height: auto;
-  padding: 0.25em 0;
+  padding:0.40em 0;
   margin-top: 3em;
 }
 /* #carouselstack{
@@ -669,7 +734,7 @@ footer {
   } */
 #copyright {
   text-align: center;
-  font-size: 0.9em;
+  font-size: 1.2em;
   padding: 1em;
   /* margin: 2em; */
 }
@@ -954,6 +1019,10 @@ footer {
   .aside-desktop {
     display: none;
   }
+  /* Cacher les icones "Voir portfolio" et "Télécharger CV" */
+  #third{
+    display: none;
+  }
   /* Afficher la version mobile */
   .aside-mobile {
     display: flex;
@@ -1177,7 +1246,10 @@ footer {
     line-height: 1.7em;
     margin-left: 1.5em;
   }
-
+  /* Cacher les icones "Voir portfolio" et "Télécharger CV" */
+  #third{
+    display: none;
+  }
   /* BOUTONS PORTFOLIO */
   .portfolio-button-mobile {
     display: flex;
@@ -1198,7 +1270,7 @@ footer {
     margin-top: 2em;
   }
   #copyright {
-    font-size: 0.85em;
+    font-size: 0.95em;
   }
   /* BANNIÈRE */
   .bg-image {
