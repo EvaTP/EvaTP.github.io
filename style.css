@@ -632,7 +632,8 @@ span.golden {
   color: #000;
   font-size: 1.6em;
   font-weight: bold;
-  margin: 1.5em 3em;
+  text-align: center;
+  margin: 1.5em auto;
   padding: 1em;
   letter-spacing: 3px;
   box-shadow: 3px 4px 10px 5px grey;
@@ -1101,6 +1102,8 @@ footer {
   /* Boutons mobile */
   .portfolio-button-mobile {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 400px;
     background-color: cyan;
@@ -1110,7 +1113,6 @@ footer {
     margin: 1em auto;
     padding: 1em;
     text-align: center;
-    letter-spacing: 0.5em;
     box-shadow: 3px 4px 10px 5px grey;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -1240,13 +1242,14 @@ footer {
   /* BOUTONS PORTFOLIO */
   .portfolio-button-mobile {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     font-size: 1.25em;
     text-align: center;
     padding: 0.9em 0;
     margin: 0.8em auto;
     font-weight: bold;
-    letter-spacing: 0.35em;
     background: cyan;
     box-sizing: border-box;
   }
@@ -1353,12 +1356,15 @@ footer {
     word-wrap: break-word;
   }
   .portfolio-button-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 95%;
     font-size: 1.1em;
     padding: 0.8em;
     margin: 0.6em auto;
-    letter-spacing: 0.02em;
     box-sizing: border-box;
+    text-align: center;
   }
   footer {
     width: 100%;
