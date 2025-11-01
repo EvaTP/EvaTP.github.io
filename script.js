@@ -1,3 +1,4 @@
+// au chargement du DOM
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script chargé !");
 
@@ -52,3 +53,40 @@ document.addEventListener("DOMContentLoaded", () => {
     copyright.textContent = `© ${year} Eva Tharrats | Tous droits réservés.`;
   }
 });
+
+// Code de déboggage responsive (isolé du code fonctionnel): voir largeur page (visible uniquement en debug = true)
+const DEBUG_MODE = false; // false en production
+
+if (DEBUG_MODE) {
+  // Créer un badge de debug
+  const debugBadge = document.createElement("div");
+  debugBadge.style.cssText = `
+    position: fixed;
+    bottom: 10px;
+    right: 12px;
+    background: rgba(0, 255, 255, 0.9);
+    color: black;
+    padding: 10px 12px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 18px;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  `;
+  document.body.appendChild(debugBadge);
+
+  function updateWidth() {
+    debugBadge.textContent = `💡 ${window.innerWidth}px`;
+  }
+  updateWidth();
+  window.addEventListener("resize", updateWidth);
+}
+
+// Ancien script pour afficher la largeur de la fenêtre dans l'onglet du navigateur (visible pour tous)
+// document.addEventListener("DOMContentLoaded", () => {
+//   function showWidth() {
+//     document.title = `Largeur : ${window.innerWidth}px`;
+//   }
+//   showWidth(); // Affiche dès le chargement
+//   window.addEventListener("resize", showWidth);
+// });

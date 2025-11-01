@@ -994,6 +994,7 @@ footer {
 /* ****************************** */
 
 /* TABLETTES & PETITS LAPTOPS (768px - 1024px) */
+/* ******************************************* */
 @media (max-width: 1024px) {
   .container {
     display: flex;
@@ -1001,11 +1002,13 @@ footer {
     align-items: stretch;
     padding: 1rem;
     width: 100%;
+    box-sizing: border-box;
   }
   .main-content {
     width: 100%;
     margin-right: 0;
     padding: 1em;
+    box-sizing: border-box;
   }
   /* Cacher la sidebar desktop */
   .aside-desktop {
@@ -1019,12 +1022,13 @@ footer {
   .aside-mobile {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin: 2em auto;
     width: 100%;
-    max-width: 800px;
-    padding: 2em;
+    max-width: 100%;
+    padding: 2em 1em;
+    box-sizing: border-box;
   }
   .aside-mobile h3 {
     font-size: 2em;
@@ -1034,6 +1038,7 @@ footer {
     padding-left: 0.5em;
     color: white;
     width: 100%;
+    box-sizing: border-box;
   }
   .aside-mobile ul {
     margin-left: 2em;
@@ -1041,6 +1046,14 @@ footer {
     line-height: 1.8em;
     color: white;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .aside-mobile li {
+    max-width: 100%;
+    word-wrap: break-word;
   }
   /* Texte à propos */
   .apropos .flex-row {
@@ -1068,6 +1081,8 @@ footer {
     margin: 1em 0;
     line-height: 1.8em;
     font-size: 1.1em;
+    box-sizing: border-box;
+    word-wrap: break-word;
   }
   #apropostitre h2 {
     font-size: 2.5em;
@@ -1100,55 +1115,24 @@ footer {
     cursor: pointer;
     transition: transform 0.3s ease;
     border: none;
+    box-sizing: border-box;
   }
   .portfolio-button-mobile:hover {
     transform: scale(1.05);
   }
 }
 
-/* TABLETTES PORTRAIT (768px - 992px) */
-/* @media (min-width: 768px) and (max-width: 992px) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  #second > p:first-of-type {
-    font-size: 1.8em;
-  }
-
-  #second p {
-    font-size: 1.2em;
-  }
-
-  #texteapropos {
-    font-size: 1.15em;
-    line-height: 1.9em;
-  }
-
-  .bg-image {
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 20px 0;
-  }
-} */
-
-/* ******************************* */
-/*  RESPONSIVE — MOBILES (≤ 767px) */
-/* ******************************* */
-
 /* MOBILES LARGES (entre 500px et 767px max) */
-/* @media (max-width: 767px){ */
+/* ***************************************** */
 @media (min-width: 500px) and (max-width: 767px) {
   body {
     width: 100%;
     padding: 0;
+    box-sizing: border-box;
   }
   .container {
     padding: 0.5em;
+    box-sizing: border-box;
   }
 
   /* NAVBAR */
@@ -1197,6 +1181,7 @@ footer {
     align-items: center;
     margin-bottom: 1em;
     padding: 0 1.5em;
+    box-sizing: border-box;
   }
   #photo-desktop {
     display: none;
@@ -1217,6 +1202,8 @@ footer {
     margin: 0.3em 0 0 0;
     line-height: 1.75em;
     font-size: 1.1em;
+    box-sizing: border-box;
+    word-wrap: break-word;
   }
 
   /* Aside mobile */
@@ -1224,10 +1211,11 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 1.5em 1em;
     margin-top: 0.2em;
+    box-sizing: border-box;
   }
   .aside-mobile h3 {
     font-size: 1.8em;
@@ -1237,6 +1225,13 @@ footer {
     font-size: 1.2em;
     line-height: 1.7em;
     margin-left: 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  .aside-mobile li {
+    max-width: 100%;
+    word-wrap: break-word;
   }
   /* Cacher les icones "Voir portfolio" et "Télécharger CV" */
   #third {
@@ -1253,6 +1248,7 @@ footer {
     font-weight: bold;
     letter-spacing: 0.35em;
     background: cyan;
+    box-sizing: border-box;
   }
 
   /* FOOTER */
@@ -1273,24 +1269,17 @@ footer {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  #texteapropos {
-    width: 90%;
-    margin: 0 auto;
-    padding: 1.5em;
-    line-height: 1.8em;
-    font-size: 1.1em;
-  }
-}
-
 /* PETITS MOBILES (jusqu'à 499px) */
-/* @media (max-width: 499px) {
-  /* body {
+/* ****************************** */
+@media (max-width: 499px) {
+  body {
     width: 100%;
     padding: 0;
+    box-sizing: border-box;
   }
   .container {
     padding: 0.5em;
+    box-sizing: border-box;
   }
   .navbarul {
     flex-direction: column;
@@ -1333,15 +1322,19 @@ footer {
   }
   #photo-mobile img {
     max-width: 70%;
-  } */
-/* #texteapropos {
+  }
+  #texteapropos {
     width: 100%;
     padding: 0.8em;
     font-size: 1em;
     line-height: 1.6em;
+    box-sizing: border-box;
+    word-wrap: break-word;
   }
   .aside-mobile {
     padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
   }
   .aside-mobile h3 {
     font-size: 1.5em;
@@ -1351,6 +1344,13 @@ footer {
     font-size: 1.1em;
     line-height: 1.6em;
     margin-left: 1.2em;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  .aside-mobile li {
+    max-width: 100%;
+    word-wrap: break-word;
   }
   .portfolio-button-mobile {
     width: 95%;
@@ -1358,6 +1358,7 @@ footer {
     padding: 0.8em;
     margin: 0.6em auto;
     letter-spacing: 0.02em;
+    box-sizing: border-box;
   }
   footer {
     width: 100%;
@@ -1371,12 +1372,8 @@ footer {
   }
   .paragrapheBanniere {
     display: none;
-  } 
-} /*
-
-
-
-
+  }
+}
 
 /* ===================================== */
 /* FIXES SUPPLÉMENTAIRES                 */
