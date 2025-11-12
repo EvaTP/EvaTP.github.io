@@ -143,9 +143,23 @@
         width: 100%; /* Prend toute la largeur disponible dans sa colonne */
       }
 
-      .project-card:hover {
+      .project-card:hover,
+      .project-card-bigger:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+      /* CARTE PROJET PLUS GRANDE POUR LES DERNIERS PROJETS PERSONNELS */
+      .project-card-bigger {
+        background-color: var(--card-bg);
+        border-radius: 0; /* Style carré */
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 750px; /* HAUTEUR FIXE pour uniformité */
+        max-width: 580px; /* AJOUT : Largeur maximale pour chaque carte */
+        width: 100%; /* Prend toute la largeur disponible dans sa colonne */
       }
 
       /* IMAGE */
@@ -162,7 +176,8 @@
         transition: transform 0.3s ease;
       }
 
-      .project-card:hover .project-image img {
+      .project-card:hover .project-image img,
+      .project-card-bigger:hover .project-image img {
         transform: scale(1.05);
       }
 
@@ -183,7 +198,8 @@
         max-width: 85%;
       }
 
-      .project-card:hover .tech-tag {
+      .project-card:hover .tech-tag,
+      .project-card-bigger:hover .tech-tag {
         opacity: 1;
         transform: translateY(0);
       }
@@ -206,17 +222,17 @@
       }
 
       .project-description {
-        font-size: 1.1em;
+        font-size: 1em;
         line-height: 1.6;
         color: #ddd;
-        margin-bottom: 1.5em;
+        margin-bottom: 0.5em;
         flex-grow: 1;
       }
       .project-description-second {
         font-size: 0.9;
         color: #daa520;
         font-style: italic;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
         flex-grow: 1;
       }
 
@@ -395,7 +411,192 @@
     </section>
 
     <!-- CONTAINER PRINCIPAL -->
+
     <div id="portfolio-container">
+      <!-- SECTION AUTRES PROJETS -->
+      <h2 class="h2portfolio">Derniers <span>Projets Personnels</span></h2>
+
+      <div class="projects-grid">
+        <!-- ART'SQUARE -->
+        <!-- <div class="project-card">
+          <div class="project-image">
+            <div class="tech-tag">WordPress & WooCommerce</div>
+            <img src="img_portfolio/artsquare-440x327.png" alt="Art'Square" />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">🖼️ Galerie Art'Square</h3>
+            <p class="project-description">
+              Site e-commerce de galerie d'art en ligne développé avec
+              WordPress, WooCommerce et Elementor.<br />
+              Vente, expositions, focus artistes, blog.
+            </p>
+            <div class="project-buttons">
+              <a
+                href="https://artsquare.evatharrats.fr/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Voir le projet
+              </a>
+               <a
+                href="https://github.com/EvaTP"
+                target="_blank"
+                class="btn btn-github"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
+                  />
+                </svg>
+                Code source
+              </a>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- THE WAVE -->
+        <div class="project-card-bigger">
+          <div class="project-image">
+            <div class="tech-tag">
+              React, Next.js, Express, Prisma, Tailwind, API + React Leaflet,
+              PostgreSQL
+            </div>
+            <img src="img_portfolio/TheWave-440x327.png" alt="The Wave" />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">🏄‍♂️ The Wave</h3>
+            <p class="project-description">
+              Application web permettant aux passionnés de surf de découvrir et
+              partager les spots à travers le monde. Carte interactive, favoris,
+              Authentification, tableau de bord admin, responsive design.
+            </p>
+            <!-- <p class="project-description">
+             <strong>🔐 Pour tester :</strong><br>
+              • Créez votre compte personnel<br>
+              • Ou utilisez le compte démo : <strong>demo / demo123</strong>
+              <br><br>
+              <em>Note : Le compte démo permet d'explorer l'interface admin 
+              en mode lecture seule pour des raisons de sécurité.</em>
+            </p> -->
+            <p class="project-description-second">
+              🚧 En cours de refactorisation : mode "démo", filtres de recherche, tableau de bord Admin.
+            </p>
+            <div class="project-buttons">
+              <a
+                href="https://the-wave-eight.vercel.app/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Voir le projet
+              </a>
+              <a
+                href="https://github.com/EvaTP/the-wave.git"
+                target="_blank"
+                class="btn btn-github"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
+                  />
+                </svg>
+                Code source
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FONDU AU NOIR -->
+        <div class="project-card-bigger">
+          <div class="project-image">
+            <div class="tech-tag">
+              React, Vite, TypeScript, Vanilla CSS, PWA
+            </div>
+            <img
+              src="img_portfolio/fondu-au-noir-440x327.png"
+              alt="Projet en cours"
+            />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">🎬 Fondu au noir</h3>
+            <p class="project-description">
+              Progressive Web App de quiz interactif avec des flashcards pour
+              explorer l'histoire du cinéma noir de manière ludique sur une
+              timeline chronologique. <br /><br />
+              Téléchargez l'appli !
+            </p>
+            <div class="project-buttons">
+              <a
+                href="https://fondu-au-noir.vercel.app/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Voir le projet
+              </a>
+              <a
+                href="https://github.com/EvaTP/fondu-au-noir.git"
+                target="_blank"
+                class="btn btn-github"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
+                  />
+                </svg>
+                Code source
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- SECTION ADA TECH SCHOOL -->
       <h2 class="h2portfolio">Projets école <span>ADA TECH SCHOOL</span></h2>
 
@@ -457,63 +658,6 @@
             </div>
           </div>
         </div>
-
-        <!-- THE WAVE -->
-        <!-- <div class="project-card">
-          <div class="project-image">
-            <div class="tech-tag">
-              React, Next.js, Express, Prisma, Tailwind, React Leaflet,
-              PostgreSQL
-            </div>
-            <img src="img_portfolio/TheWave-440x327.png" alt="The Wave" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">🏄‍♂️ The Wave</h3>
-            <p class="project-description">
-              Application web international permettant aux passionnés de surf de
-              découvrir et partager les spots à travers le monde.<br />
-              Authentification, CRUD page admin, responsive design, carte
-              interactive.
-            </p>
-            <div class="project-buttons">
-              <a
-                href="https://the-wave-eight.vercel.app/"
-                target="_blank"
-                class="btn btn-primary"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Voir le projet
-              </a>
-              <a
-                href="https://github.com/EvaTP/the-wave.git"
-                target="_blank"
-                class="btn btn-github"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
-                  />
-                </svg>
-                Code source
-              </a>
-            </div>
-          </div>
-        </div> -->
 
         <!-- QUIZ ESPACE -->
         <div class="project-card">
@@ -675,10 +819,10 @@
       </div>
 
       <!-- SECTION AUTRES PROJETS -->
-      <h2 class="h2portfolio">Projets <span>Personnels</span></h2>
-
+  
+<!-- 
       <div class="projects-grid">
-        <!-- ART'SQUARE -->
+        ART'SQUARE -->
         <!-- <div class="project-card">
           <div class="project-image">
             <div class="tech-tag">WordPress & WooCommerce</div>
@@ -786,131 +930,7 @@
             </div>
           </div>
         </div> -->
-
-        <!-- THE WAVE -->
-        <div class="project-card">
-          <div class="project-image">
-            <div class="tech-tag">
-              React, Next.js, Express, Prisma, Tailwind, API + React Leaflet,
-              PostgreSQL
-            </div>
-            <img src="img_portfolio/TheWave-440x327.png" alt="The Wave" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">🏄‍♂️ The Wave</h3>
-            <p class="project-description">
-              Application web internationale permettant aux passionnés de surf
-              de découvrir et partager les spots à travers le monde. Carte
-              interactive, favoris, Authentification, CRUD page admin,
-              responsive design.
-            </p>
-            <!-- <p class="project-description">
-              Créez votre propre compte pour surfer dans toutes les
-              fonctionnalités, ou loggez-vous avec le profil de Bodhi, 🧔<strong
-                >Username: bodhi et Password: 1234xz</strong
-              >
-              pour accéder à la page Administrateur.
-            </p> -->
-            <p class="project-description-second">
-              🚧 En cours de refactorisation : filtres de recherche, page Admin.
-            </p>
-            <div class="project-buttons">
-              <a
-                href="https://the-wave-eight.vercel.app/"
-                target="_blank"
-                class="btn btn-primary"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Voir le projet
-              </a>
-              <a
-                href="https://github.com/EvaTP/the-wave.git"
-                target="_blank"
-                class="btn btn-github"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
-                  />
-                </svg>
-                Code source
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- FONDU AU NOIR -->
-        <div class="project-card">
-          <div class="project-image">
-            <div class="tech-tag">
-              React, Vite, TypeScript, Vanilla CSS, PWA
-            </div>
-            <img
-              src="img_portfolio/fondu-au-noir-440x327.png"
-              alt="Projet en cours"
-            />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">🎬 Fondu au noir</h3>
-            <p class="project-description">
-              Progressive Web App de quiz interactif avec des flashcards pour
-              explorer l'histoire du cinéma noir de manière ludique sur une
-              timeline chronologique. <br />Projet personnel.
-            </p>
-            <div class="project-buttons">
-              <a
-                href="https://fondu-au-noir.vercel.app/"
-                target="_blank"
-                class="btn btn-primary"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Voir le projet
-              </a>
-              <a
-                href="https://github.com/EvaTP/fondu-au-noir.git"
-                target="_blank"
-                class="btn btn-github"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
-                  />
-                </svg>
-                Code source
-              </a>
-            </div>
-          </div>
-        </div>
+  
       </div>
     </div>
 
