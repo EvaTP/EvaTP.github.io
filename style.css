@@ -1384,12 +1384,14 @@ footer {
   .navbarul {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.5em;
     padding: 5px;
   }
   .navbarul li a {
     font-size: 1em;
     padding: 8px 10px;
+    text-align: center;
   }
   .navbar {
     padding: 10px 5px;
