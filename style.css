@@ -150,7 +150,8 @@ html {
   box-sizing: border-box;
 }
 body {
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: #120f2a;
   color: #fff;
   font-family: var(--font-family-body);
 }
@@ -173,7 +174,8 @@ body {
 .aside-desktop {
   width: 23%; /* élargit la sidebar */
   padding: 15px;
-  background-color: #2d2d2d;
+  /* background-color: #2d2d2d; */
+  background-color: #120f2a;
   box-shadow: 4px 8px 10px 5px grey;
   color: white;
 }
@@ -181,8 +183,9 @@ h1 {
   font-family: var(--font-family-body);
   font-size: 4.5rem;
   color: #fff;
-  margin: 20px 0 15px 0;
-  text-align: center;
+  /* margin: 20px 0 15px 0; */
+  margin: 1rem 0.5rem 1rem 3rem;
+  text-align: left;
   font-weight: bold;
 }
 h2 {
@@ -402,12 +405,77 @@ p {
   } */
 
 /* SECTION 2 A PROPOS */
+/* Développeuse... alternance */
+
+.intro-box {
+  margin-left: 6rem;
+  margin-top: 1.5rem;
+  max-width: 750px;
+  font-size: 2em;
+}
+
+.intro-top {
+  position: relative;
+  padding: 1.75rem 1.2rem 1rem 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* ligne verticale gauche */
+.intro-top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: cyan;
+}
+
+/* ligne horizontale haute (courte) */
+.intro-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35%;
+  height: 4px;
+  background-color: cyan;
+}
+
+.intro-bottom {
+  position: relative;
+  padding: 1rem 1.75rem 1.75rem 1rem;
+  text-align: right;
+}
+
+/* ligne verticale droite */
+.intro-bottom::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 4px;
+  background-color: cyan;
+}
+
+/* ligne horizontale basse (courte) */
+.intro-bottom::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  height: 4px;
+  background-color: cyan;
+}
 
 #accueil-container {
-  margin: 2em 0 1em;
+  margin: 2em 0 1em 1em;
 }
 .apropos {
   transition: opacity 0.5s ease;
+  padding: 2rem;
 }
 .hidden {
   display: none;
@@ -427,8 +495,8 @@ p {
 }
 #second > p:first-of-type {
   font-size: 2.5em;
-  text-align: center;
-  margin: 0.25em 0 1em 0;
+  text-align: left;
+  margin: 0.25em 0 1em 0.5em;
   padding: 0.5em;
   /* color: var(--light-color); */
   color: white;
@@ -442,7 +510,7 @@ p {
   color: white;
   font-style: italic;
   font-size: 1em;
-  text-align: center;
+  text-align: left;
 }
 .apropos.flex-row {
   align-items: flex-start;
@@ -818,7 +886,9 @@ footer {
   background-color: #333;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Ajoute un effet au survol de la tuile */
@@ -889,7 +959,9 @@ footer {
   font-family: var(--font-family-captions);
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   z-index: 2;
 }
 /* Apparition uniquement au survol */
@@ -943,7 +1015,9 @@ footer {
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 1.2rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -1154,7 +1228,7 @@ footer {
   /* TITRES & TEXTES */
   h1 {
     font-size: 2.5rem;
-    margin: 10px 0;
+    /* margin: 10px 0; */
     text-align: center;
   }
   #second {

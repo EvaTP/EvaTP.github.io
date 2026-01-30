@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -65,13 +66,21 @@
       <main class="main-content">
         <section id="second" class="">
           <h1>Eva Tharrats</h1>
-          <p>
-            Développeuse web full-stack<br />
-            Apprenante chez Ada Tech School<br /><br />
-            En recherche d'alternance
-          </p>
+          <div class="intro-box">
+            <p class="intro-top">
+              Développeuse web full-stack<br />
+              Apprenante chez Ada Tech School
+            </p>
+            <p class="intro-bottom">En recherche d’alternance</p>
+          </div>
 
-          <div id="apropostitre" class="flex-column">
+          <div
+            id="apropostitre"
+            class="flex-column"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-easing="ease-out-cubic"
+          >
             <h2>A propos</h2>
           </div>
 
@@ -79,7 +88,12 @@
             <img src="img/Eva-cercle-fond-cyan.png" alt="photoEva-mobile" />
           </div>
 
-          <div class="apropos flex-row">
+          <div
+            class="apropos flex-row"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-easing="ease-out-cubic"
+          >
             <div class="apropos" id="photo-desktop">
               <img src="img/Eva-cercle-fond-goldenrod.png" alt="photoEva" />
             </div>
@@ -93,15 +107,16 @@
               <p>
                 Après plus de 30 ans d'expérience professionnelle en tant
                 qu'assistante et assistante de direction trilingue, mon attrait
-                pour l’informatique et la technologie et l'envie d'apprendre,
+                pour l’informatique et la technologie et l'envie d'apprendre
                 m’ont motivée à entreprendre une
                 <strong
                   >reconversion professionnelle dans le développement
                   web.</strong
                 >
                 <br /><br />
-                Après une première formation de quatre mois dans le centre de
-                formation IFOCOP, j'ai fait le choix de rejoindre
+                Après une première formation de quatre mois suivie d'un stage
+                dans le centre de formation IFOCOP, j'ai fait le choix de
+                rejoindre
                 <span>ADA TECH SCHOOL</span>, première école de tech inclusive
                 en France, <br />
                 où j'ai suivi la partie théorique de la formation
@@ -125,7 +140,12 @@
         </section>
 
         <!-- Portfolio & CV -->
-        <section id="third">
+        <section
+          id="third"
+          data-aos="fade-right"
+          data-aos-duration="1500"
+          data-aos-easing="ease-out-cubic"
+        >
           <!-- Bloc Portfolio -->
           <div class="bloc-action">
             <h2>
@@ -139,7 +159,7 @@
             </h2>
             <button
               class="action-button"
-              onclick="window.open('portfolio.html','_blank')"
+              onclick="window.open('portfolio.html', '_blank')"
             >
               <img src="img_portfolio/start.png" alt="bouton-portfolio" />
             </button>
@@ -158,7 +178,7 @@
             </h2>
             <button
               class="action-button"
-              onclick="window.open('CV-Eva_Tharrats_alternance.pdf','_blank')"
+              onclick="window.open('CV-Eva_Tharrats_alternance.pdf', '_blank')"
             >
               <img
                 src="img_portfolio/download-CV.png"
@@ -208,14 +228,14 @@
 
         <button
           class="portfolio-button-mobile aside-mobile"
-          onclick="location.href='portfolio.html'"
+          onclick="location.href = 'portfolio.html'"
         >
           Voir portfolio
         </button>
         <br />
         <button
           class="portfolio-button-mobile aside-mobile"
-          onclick="location.href='CV-Eva_Tharrats_alternance.pdf'"
+          onclick="location.href = 'CV-Eva_Tharrats_alternance.pdf'"
         >
           Télécharger CV
         </button>
@@ -344,5 +364,13 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- animation AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true, // animation une seule fois
+        disable: "mobile", // désactive AOS sur mobile
+      });
+    </script>
   </body>
 </html>
