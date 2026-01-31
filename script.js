@@ -46,6 +46,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Ciblage du bloc "Me contacter" (fade in au scroll)
+  const contactBlock = document.querySelector(".contact-block");
+
+  function revealOnScroll() {
+    const rect = contactBlock.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      contactBlock.classList.add("visible");
+    }
+  }
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+
   // Footer automatisation date
   const year = new Date().getFullYear();
   const copyright = document.getElementById("copyright");
