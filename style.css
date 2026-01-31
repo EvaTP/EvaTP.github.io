@@ -416,7 +416,7 @@ p {
 
 .intro-top {
   position: relative;
-  padding: 1.75rem 1.2rem 1rem 1.75rem;
+  padding: 1.9rem 1.2rem 1rem 1.7em;
   margin-bottom: 2rem;
 }
 
@@ -444,7 +444,7 @@ p {
 
 .intro-bottom {
   position: relative;
-  padding: 1rem 1.75rem 1.75rem 1rem;
+  padding: 1rem 1.75rem 1.9rem 1rem;
   text-align: right;
 }
 
@@ -473,6 +473,7 @@ p {
 #accueil-container {
   margin: 2em 0 1em 1em;
 }
+
 .apropos {
   transition: opacity 0.5s ease;
   padding: 2rem;
@@ -489,7 +490,7 @@ p {
 #apropostitre h2,
 #contacttitre h2 {
   font-size: 3em;
-  margin-top: 1em;
+  margin-top: 2em;
   margin-bottom: 1em;
   margin-left: 1em;
 }
@@ -1216,13 +1217,12 @@ footer {
     flex-direction: row;
     align-items: center;
     gap: 1em;
-    padding: 10px;
   }
   .navbarul li a {
     font-size: 1.1em;
   }
   .navbar {
-    padding: 15px 10px;
+    padding: 25px 10px;
   }
 
   /* TITRES & TEXTES */
@@ -1357,6 +1357,12 @@ footer {
 /* ****************************** */
 
 @media (max-width: 767px) {
+  .intro-box {
+    font-size: 1.5em;
+    margin-left: 0;
+    margin-right: 0.25em;
+    max-width: 100%;
+  }
   .intro-top,
   .intro-bottom {
     padding: 1rem;
@@ -1382,10 +1388,11 @@ footer {
     box-sizing: border-box;
   }
   .navbarul {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    gap: 0.5em;
+    gap: 1em;
     padding: 5px;
   }
   .navbarul li a {
@@ -1394,7 +1401,7 @@ footer {
     text-align: center;
   }
   .navbar {
-    padding: 10px 5px;
+    padding: 30px 0;
   }
   h1 {
     font-size: 2rem;
