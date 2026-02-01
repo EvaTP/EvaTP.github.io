@@ -148,6 +148,7 @@ video {
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   /* background-color: rgba(0, 0, 0, 0.8); */
@@ -707,6 +708,16 @@ span.golden {
   line-height: 1.5em;
   color: white;
 }
+.portfolio-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+  margin: 1em 0;
+  box-sizing: border-box;
+}
 .portfolio-button-mobile {
   display: none;
   width: 70%;
@@ -833,12 +844,37 @@ button {
 /* SECTION 6 FOOTER */
 
 footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: var(--footer-color);
   width: 100%;
   height: auto;
   padding: 0.4em 0;
   margin-top: 3em;
 }
+#copyrightDiv {
+  margin-left: 3em;
+}
+#copyright {
+  text-align: right;
+  font-size: 1.2em;
+  padding: 1em;
+}
+#hautpageDiv {
+  margin-right: 4em;
+}
+
+#hautpage img {
+  display: block;
+  transition: transform 0.3s ease;
+}
+#hautpage img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* OLD Caroussel stack */
 /* #carouselstack{
     display: block; 
     width: 100%;
@@ -868,12 +904,6 @@ footer {
     color : #fff;
     font-style: normal;
   } */
-#copyright {
-  text-align: center;
-  font-size: 1.2em;
-  padding: 1em;
-  /* margin: 2em; */
-}
 
 /* ******************** */
 /* PAGE PORTFOLIO       */
@@ -1158,6 +1188,9 @@ footer {
     margin-right: 0;
     padding: 1em;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   /* Cacher la sidebar desktop */
   .aside-desktop {
@@ -1248,12 +1281,13 @@ footer {
   } */
 
   /* Boutons mobile */
+
   .portfolio-button-mobile {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 350px;
     background-color: cyan;
     color: black;
     font-size: 1.3em;
@@ -1296,6 +1330,15 @@ footer {
   }
   .navbar {
     padding: 25px 10px;
+  }
+  .main-content {
+    width: 100%;
+    margin-right: 0;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* TITRES & TEXTES */
@@ -1399,7 +1442,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
     font-size: 1.25em;
     text-align: center;
     padding: 0.9em 0;
@@ -1447,9 +1490,9 @@ footer {
   }
 }
 /* ****************************** */
-
 /* PETITS MOBILES (jusqu'à 499px) */
 /* ****************************** */
+
 @media (max-width: 499px) {
   body {
     width: 100%;
@@ -1475,6 +1518,15 @@ footer {
   }
   .navbar {
     padding: 30px 0;
+  }
+  .main-content {
+    width: 100%;
+    margin-right: 0;
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   h1 {
     font-size: 2rem;
@@ -1600,413 +1652,3 @@ a {
   justify-content: center;
   width: 100%;
 }
-
-/* ******************** */
-/*  ancien RESPONSIVE DESIGN  a supprimer */
-/* ******************** */
-
-/* DESKTOP (min 1024 max 1280) */
-/* @media (max-width: 1024px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  .main-content {
-    width: 90%;
-    margin-right: 2%;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .apropos.flex-row {
-    margin-bottom: 2em;
-  }
-  #apropostitre h2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 3em;
-    margin-bottom: 0.5em;
-  }
-  .section {
-    width: 100%;
-  }
-  .section:first-child {
-    order: 1;
-  }
-  .section:last-child {
-    order: 2;
-  }
-  .aside-desktop {
-    display: none;
-  }
-  .aside-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2em auto;
-    width: fit-content;
-  }
-} */
-/* ordis PORTABLES (min 992 max 1200) */
-
-/* TABLETTES (min 768 max 992 ) */
-/* **************************** */
-
-/* page accueil */
-/* @media (min-width: 768px) and (max-width: 992px) {
-  /* .aside-desktop {
-    display: none;
-  } */
-/* .apropos.flex-row {
-    margin-bottom: 0.25em;
-  } */
-/* .aside-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0.20em auto; 
-    width : fit-content;
-  }
-  .aside-mobile h3{
-    font-size: 3em;
-  } */
-/* Évite les débordements horizontaux */
-/* body {
-    overflow-x: hidden;
-  } */
-/* h1 {
-    font-size: 3rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  p,
-  label,
-  input,
-  button {
-    font-size: 0.5rem;
-  }
-  #photo-desktop {
-    display: none;
-  }
-  #photo-mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 0.25em;
-  }
-  #photo-mobile img {
-    max-width: 40%;
-    height: auto;
-  }
-  #texteapropos {
-    width: 90%;
-    align-items: flex-start;
-    padding: 1em;
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    line-height: 2em;
-  }
-  #contactemail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 1.75em;
-    letter-spacing: 0.15em;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0 4em;
-    /* box-shadow : 3px 4px 10px 5px grey; */
-/* }
-  input,
-  button {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .bg-image {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding: 20px 0;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-} */
-
-/*  MOBILES  */
-/* ********* */
-
-/* page accueil */
-/* @media (min-width: 500px) and (max-width: 767px) {
-  body {
-    width: 100%;
-    padding: 0.25;
-  }
-  #second {
-    margin: 0 1em;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-  #second > p:first-of-type {
-    font-size: 2em;
-    text-align: center;
-    margin: 0.25em 0 1em 0;
-    padding: 0.5em;
-  }
-  #second p {
-    font-size: 1em;
-    text-align: left;
-    margin: 1em 0 1em 0;
-  }
-  #second p span {
-    color: white;
-    font-style: italic;
-    font-size: 0.75em;
-    text-align: center;
-  }
-  .apropos.flex-row {
-    margin-bottom: 0.25em;
-  }
-  .navbarul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-  }
-  .navbarul li a {
-    /* font-size: 18px; */
-/* font-size: 1, 25em;
-  }
-  .navbar {
-    padding: 10px 20px;
-  }
-  #accueil-container {
-    margin: 0;
-  }
-  .apropos.flex-row {
-    align-items: flex-start;
-    margin-bottom: 1em;
-  }
-  #photo-desktop {
-    display: none;
-  }
-  #photo-mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 0.25em;
-  }
-  #photo-mobile img {
-    max-width: 40%;
-    height: auto;
-  }
-
-  #texteapropos {
-    width: 90%;
-    align-items: flex-start;
-    padding: 0.25em;
-    margin-top: 0.5em;
-    margin-left: 1em;
-    margin-right: 1em;
-    line-height: 2em;
-    font-size: 1.5em;
-  } */
-/* #contactemail{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-size: 1.75em; 
-  letter-spacing: 0.15em;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin : 0 4em; */
-/* box-shadow : 3px 4px 10px 5px grey; */
-/* 
-  .aside-desktop {
-    display: none;
-  }
-  .aside-mobile {
-    display: block;
-  }
-  .flex-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .bg-image {
-    padding: 15px 0;
-  }
-  h2 {
-    font-size: 1em;
-    color: #ffff;
-    margin: 1rem 0.5rem 1rem 0;
-    padding-left: 0.5em;
-    border-left: 7px solid cyan;
-    text-align: left;
-  }
-  .titre-tuile {
-    font-size: 1em;
-    text-align: center;
-    margin-top: 0.25em;
-    color: white;
-  }
-  .paragrapheBanniere {
-    display: none;
-  }
-
-  footer {
-    background-color: var(--footer-color);
-    width: 100vw;
-    height: auto; /* Ajustement de la hauteur automatique */
-/* padding: 0.15em 0;
-    margin: 0;
-  } */
-/* page portfolio */
-/* .mosaique {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 15px;
-    color: white;
-  } */
-/* page CV */
-/* #cv-container {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  #cv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 3em;
-  }
-  #download {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1em;
-  }
-  #download img {
-    width: 80px;
-  }
-  #download a {
-    margin-top: 1.5em;
-    color: white;
-    font-family: var(--font-family-body);
-    font-size: 2em;
-    font-weight: bold;
-  } */
-/* } */
-
-/* MOBILES >600 */
-/* @media screen and (max-width: 600px) {
-  .navbarul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    padding: 1em 0;
-  }
-
-  .navbarul li {
-    margin: 0;
-    padding: 0.5em 0;
-  }
-
-  .navbarul a {
-    font-size: 1.2em;
-    color: var(--goldenrod-color);
-    text-decoration: none;
-  }
-
-  /* Réorganisation de la structure générale */
-/* .container {
-    flex-direction: column;
-  } */
-
-/* .aside-desktop {
-    display: none;
-  }
-
-  .aside-mobile {
-    display: block;
-    padding: 1em;
-    background-color: #2d2d2d;
-  }
-
-  .main-content {
-    width: 100%;
-    margin: 0;
-  }
-} */
-
-/* PETITS MOBILES */
-/* @media (min-width: 300px) and (max-width: 499px) {
-  .main-content {
-    width: 100%;
-    margin-right: 2em;
-    padding: 1em;
-  }
-}
-  #second{
-    margin : 0 1em;
-  }
-  h1{
-    font-size: 2rem;
-  }
-  #second > p:first-of-type{
-    font-size: 2em;
-    text-align: center;
-    margin: 0.25em 0 1em 0;
-    padding : 0.5em;
-}
-#second p{
-    font-size: 1em;
-    text-align: left;
-    margin: 1em 0 1em 0;
-}
-#second p span {
-    color: white;
-    font-style: italic;
-    font-size: 0.75em;
-    text-align: center;
-}
-  #photo{
-    width: 10%;
-    padding: 0;
-    margin-right: 10px;
-    margin-top : 0.25em;
-}
-  #texteapropos{
-    width: 90%;
-    align-items: flex-start;
-    padding: 0.25em;
-    margin-top: 0.5em;
-    margin-left: 1em;
-    margin-right: 1em;
-    line-height: 2em;
-}
-} */

@@ -291,14 +291,33 @@
 
       /* FOOTER */
       footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         background-color: rgba(128, 128, 128, 0.5);
         width: 100%;
         padding: 1.5em 0;
         margin-top: 4em;
         text-align: center;
       }
+     #copyrightDiv {
+        margin-left: 3em;
+      }
       #copyright {
+        text-align: right;
         font-size: 1.2em;
+        padding: 1em;
+      }
+      #hautpageDiv {
+        margin-right: 4em;
+      }
+      #hautpage img {
+        display: block;
+      }
+      #hautpage img:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
       }
 
       /* RESPONSIVE */
@@ -340,6 +359,9 @@
         #portfolio-container {
           padding: 0 1em;
         }
+          #copyright {
+        font-size: 0.95em;
+        }
       }
 
       @media (max-width: 480px) {
@@ -355,14 +377,14 @@
           font-size: 0.8em;
         }
           #copyright {
-            font-size: 0.95em;
+            font-size: 0.8em;
           }
       }
     </style>
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav id="navbar" class="navbar">
         <ul class="navbarul">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
@@ -938,10 +960,21 @@
       </div>
     </div>
 
+
     <!-- FOOTER -->
     <footer>
       <div id="copyrightDiv">
         <p id="copyright"></p>
+      </div>
+      <div id="hautpageDiv">
+        <a id="hautpage" href="#navbar" aria-label="Retour en haut de page">
+          <img
+            src="/icones/chevron-up-ffc412.svg"
+            alt=""
+            width="35"
+            height="35"
+          />
+        </a>
       </div>
     </footer>
     <script src="script.js"></script>

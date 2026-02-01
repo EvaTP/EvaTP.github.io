@@ -14,7 +14,7 @@
   <body>
     <header>
       <!-- NAV BAR DESKTOP -->
-      <nav class="navbar">
+      <nav id="navbar" class="navbar">
         <ul class="navbarul">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
@@ -251,19 +251,22 @@
           </div>
         </div>
 
-        <button
-          class="portfolio-button-mobile aside-mobile"
-          onclick="location.href = 'portfolio.html'"
-        >
-          Voir portfolio
-        </button>
-        <br />
-        <button
-          class="portfolio-button-mobile aside-mobile"
-          onclick="location.href = 'CV-Eva_Tharrats_alternance.pdf'"
-        >
-          Télécharger CV
-        </button>
+        <!-- BOUTONS MOBILE -->
+        <!-- Conteneur pour les boutons mobile -->
+        <div class="portfolio-buttons-container">
+          <button
+            class="portfolio-button-mobile"
+            onclick="location.href = 'portfolio.html'"
+          >
+            Voir portfolio
+          </button>
+          <button
+            class="portfolio-button-mobile"
+            onclick="location.href = 'CV-Eva_Tharrats_alternance.pdf'"
+          >
+            Télécharger CV
+          </button>
+        </div>
       </main>
 
       <!-- ASIDE DESKTOP -->
@@ -395,6 +398,16 @@
     <footer>
       <div id="copyrightDiv">
         <p id="copyright"></p>
+      </div>
+      <div id="hautpageDiv">
+        <a id="hautpage" href="#navbar" aria-label="Retour en haut de page">
+          <img
+            src="/icones/chevron-up-ffc412.svg"
+            alt=""
+            width="35"
+            height="35"
+          />
+        </a>
       </div>
     </footer>
 
