@@ -176,10 +176,14 @@ body {
   margin-top: 5rem;
   width: 23%; /* élargit la sidebar */
   padding: 15px;
-  /* background-color: #2d2d2d; */
+  /* background-color: #2d2d2d; ancienne couleur noire */
   background-color: #120f2a;
   box-shadow: 4px 8px 10px 5px grey;
   color: white;
+  height: fit-content; /* S'adapte au contenu */
+  align-self: flex-start; /* Empêche l'étirement vertical */
+  position: sticky; /* Optionnel : reste visible au scroll */
+  top: 100px; /* Optionnel : position sticky */
 }
 h1 {
   font-family: var(--font-family-body);
@@ -1280,7 +1284,18 @@ footer {
     letter-spacing: 0.1em;
   } */
 
-  /* Boutons mobile */
+  /* Boutons mobile "voir Portfolio" et "Télécharger CV" */
+
+  .portfolio-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 1em 0;
+    box-sizing: border-box;
+  }
 
   .portfolio-button-mobile {
     display: flex;
@@ -1437,7 +1452,19 @@ footer {
   #third {
     display: none;
   }
-  /* BOUTONS PORTFOLIO */
+
+  /* Boutons mobile "voir Portfolio" et "Télécharger CV" */
+  .portfolio-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 1em 0;
+    box-sizing: border-box;
+  }
+
   .portfolio-button-mobile {
     display: flex;
     justify-content: center;
@@ -1586,6 +1613,17 @@ footer {
   .aside-mobile li {
     max-width: 100%;
     word-wrap: break-word;
+  }
+  /* Boutons mobile "voir Portfolio" et "Télécharger CV" */
+  .portfolio-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 1em 0;
+    box-sizing: border-box;
   }
   .portfolio-button-mobile {
     display: flex;
