@@ -88,15 +88,6 @@ video {
   text-decoration: none;
 }
 
-/* POLICES */
-/* @font-face { /* utilisation d'une police css3 à l'aide d'une url 
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Roboto"), local("Roboto"), url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-} */
-
-/* <weight>: Use a value from 100 to 900 */
 .roboto-normal {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -186,13 +177,14 @@ body {
   top: 100px; /* Optionnel : position sticky */
 }
 h1 {
-  font-family: var(--font-family-body);
-  font-size: 4.5rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 800; /* ou 600 selon ton goût */
+  /* font-family: var(--font-family-body); */
+  font-size: 5.2rem;
   color: #fff;
-  /* margin: 20px 0 15px 0; */
-  margin: 1rem 0.5rem 1rem 3rem;
+  margin: 1.2rem 0.5rem 1.2rem 3rem;
   text-align: left;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 h2 {
   font-family: var(--font-family-body);
@@ -1366,7 +1358,7 @@ footer {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     /* margin: 10px 0; */
     text-align: center;
   }
@@ -1556,8 +1548,8 @@ footer {
     align-items: center;
   }
   h1 {
-    font-size: 2rem;
-    margin: 10px 0;
+    font-size: 2.5rem;
+    margin: 2px 0 12px 0;
   }
   #second {
     margin: 0 0.3em;
