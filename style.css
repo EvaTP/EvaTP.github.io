@@ -1,5 +1,4 @@
 /* RESET CSS */
-/* Nous cassons (reset) l'effet d'héritage pour toutes les balises susceptibles d'être concernées */
 html,
 body,
 div,
@@ -101,7 +100,6 @@ video {
   --secondary-color: #00ffff;
   --third-color: #7d1af0;
   --fourth-color: #f56263;
-
   --heading-color: #333;
   --light-color: #f9f9f9;
   --dark-color: #333;
@@ -110,7 +108,6 @@ video {
   --golden-color: #ffd700;
   --goldenrod-color: #daa520;
   --footer-color: rgba(128, 128, 128, 0.5);
-
   --btn-primary-bg: #333;
   --btn-secondary-bg: #00ffff;
   --btn-accent-bg: #ffc412;
@@ -118,31 +115,24 @@ video {
   --btn-secondary-hover-bg: #333;
   --btn-accent-hover-bg: #8584ff;
   --btn-disabled: #595959;
-
-  /* FONTS */
   --font-family-body: "Roboto", sans-serif;
   --font-family-captions: "Montserrat", sans-serif;
   --border-radius: 8px;
-
   --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 3px 10px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 5px 15px rgba(0, 0, 0, 0.2);
-
   --section-margin: 2rem 0;
   --container-width: 90%;
 }
 
-/* ******************** */
-/*    GENERAL SETTINGS  */
-/* ******************** */
-
+/* GENERAL SETTINGS */
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 body {
-  /* background-color: rgba(0, 0, 0, 0.8); */
   background-color: #120f2a;
   color: #fff;
   font-family: var(--font-family-body);
@@ -165,27 +155,26 @@ body {
 
 .aside-desktop {
   margin-top: 5rem;
-  width: 23%; /* élargit la sidebar */
+  width: 23%;
   padding: 15px;
-  /* background-color: #2d2d2d; ancienne couleur noire */
   background-color: #120f2a;
   box-shadow: 4px 8px 10px 5px grey;
   color: white;
-  height: fit-content; /* S'adapte au contenu */
-  align-self: flex-start; /* Empêche l'étirement vertical */
-  position: sticky; /* Optionnel : reste visible au scroll */
-  top: 100px; /* Optionnel : position sticky */
+  height: fit-content;
+  align-self: flex-start;
+  position: sticky;
+  top: 100px;
 }
+
 h1 {
   font-family: "Playfair Display", serif;
-  font-weight: 800; /* ou 600 selon ton goût */
-  /* font-family: var(--font-family-body); */
+  font-weight: 800;
   font-size: 5.2rem;
   color: #fff;
   margin: 1.2rem 0.5rem 1.2rem 3rem;
   text-align: left;
-  /* font-weight: bold; */
 }
+
 h2 {
   font-family: var(--font-family-body);
   font-size: 1.5em;
@@ -195,52 +184,43 @@ h2 {
   border-left: 7px solid cyan;
   text-align: left;
 }
+
 p {
   font-family: var(--font-family-body);
   font-size: 1.25em;
   color: white;
 }
+
 .ulaside li {
   list-style-type: disc;
   font-family: var(--font-family-body);
   color: white;
 }
+
 .flex-column {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
+
 .flex-row {
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
 }
-/* HEADER */
-/* header{
-    box-shadow: 3px 4px 8px grey;
-} */
 
 /* NAV BAR */
 .navbar {
   width: 100%;
-  /* margin: 0 auto 40px auto; */
   position: sticky;
   top: 0;
   padding: 30px 0 30px;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
-/* Cacher le bouton burger par défaut */
-/* .burger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color:var(--goldenrod-color);
-  cursor: pointer;
-} */
+
 .navbarul {
   list-style-type: none;
   padding: 0;
@@ -248,6 +228,7 @@ p {
   display: flex;
   justify-content: space-around;
 }
+
 .navbarul li {
   display: flex;
   align-items: center;
@@ -255,6 +236,7 @@ p {
   text-align: center;
   font-size: 1.25em;
 }
+
 .navbar li a {
   display: flex;
   align-items: center;
@@ -265,146 +247,44 @@ p {
   border-bottom: 2px solid transparent;
   padding: 10px 15px;
 }
+
 .navbar li a:hover {
   color: cyan;
   border-bottom: 2px solid var(--golden-color);
 }
+
 .navbar a.active {
   color: cyan;
   font-weight: bold;
 }
 
-/* icones LinkedIn et Github en svg */
 .linkedin-icon {
   width: 24px;
   height: 24px;
   fill: white;
   transition: fill 0.3s ease;
 }
-/* Change de couleur au survol du lien parent */
+
 .icon-link:hover .linkedin-icon {
   fill: var(--secondary-color);
 }
+
 .github-icon {
   width: 24px;
   height: 24px;
   fill: white;
   transition: fill 0.3s ease;
 }
+
 .icon-link:hover .github-icon {
   fill: var(--secondary-color);
 }
 
-/* NAV BAR MOBILE */
 .navbar-mobile {
   display: none;
 }
 
-/* .navbar-mobile i{
-    position: fixed;
-    z-index: 9999;
-    top: 9px;
-    right: 15px;
-    font-size: 3rem;
-    color: white;
-}
-.modal{
-    transition: top 0.9s;
-    background-color: #F92995;
-    height: 100vh;
-    position: fixed;
-    top: -100vh;
-    left: 0;
-    width: 100%;
-    opacity: 0.9;
-} */
-/* .navbar-mobile .navbar-mobile-list{
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.navbar-mobile .navbar-mobile-list a{
-    font-size: 5rem;
-    font-weight: 800;
-    color: #1E2337;
-    padding: 2rem;
-}
-.change-modal{
-    top:0
-} */
-
-/* ******************** */
 /* PAGE INDEX - ACCUEIL */
-/* ******************** */
-
-/* SECTION 1  WARNINGS */
-/* #warning1, #warning3{
-    display: block;
-    width: 100%;
-    border-bottom: 8px solid blue;
-    border-top: 8px solid green;
-    background-color: crimson;
-    font-size: 1.5em;
-    line-height: 1.3;
-    text-align: center;
-    color: #000;
-    padding : 10px 15px;
-    animation-name: defilement-ltr;
-    animation-duration: 18s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 1em;
-}
-#warning1{
-    margin-top: 1em;
-    font-size: 2.5em;
-}
-#warning2{
-    display: block;
-    width: 100%;
-    border-bottom: 8px solid cyan;
-    border-top: 8px solid cyan;
-    background-color: goldenrod;
-    font-size: 2em;
-    font-style: italic;
-    line-height: 1.3;
-    text-align: center;
-    color: #000;
-    padding : 10px 15px;
-    animation-name: defilement-rtl;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 1em;
-}
-
-@keyframes defilement-ltr {
-    0% {
-        transform : translateX(-100%);
-      }
-      100% {
-        transform : translateX(100%);
-      }
-  }
-
-  @keyframes defilement-rtl {
-    0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform : translateX(-100%);
-      }
-  } */
-
-/* SECTION 2 A PROPOS */
-/* Développeuse... alternance */
-
 .intro-box {
   margin-left: 6rem;
   margin-top: 1.5rem;
@@ -418,7 +298,6 @@ p {
   margin-bottom: 2rem;
 }
 
-/* ligne verticale gauche */
 .intro-top::before {
   content: "";
   position: absolute;
@@ -429,7 +308,6 @@ p {
   background-color: cyan;
 }
 
-/* ligne horizontale haute (courte) */
 .intro-top::after {
   content: "";
   position: absolute;
@@ -446,7 +324,6 @@ p {
   text-align: right;
 }
 
-/* ligne verticale droite */
 .intro-bottom::before {
   content: "";
   position: absolute;
@@ -457,7 +334,6 @@ p {
   background-color: cyan;
 }
 
-/* ligne horizontale basse (courte) */
 .intro-bottom::after {
   content: "";
   position: absolute;
@@ -476,15 +352,18 @@ p {
   transition: opacity 0.5s ease;
   padding: 2rem;
 }
+
 .hidden {
   display: none;
 }
+
 .show {
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: flex-start;
 }
+
 #apropostitre h2,
 #contacttitre h2 {
   font-size: 3em;
@@ -492,44 +371,51 @@ p {
   margin-bottom: 1em;
   margin-left: 1em;
 }
+
 #second > p:first-of-type {
   font-size: 2.5em;
   text-align: left;
   margin: 0.25em 0 1em 0.5em;
   padding: 0.5em;
-  /* color: var(--light-color); */
   color: white;
 }
+
 #second p {
   font-size: 1.25em;
   text-align: left;
   margin: 1em 0 1em 0;
 }
+
 #second p span {
   color: white;
   font-style: italic;
   font-size: 1em;
   text-align: left;
 }
+
 .apropos.flex-row {
   align-items: flex-start;
   margin-bottom: 0.5em;
 }
+
 #photo-desktop {
   width: 15%;
   padding: 0.2em;
   margin-right: 20px;
   margin-top: 1em;
 }
+
 #photo-desktop img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0;
 }
+
 #photo-mobile {
   display: none;
 }
+
 #texteapropos {
   width: 75%;
   font-size: 1.25em;
@@ -544,62 +430,61 @@ p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
+
 #texteapropos p span {
   color: pink;
   font-weight: bold;
 }
+
 #texteapropos p span:last-child {
   color: var(--goldenrod-color);
   font-size: 1.25em;
 }
+
 #second p span.golden {
   color: var(--golden-color);
   font-weight: bold;
   font-size: 1.25em;
 }
+
 span.golden {
   color: goldenrod;
-  /* color: var(--goldenrod-color); */
 }
 
-/* #contactemail {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  gap: 1.5em;
-  background-color: cyan;
-  color: black;
-  font-size: 1.75em;
-  letter-spacing: 0.25em;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0 4em;
-  box-shadow : 3px 4px 10px 5px grey;
-} */
-
 /* SECTION 3 LIENS PORTFOLIO & CV */
-/* Section principale : les 2 blocs CÔTE À CÔTE */
 #third {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   gap: 4em;
+  /* flex: 1; */
   margin: 2em auto;
   width: 100%;
   max-width: 1200px;
 }
-/* Chaque bloc (portfolio et CV) en colonne */
+
+.buttons-desktop-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2em;
+  gap: 4em;
+  flex: 1;
+  max-width: 450px;
+}
+
 #third .bloc-action {
   display: flex;
-  flex-direction: column; /* Image SOUS le titre */
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Alignement en haut */
+  justify-content: flex-start;
   text-align: center;
-  gap: 0.3em; /* Espace entre le h2 et l'image */
-  flex: 1; /* Les deux blocs prennent la même largeur */
+  gap: 0.3em;
+  width: 100%;
+  /* flex: 1; */
 }
+
 #third h2 {
   font-size: 2.5em;
   margin-right: 1em;
@@ -607,10 +492,9 @@ span.golden {
   padding-left: 0.5em;
   display: flex;
   align-items: center;
-  gap: 0.5em; /* Espace entre l'icône et le texte */
+  gap: 0.5em;
 }
 
-/* Centrer uniquement le bouton dans son propre conteneur */
 .action-button {
   display: flex;
   justify-content: center;
@@ -630,6 +514,7 @@ span.golden {
   background: transparent;
   border: none;
 }
+
 .action-button:hover {
   background-color: #00cccc;
   transform: scale(1.1);
@@ -648,25 +533,28 @@ span.golden {
 .titre-container {
   position: relative;
 }
+
 .flechemauve {
   position: absolute;
   z-index: 2;
   right: 10px;
   top: 0.1em;
 }
+
 .aside-section {
   margin-bottom: 2em;
   margin-top: 2em;
 }
+
 .aside-section h2 {
   margin-left: 0;
   margin-bottom: 1em;
   margin-top: 0.5em;
   font-size: 2.5em;
   display: flex;
-  flex-direction: row; /* Alignement horizontal */
-  align-items: center; /* Centre verticalement l'icône et le texte */
-  gap: 0.5em; /* Espacement entre l'image et le texte */
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .aside-section h4 {
@@ -690,6 +578,7 @@ span.golden {
 .aside-mobile {
   display: none;
 }
+
 .aside-mobile h3 {
   font-size: 2em;
   border-left: 5px solid cyan;
@@ -698,22 +587,18 @@ span.golden {
   padding-left: 0.5em;
   color: white;
 }
+
 .aside-mobile ul {
   margin-left: 1.5em;
   font-size: 1.5em;
   line-height: 1.5em;
   color: white;
 }
+
 .portfolio-buttons-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 1em;
-  margin: 1em 0;
-  box-sizing: border-box;
+  display: none;
 }
+
 .portfolio-button-mobile {
   display: none;
   width: 70%;
@@ -729,6 +614,7 @@ span.golden {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
 .portfolio-button-mobile:hover {
   background-color: #00cccc;
   transform: scale(1.1);
@@ -736,7 +622,7 @@ span.golden {
   border: 2px solid #000;
 }
 
-/* **** CONTACT **** */
+/* CONTACT */
 .contact-block {
   position: relative;
   padding: 20px 40px;
@@ -751,12 +637,11 @@ span.golden {
   transition: all 0.8s ease-out;
 }
 
-/* coins supérieurs */
 .contact-block::before,
 .contact-block::after {
   content: "";
   position: absolute;
-  width: 40px; /* longueur des coins */
+  width: 40px;
   height: 40px;
   border: 6px solid #ffc412;
   box-sizing: border-box;
@@ -776,7 +661,6 @@ span.golden {
   border-bottom: none;
 }
 
-/* coins inférieurs avec pseudo-éléments internes simples */
 .contact-block p::before,
 .contact-block p::after {
   content: "";
@@ -801,7 +685,6 @@ span.golden {
   border-top: none;
 }
 
-/* Animation */
 .contact-block.visible {
   opacity: 1;
   transform: translateY(0);
@@ -811,34 +694,65 @@ button {
   background-color: transparent;
   border: none;
 }
-/* button{
-    width : 16rem;
-    font-family: "Roboto";
-    background-color : slateblue;
-    color : white;
-    font-size : 1.5em;
-    align-self:center;
-    padding: 1.5rem;
-    border-radius: 4px;
-    transition: ease 1s;
-    margin-top: 1em; /* Ajout de marge en haut pour l'espacement
-} */
 
-/* button img:hover{
-    box-shadow : 7px 7px 10px 5px cyan;
-    background-color: rgb(44, 244, 244);
-    color: #000;
-    font-size: 1.75em;
-    opacity: 0.7;
-}  */
-/* button:active {
-    background-color: cyan;
-    box-shadow: 0 5px #666;
-    transform: translateY(10px);
-  } */
+/* SECTION BOUTONS + VIDÉO */
+.buttons-video-section {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 2em auto;
+  /* width: 100%; */
+  padding: 2em 1em;
+  box-sizing: border-box;
+}
 
-/* SECTION 6 FOOTER */
+.buttons-video-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.buttons-column {
+  /* display: flex; */
+  display: none; /* Caché en desktop */
+  flex-direction: column;
+  gap: 1.5em;
+  flex: 1;
+  max-width: 400px;
+}
+
+.video-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  max-width: 500px;
+  /* margin: 0 auto; */
+}
+.video-desktop {
+  display: flex;
+}
+.video-mobile {
+  display: none;
+}
+
+.video-column iframe {
+  width: 100%;
+  max-width: 415px;
+  height: 615px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* FOOTER */
 footer {
   display: flex;
   justify-content: space-around;
@@ -849,14 +763,17 @@ footer {
   padding: 0.4em 0;
   margin-top: 3em;
 }
+
 #copyrightDiv {
   margin-left: 3em;
 }
+
 #copyright {
   text-align: right;
   font-size: 1.2em;
   padding: 1em;
 }
+
 #hautpageDiv {
   margin-right: 4em;
 }
@@ -865,47 +782,13 @@ footer {
   display: block;
   transition: transform 0.3s ease;
 }
+
 #hautpage img:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-/* OLD Caroussel stack */
-/* #carouselstack{
-    display: block; 
-    width: 100%;
-    font-size: 1em;
-    line-height: 1.3; 
-    text-align: center;
-    color: #fff; 
-    padding : 10px 5px;
-    animation-name: defilement-rtl;
-    animation-duration: 40s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    position: relative;
-    overflow: hidden;
-}
-@keyframes defilement-rtl {
-    0% {
-        transform: translateX(100%);
-        right: -80px;
-      }
-      100% {
-        transform : translateX(-100%);
-        right: 80px;
-      }
-  }
-  #iconescarousel{
-    color : #fff;
-    font-style: normal;
-  } */
-
-/* ******************** */
-/* PAGE PORTFOLIO       */
-/* ******************** */
-
-/* background-image */
+/* PAGE PORTFOLIO */
 .bg-image {
   background-size: cover;
   background-position: center center;
@@ -915,16 +798,19 @@ footer {
   text-align: center;
   background-color: #2d2d2d;
 }
+
 .paragrapheBanniere {
   font-size: 2em;
 }
+
 #portfolio-container {
-  margin: 2em auto 1em auto;
+  margin: 1em auto;
   display: flex;
   flex-direction: column;
-  max-width: 1400px; /* Définit une largeur maximale p */
-  width: 95%; /* Assure qu'il prenne 95% de la largeur disponible sur les petits écrans */
+  max-width: 1400px;
+  width: 95%;
 }
+
 .h2portfolio {
   font-family: "Roboto";
   font-size: 2.75em;
@@ -934,21 +820,25 @@ footer {
   border-left: 7px solid cyan;
   text-align: left;
 }
+
 .h2portfolio span {
   color: pink;
   font-weight: bold;
 }
+
 #git-next {
   margin-top: -1em;
 }
-/* styles mosaique */
+
 #mosaique-ada {
   margin-left: 2em;
 }
+
 #mosaique-ifocop {
   margin: 0 2em 2em 3em;
   gap: 6em;
 }
+
 .mosaique {
   display: flex;
   flex-direction: row;
@@ -959,6 +849,7 @@ footer {
   max-width: 1200px;
   padding: 0 1em;
 }
+
 .mosaique .row {
   display: flex;
   flex-wrap: wrap;
@@ -967,18 +858,12 @@ footer {
   width: 100%;
   padding: 0 2em;
 }
-/* .mosaique .row { */
-/* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    padding: 1.5em; 
-}*/
+
 .mosaique .column,
 .mosaique .column-ifocop {
-  flex: 1 1 300px; /* Chaque colonne prendra une part égale de l'espace disponible */
-  min-width: 360px; /* Largeur minimale pour éviter qu'elles ne soient trop petites */
-  max-width: 490px; /* Largeur maximale pour qu'elles ne soient pas trop grandes */
+  flex: 1 1 300px;
+  min-width: 360px;
+  max-width: 490px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -991,49 +876,27 @@ footer {
     box-shadow 0.3s ease;
 }
 
-/* Ajoute un effet au survol de la tuile */
 .mosaique .column:hover,
 .mosaique .column-ifocop:hover {
-  transform: translateY(-5px); /* Légère élévation */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* .mosaique .column {
-  flex: 1;
-  display: flex;
-  align-items: stretch;
-  padding: 1em;
-  margin: 0;
-  min-height: clamp(200px, 30vh, 400px);
-  width: 90%;
-}
-.mosaique .column-ifocop {
-  flex: 1;
-  display: flex;
-  align-items: stretch;
-  padding: 1em;
-  margin: 0;
-  min-height: clamp(200px, 30vh, 400px);
-  width: 100%;
-} */
 .column {
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
+
 .mosaique .image-container {
   flex: 1;
   position: relative;
   overflow: hidden;
-  /* box-shadow: var(--shadow-xl);
-  transition: transform 0.3s ease; */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   width: 100%;
-  /* min-height: clamp(300px, 40vh, 400px); */
-  /* height: 100%; */
 }
+
 .image-container img {
   height: 250px;
   flex: 1;
@@ -1042,12 +905,11 @@ footer {
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-/* Animation image */
+
 .image-container:hover img {
   transform: scale(1.05);
 }
 
-/* Cartouche techno */
 .tech-tag {
   position: absolute;
   top: 25px;
@@ -1064,7 +926,7 @@ footer {
     transform 0.3s ease;
   z-index: 2;
 }
-/* Apparition uniquement au survol */
+
 .image-container:hover .tech-tag {
   opacity: 1;
   transform: translateY(0);
@@ -1077,12 +939,9 @@ footer {
   margin-top: 0.75em;
   padding: 10px;
   color: white;
-  flex-grow: 1; /* Permet au titre de prendre l'espace restant s'il est plus long, aidant l'uniformité */
-  /* display: flex;  Pour centrer le texte si nécessaire */
-  /* align-items: center;  Centre verticalement le texte */
-  /* justify-content: center;  Centre horizontalement le texte */
-  word-break: break-word; /* Évite que le texte ne dépasse si les mots sont trop longs */
-  line-height: 1.3; /* Améliore la lisibilité */
+  flex-grow: 1;
+  word-break: break-word;
+  line-height: 1.3;
 }
 
 .description-projet {
@@ -1092,11 +951,10 @@ footer {
   margin: 0 1em 0.5em 1em;
   padding: 10px;
   color: #ddd;
-  flex-grow: 1; /* Permet à la description de prendre l'espace restant s'il est plus long, aidant l'uniformité */
-  line-height: 1.4; /* Améliore la lisibilité */
+  flex-grow: 1;
+  line-height: 1.4;
 }
 
-/* GITHUB */
 .github-button-container {
   text-align: center;
   margin-top: 15px;
@@ -1107,7 +965,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #000; /* noir GitHub */
+  background-color: #000;
   color: #fff;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
@@ -1129,13 +987,9 @@ footer {
 .github-button img {
   width: 30px;
   height: 30px;
-  /*filter: invert(1);  rend l’icône blanche */
 }
 
-/* ******************** */
-/*       PAGE CV        */
-/* ******************** */
-
+/* PAGE CV */
 #cv {
   display: flex;
   flex-direction: row;
@@ -1144,32 +998,32 @@ footer {
   text-align: center;
   margin: 3em;
 }
+
 #download {
   display: flex;
   flex-direction: column;
   text-align: center;
   margin: 3em;
 }
+
 #download img {
   width: 140px;
   height: 140px;
 }
+
 #download a {
   margin-top: 1.5em;
   color: white;
   font-family: var(--font-family-body);
   font-weight: bold;
 }
+
 #download a:hover {
   text-decoration: underline;
 }
 
-/* ****************************** */
-/*  RESPONSIVE — nouvelle version */
-/* ****************************** */
-
+/* RESPONSIVE */
 /* TABLETTES & PETITS LAPTOPS (768px - 1024px) */
-/* ******************************************* */
 @media (max-width: 1024px) {
   .container {
     display: flex;
@@ -1179,6 +1033,7 @@ footer {
     width: 100%;
     box-sizing: border-box;
   }
+
   .main-content {
     width: 100%;
     margin-right: 0;
@@ -1188,15 +1043,22 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-  /* Cacher la sidebar desktop */
+
   .aside-desktop {
     display: none;
   }
-  /* Cacher les icones "Voir portfolio" et "Télécharger CV" */
+
   #third {
     display: none;
   }
-  /* Afficher la version mobile */
+
+  .video-desktop {
+    display: none;
+  }
+  .video-mobile {
+    display: flex;
+  }
+
   .aside-mobile {
     display: flex;
     flex-direction: column;
@@ -1208,6 +1070,7 @@ footer {
     padding: 2em 1em;
     box-sizing: border-box;
   }
+
   .aside-mobile h3 {
     font-size: 2em;
     border-left: 5px solid cyan;
@@ -1218,6 +1081,7 @@ footer {
     width: 100%;
     box-sizing: border-box;
   }
+
   .aside-mobile ul {
     margin-left: 2em;
     font-size: 1.3em;
@@ -1229,19 +1093,22 @@ footer {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+
   .aside-mobile li {
     max-width: 100%;
     word-wrap: break-word;
   }
-  /* Texte à propos */
+
   .apropos .flex-row {
     flex-direction: column;
     align-items: center;
     margin-bottom: 2em;
   }
+
   #photo-desktop {
     display: none;
   }
+
   #photo-mobile {
     display: flex;
     justify-content: center;
@@ -1249,10 +1116,12 @@ footer {
     width: 100%;
     margin: 1em 0;
   }
+
   #photo-mobile img {
     max-width: 50%;
     height: auto;
   }
+
   #texteapropos {
     width: 100%;
     padding: 1.5em;
@@ -1262,31 +1131,16 @@ footer {
     box-sizing: border-box;
     word-wrap: break-word;
   }
+
   #apropostitre h2 {
     font-size: 2.5em;
     margin: 1em 0 0.5em 0;
     text-align: center;
   }
-  /* #contactemail {
-    flex-direction: column;
-    width: 100%;
-    gap: 1em;
-    font-size: 1.5em;
-    margin: 2em auto;
-    letter-spacing: 0.1em;
-  } */
 
-  /* Boutons mobile "voir Portfolio" et "Télécharger CV" */
-
-  .portfolio-buttons-container {
+  /* Afficher les boutons en mobile */
+  .buttons-column {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-    margin: 1em 0;
-    box-sizing: border-box;
   }
 
   .portfolio-button-mobile {
@@ -1308,36 +1162,69 @@ footer {
     border: none;
     box-sizing: border-box;
   }
+
   .portfolio-button-mobile:hover {
     transform: scale(1.05);
+  }
+
+  /* ✅ En colonne sur mobile/tablette */
+  .buttons-video-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+  }
+  /* Tout en colonne */
+  .buttons-video-section {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .buttons-column {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .video-column {
+    width: 100%;
+  }
+
+  /* Afficher les tech tags en permanence sur mobile/tablette */
+  .tech-tag {
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 0.9em;
+    padding: 6px 10px;
+    background-color: rgba(0, 0, 0, 0.9);
   }
 }
 
 /* MOBILES LARGES (entre 500px et 767px max) */
-/* ***************************************** */
 @media (min-width: 500px) and (max-width: 767px) {
   body {
     width: 100%;
     padding: 0;
     box-sizing: border-box;
   }
+
   .container {
     padding: 0.5em;
     box-sizing: border-box;
   }
 
-  /* NAVBAR */
   .navbarul {
     flex-direction: row;
     align-items: center;
     gap: 1em;
   }
+
   .navbarul li a {
     font-size: 1.1em;
   }
+
   .navbar {
     padding: 25px 10px;
   }
+
   .main-content {
     width: 100%;
     margin-right: 0;
@@ -1348,8 +1235,6 @@ footer {
     align-items: center;
   }
 
-  /* TITRES & TEXTES */
-
   .intro-box {
     font-size: 1.5em;
     margin-left: 0;
@@ -1359,30 +1244,33 @@ footer {
 
   h1 {
     font-size: 3rem;
-    /* margin: 10px 0; */
     text-align: center;
   }
+
   #second {
     margin: 0 0.5em;
   }
+
   #second > p:first-of-type {
     font-size: 1.5em;
     padding: 0.3em;
     margin: 0.5em 0;
   }
+
   #second p {
     font-size: 1.1em;
     margin: 0.8em 0;
   }
+
   #second p span {
     font-size: 0.9em;
   }
 
-  /* SECTION À PROPOS */
   #apropostitre h2 {
     font-size: 2em;
     margin: 1em 0 0.5em 0;
   }
+
   .apropos.flex-row {
     flex-direction: column;
     align-items: center;
@@ -1390,19 +1278,23 @@ footer {
     padding: 0 1.5em;
     box-sizing: border-box;
   }
+
   #photo-desktop {
     display: none;
   }
+
   #photo-mobile {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 1em 0;
   }
+
   #photo-mobile img {
     max-width: 60%;
     height: auto;
   }
+
   #texteapropos {
     width: 100%;
     padding: 1em;
@@ -1413,7 +1305,6 @@ footer {
     word-wrap: break-word;
   }
 
-  /* Aside mobile */
   .aside-mobile {
     display: flex;
     flex-direction: column;
@@ -1424,10 +1315,12 @@ footer {
     margin-top: 0.2em;
     box-sizing: border-box;
   }
+
   .aside-mobile h3 {
     font-size: 1.8em;
     margin: 1em 0 0.5em 0;
   }
+
   .aside-mobile ul {
     font-size: 1.2em;
     line-height: 1.7em;
@@ -1436,25 +1329,14 @@ footer {
     box-sizing: border-box;
     word-wrap: break-word;
   }
+
   .aside-mobile li {
     max-width: 100%;
     word-wrap: break-word;
   }
-  /* Cacher les icones "Voir portfolio" et "Télécharger CV" */
+
   #third {
     display: none;
-  }
-
-  /* Boutons mobile "voir Portfolio" et "Télécharger CV" */
-  .portfolio-buttons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-    margin: 1em 0;
-    box-sizing: border-box;
   }
 
   .portfolio-button-mobile {
@@ -1471,25 +1353,24 @@ footer {
     box-sizing: border-box;
   }
 
-  /* FOOTER */
   footer {
     width: 100%;
     padding: 0.5em 0;
     margin-top: 2em;
   }
+
   #copyright {
     font-size: 0.95em;
   }
-  /* BANNIÈRE */
+
   .bg-image {
     padding: 10px 0;
   }
+
   .bg-image p .paragrapheBanniere {
     display: none;
   }
 }
-
-/* ****************************** */
 
 @media (max-width: 767px) {
   .intro-box {
@@ -1498,6 +1379,7 @@ footer {
     margin-right: 0.25em;
     max-width: 100%;
   }
+
   .intro-top,
   .intro-bottom {
     padding: 1rem;
@@ -1508,20 +1390,20 @@ footer {
     width: 25%;
   }
 }
-/* ****************************** */
-/* PETITS MOBILES (jusqu'à 499px) */
-/* ****************************** */
 
+/* PETITS MOBILES (jusqu'à 499px) */
 @media (max-width: 499px) {
   body {
     width: 100%;
     padding: 0;
     box-sizing: border-box;
   }
+
   .container {
     padding: 0.5em;
     box-sizing: border-box;
   }
+
   .navbarul {
     display: flex;
     flex-direction: row;
@@ -1530,14 +1412,17 @@ footer {
     gap: 1em;
     padding: 5px;
   }
+
   .navbarul li a {
     font-size: 1em;
     padding: 8px 10px;
     text-align: center;
   }
+
   .navbar {
     padding: 30px 0;
   }
+
   .main-content {
     width: 100%;
     margin-right: 0;
@@ -1547,36 +1432,45 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+
   h1 {
     font-size: 2.5rem;
     margin: 2px 0 12px 0;
   }
+
   #second {
     margin: 0 0.3em;
   }
+
   #second > p:first-of-type {
     font-size: 1.3em;
     padding: 0.3em;
   }
+
   #second p {
     font-size: 1em;
     margin: 0.5em 0;
   }
+
   #second p span {
     font-size: 0.85em;
   }
+
   #apropostitre h2 {
     font-size: 1.8em;
     margin: 1em 0 0.5em 0;
   }
+
   #photo-mobile {
     display: flex;
     justify-content: center;
     margin: 1em 0;
   }
+
   #photo-mobile img {
     max-width: 70%;
   }
+
   #texteapropos {
     width: 100%;
     padding: 0.8em;
@@ -1585,15 +1479,18 @@ footer {
     box-sizing: border-box;
     word-wrap: break-word;
   }
+
   .aside-mobile {
     padding: 1em;
     width: 100%;
     box-sizing: border-box;
   }
+
   .aside-mobile h3 {
     font-size: 1.5em;
     margin: 0.8em 0 0.3em 0;
   }
+
   .aside-mobile ul {
     font-size: 1.1em;
     line-height: 1.6em;
@@ -1602,21 +1499,12 @@ footer {
     box-sizing: border-box;
     word-wrap: break-word;
   }
+
   .aside-mobile li {
     max-width: 100%;
     word-wrap: break-word;
   }
-  /* Boutons mobile "voir Portfolio" et "Télécharger CV" */
-  .portfolio-buttons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-    margin: 1em 0;
-    box-sizing: border-box;
-  }
+
   .portfolio-button-mobile {
     display: flex;
     justify-content: center;
@@ -1628,34 +1516,32 @@ footer {
     box-sizing: border-box;
     text-align: center;
   }
+
   footer {
     width: 100%;
     padding: 0.5em 0;
   }
+
   #copyright {
     font-size: 0.8em;
   }
+
   .bg-image {
     padding: 10px 0;
   }
+
   .paragrapheBanniere {
     display: none;
   }
 }
 
-/* ===================================== */
-/* FIXES SUPPLÉMENTAIRES                 */
-/* ===================================== */
-
-/* Éviter que les images débordent */
-
+/* FIXES SUPPLÉMENTAIRES */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Éviter le débordement du texte */
 p,
 li,
 h1,
@@ -1665,18 +1551,15 @@ h3 {
   overflow-wrap: break-word;
 }
 
-/* Uniformiser les boutons */
 button {
   font-family: var(--font-family-body);
 }
 
-/* S'assurer que les liens dans les boutons fonctionnent */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Centrer les boutons mobiles */
 .aside-mobile a {
   display: flex;
   justify-content: center;

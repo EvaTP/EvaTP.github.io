@@ -145,8 +145,8 @@
                 Format : 4 jours en entreprise / 1 jour à l'école.
                 <br /><br />
                 Je serais ravie d’échanger avec vous pour vous présenter mon
-                parcours et discuter de la manière dont je pourrais contribuer
-                concrètement à vos projets.
+                parcours et discuter de la manière dont je pourrais contribuer à
+                vos projets.
               </p>
               <br /><br />
               <div class="contact-block">
@@ -165,34 +165,61 @@
           </div>
         </section>
 
-        <!-- Portfolio & CV -->
+        <!-- Portfolio & CV + VIDEO -->
         <section
           id="third"
           data-aos="fade-right"
           data-aos-duration="1500"
           data-aos-easing="ease-out-cubic"
         >
-          <!-- Bloc Portfolio -->
-          <div class="bloc-action">
-            <h2>
-              <img
-                src="icones/deux-chevrons-rose-cyan.png"
-                alt="chevrons"
-                width="25"
-                height="15"
-              />
-              Voir portfolio
-            </h2>
-            <button
-              class="action-button"
-              onclick="window.open('portfolio.html', '_blank')"
-            >
-              <img src="img_portfolio/start.png" alt="bouton-portfolio" />
-            </button>
+          <!-- Colonne 1 : Boutons -->
+          <div class="buttons-desktop-column">
+            <!-- Bloc Portfolio -->
+            <div class="bloc-action">
+              <h2>
+                <img
+                  src="icones/deux-chevrons-rose-cyan.png"
+                  alt="chevrons"
+                  width="25"
+                  height="15"
+                />
+                Voir portfolio
+              </h2>
+              <button
+                class="action-button"
+                onclick="window.open('portfolio.html', '_blank')"
+              >
+                <img src="img_portfolio/start.png" alt="bouton-portfolio" />
+              </button>
+            </div>
+
+            <!-- Bloc CV  -->
+            <div class="bloc-action">
+              <h2>
+                <img
+                  src="icones/deux-chevrons-rose-cyan.png"
+                  alt="chevrons"
+                  width="25"
+                  height="15"
+                />
+                Télécharger CV
+              </h2>
+              <button
+                class="action-button"
+                onclick="
+                  window.open('CV-Eva_Tharrats_alternance.pdf', '_blank')
+                "
+              >
+                <img
+                  src="img_portfolio/download-CV.png"
+                  alt="bouton-download-cv"
+                />
+              </button>
+            </div>
           </div>
 
-          <!-- Bloc CV  -->
-          <div class="bloc-action">
+          <!-- Colonne 2 : Vidéo DESKTOP-->
+          <div class="video-column video-desktop">
             <h2>
               <img
                 src="icones/deux-chevrons-rose-cyan.png"
@@ -200,17 +227,16 @@
                 width="25"
                 height="15"
               />
-              Télécharger CV
+              Vidéo LinkedIn
             </h2>
-            <button
-              class="action-button"
-              onclick="window.open('CV-Eva_Tharrats_alternance.pdf', '_blank')"
-            >
-              <img
-                src="img_portfolio/download-CV.png"
-                alt="bouton-download-cv"
-              />
-            </button>
+            <iframe
+              src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7432819287259607041"
+              height="625"
+              width="425"
+              frameborder="0"
+              allowfullscreen=""
+              title="Post intégré"
+            ></iframe>
           </div>
         </section>
 
@@ -230,7 +256,7 @@
 
             <h3>Compétences Back-end</h3>
             <ul class="ulaside">
-              <li>SGBDR</li>
+              <li>Bases de données</li>
               <li>Node.js</li>
               <li>PHP</li>
               <li>Langage SQL</li>
@@ -256,22 +282,39 @@
           </div>
         </div>
 
-        <!-- BOUTONS MOBILE -->
-        <!-- Conteneur pour les boutons mobile -->
-        <div class="portfolio-buttons-container">
-          <button
-            class="portfolio-button-mobile"
-            onclick="location.href = 'portfolio.html'"
-          >
-            Voir portfolio
-          </button>
-          <button
-            class="portfolio-button-mobile"
-            onclick="location.href = 'CV-Eva_Tharrats_alternance.pdf'"
-          >
-            Télécharger CV
-          </button>
-        </div>
+        <!-- SECTION BOUTONS + VIDÉO (Mobile uniquement) -->
+        <section class="buttons-video-section">
+          <div class="buttons-video-container">
+            <!-- Colonne Boutons -->
+            <div class="buttons-column">
+              <button
+                class="portfolio-button-mobile"
+                onclick="location.href = 'portfolio.html'"
+              >
+                Voir portfolio
+              </button>
+              <button
+                class="portfolio-button-mobile"
+                onclick="location.href = 'CV-Eva_Tharrats_alternance.pdf'"
+              >
+                Télécharger CV
+              </button>
+            </div>
+
+            <!-- Colonne Vidéo  -->
+            <div class="video-column video-mobile">
+              <h3 class="video-title">Vidéo LinkedIn</h3>
+              <iframe
+                src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7432819287259607041"
+                height="625"
+                width="425"
+                frameborder="0"
+                allowfullscreen=""
+                title="Post intégré"
+              ></iframe>
+            </div>
+          </div>
+        </section>
       </main>
 
       <!-- ASIDE DESKTOP -->
@@ -325,7 +368,7 @@
             </div>
             <div>
               <ul class="ulaside">
-                <li>SGBDR</li>
+                <li>Bases de données</li>
                 <li>Node.js</li>
                 <li>PHP</li>
                 <li>Langage SQL</li>
