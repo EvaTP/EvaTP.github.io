@@ -455,71 +455,66 @@ span.golden {
 #third {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 4em;
-  /* flex: 1; */
-  margin: 2em auto;
+  align-items: center; /* Aligne verticalement au centre */
+  justify-content: center; /* Centre les boutons horizontalement sur la page */
+  gap: 10em; /* Crée un bel espace fixe entre Portfolio et CV */
+  margin: 3em auto;
   width: 100%;
   max-width: 1200px;
 }
 
 .buttons-desktop-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  padding-top: 2em;
-  gap: 4em;
-  flex: 1;
-  max-width: 450px;
+  align-items: center;
+  gap: 10em; /* Contrôle l'espace entre vos deux blocs */
+  width: 100%;
 }
 
 #third .bloc-action {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   text-align: center;
   gap: 0.3em;
-  width: 100%;
-  /* flex: 1; */
+  width: auto; /* Fini le width 100% qui étalait tout */
 }
 
 #third h2 {
   font-size: 2.5em;
-  margin-right: 1em;
   border-left: 7px solid cyan;
   padding-left: 0.5em;
   display: flex;
   align-items: center;
   gap: 0.5em;
+  margin: 0 0 0.5em 0; /* Nettoyage des marges */
 }
 
 .action-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35%;
-  margin-top: -2em;
-  background-color: var(--primary-color);
-  color: #000;
-  font-size: 1.6em;
-  font-weight: bold;
-  margin: 0.5em 3em;
-  padding: 1em;
-  letter-spacing: 3px;
-  box-shadow: 3px 4px 10px 5px grey;
+  /* width: clamp(180px, 22vw, 280px); */
+  width: 180px; /*  donne une largeur fixe et propre au bouton */
+  height: auto;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   transition: transform 0.3s ease;
-  background: transparent;
-  border: none;
+  padding: 0; /* Supprime le padding qui déformait l'image */
+  margin: 0 auto; /* Centre le bouton sous le titre H2 */
 }
 
 .action-button:hover {
-  background-color: #00cccc;
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
-  border: 2px solid #000;
+}
+
+/* On cible l'image à l'intérieur pour qu'elle prenne tout le bouton proprement */
+.action-button img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .action-button img {
@@ -717,6 +712,7 @@ button {
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .buttons-column {
@@ -1198,8 +1194,8 @@ footer {
   }
 }
 
-/* MOBILES LARGES (entre 500px et 767px max) */
-@media (min-width: 500px) and (max-width: 767px) {
+/* MOBILES LARGES (entre 500px et 1200px max) */
+@media (min-width: 500px) and (max-width: 1200px) {
   body {
     width: 100%;
     padding: 0;
@@ -1344,6 +1340,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 90%;
+    max-width: 450px;
     font-size: 1.25em;
     text-align: center;
     padding: 0.9em 0;
@@ -1370,9 +1367,47 @@ footer {
   .bg-image p .paragrapheBanniere {
     display: none;
   }
+
+  /* --- AJOUTS RE-CADRAGE BOUTONS MOBILE --- */
+  .buttons-video-section,
+  .buttons-video-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+  }
+
+  .buttons-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+  }
+
+  /* --- AJOUTS RE-CADRAGE BOUTONS MOBILE (FORMAT MOYEN) --- */
+  .buttons-video-section,
+  .buttons-video-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+  }
+
+  .buttons-column {
+    display: flex; /* Redéfinit le display: none du desktop */
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    gap: 0;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .intro-box {
     font-size: 1.5em;
     margin-left: 0;
@@ -1532,6 +1567,43 @@ footer {
 
   .paragrapheBanniere {
     display: none;
+  }
+
+  /* --- AJOUTS RE-CADRAGE BOUTONS PETITS MOBILE --- */
+  .buttons-video-section,
+  .buttons-video-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+  }
+
+  .buttons-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+  }
+}
+
+/* --- FORMAT TABLETTES & ÉCRANS INTERMÉDIAIRES (ex: 978px) --- */
+@media (min-width: 768px) and (max-width: 1200px) {
+  /* On écarte un peu moins les blocs pour qu'ils restent bien dans l'écran */
+  #third {
+    gap: 4em;
+    margin: 2em auto;
+  }
+
+  .buttons-desktop-column {
+    gap: 4em;
+  }
+
+  /* On agrandit les boutons-images pour le format intermédiaire */
+  .action-button {
+    width: 260px; /* Vos boutons passent de 180px à 260px sur cette tranche d'écran ! */
   }
 }
 
