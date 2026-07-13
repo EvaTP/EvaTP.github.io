@@ -1,10 +1,13 @@
 // au chargement du DOM
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Script chargé !");
+  console.log("🚀 Portfolio Script chargé !");
 
-  // Montrer la page active dans la navbar
+  /* ==========================================
+     1. GESTION DE LA NAV ACTIVE (Garder & Optimiser)
+     ========================================== */
   const currentPage = window.location.pathname;
-  const currentFile = currentPage.split("/").pop() || "index.html"; // Récupère le nom du fichier
+  // Gère le cas où l'on est à la racine "/" ou dans un sous-dossier comme "/en/"
+  const currentFile = currentPage.split("/").pop() || "index.html";
 
   document.querySelectorAll(".navbar a").forEach((link) => {
     const href = link.getAttribute("href");
@@ -16,61 +19,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Ciblage du titre "A propos"
-  const titreApropos = document.querySelector("#apropostitre");
-  const divApropos = document.querySelector(".apropos.hidden");
-  if (titreApropos && divApropos) {
-    titreApropos.addEventListener("click", () => {
-      if (divApropos.classList.contains("hidden")) {
-        divApropos.classList.remove("hidden");
-        divApropos.classList.add("show");
+  /* ==========================================
+     2. OUVERTURE DE LA BIO INTERACTIVE (Nouveau & Fluide)
+     ========================================== */
+  const toggleBioBtn = document.getElementById("toggle-bio-btn");
+  const bioContent = document.getElementById("bio-content");
+
+  if (toggleBioBtn && bioContent) {
+    toggleBioBtn.addEventListener("click", () => {
+      // Bascule les classes d'affichage/masquage
+      bioContent.classList.toggle("is-hidden");
+      bioContent.classList.toggle("is-visible");
+
+      // Détecte la langue courante (FR ou EN) pour adapter le texte du bouton
+      const isEnglish = document.documentElement.lang === "en";
+
+      if (bioContent.classList.contains("is-visible")) {
+        toggleBioBtn.textContent = isEnglish
+          ? "Hide my profile"
+          : "Masquer mon parcours";
       } else {
-        divApropos.classList.remove("show");
-        divApropos.classList.add("hidden");
+        toggleBioBtn.textContent = isEnglish
+          ? "Discover my story"
+          : "Découvrir mon parcours";
       }
     });
   }
 
-  // Ciblage du titre "Mon stack"
-  const titreMonStack = document.querySelector("#monstacktitre");
-  const divMonStack = document.querySelector(".monstack.hidden");
-  if (titreMonStack && divMonStack) {
-    titreMonStack.addEventListener("click", () => {
-      if (divMonStack.classList.contains("hidden")) {
-        divMonStack.classList.remove("hidden");
-        divMonStack.classList.add("show");
-      } else {
-        divMonStack.classList.remove("show");
-        divMonStack.classList.add("hidden");
-      }
-    });
-  }
-
-  // Ciblage du bloc "Me contacter" (fade in au scroll)
+  /* ==========================================
+     3. ANIMATION DU BLOC CONTACT AU SCROLL (Garder)
+     ========================================== */
   const contactBlock = document.querySelector(".contact-block");
 
-  function revealOnScroll() {
-    const rect = contactBlock.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      contactBlock.classList.add("visible");
+  if (contactBlock) {
+    function revealOnScroll() {
+      const rect = contactBlock.getBoundingClientRect();
+      // Se déclenche un peu avant que le bloc n'arrive tout en haut de l'écran
+      if (rect.top < window.innerHeight - 50) {
+        contactBlock.classList.add("visible");
+        // Optionnel : on retire le listener une fois l'animation jouée pour optimiser les performances
+        window.removeEventListener("scroll", revealOnScroll);
+      }
     }
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+    revealOnScroll(); // Lancement immédiat au cas où le bloc est déjà visible sans scroller
   }
-  window.addEventListener("scroll", revealOnScroll);
-  window.addEventListener("load", revealOnScroll);
 
-  // Footer automatisation date
+  /* ==========================================
+     4. AUTOMATISATION DU COPYRIGHT (Garder)
+     ========================================== */
   const year = new Date().getFullYear();
   const copyright = document.getElementById("copyright");
   if (copyright) {
-    copyright.textContent = `© ${year} Eva Tharrats | Tous droits réservés.`;
+    const isEnglish = document.documentElement.lang === "en";
+    const rightsText = isEnglish
+      ? "All rights reserved."
+      : "Tous droits réservés.";
+    copyright.textContent = `© ${year} Eva Tharrats | ${rightsText}`;
   }
 });
 
-// Code de déboggage responsive (isolé du code fonctionnel): voir largeur page (visible uniquement en debug = true)
-const DEBUG_MODE = false; // false en production
+/* ==========================================
+   5. MODE DEBUG RESPONSIVE (Isolé & Propre)
+   ========================================== */
+const DEBUG_MODE = false; // Passe à true pour l'avoir pendant tes sessions de dev responsive
 
 if (DEBUG_MODE) {
-  // Créer un badge de debug
   const debugBadge = document.createElement("div");
   debugBadge.style.cssText = `
     position: fixed;
@@ -84,21 +99,13 @@ if (DEBUG_MODE) {
     font-size: 18px;
     z-index: 9999;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    pointer-events: none; /* Évite de bloquer les clics en bas de page */
   `;
   document.body.appendChild(debugBadge);
 
   function updateWidth() {
-    debugBadge.textContent = `💡 ${window.innerWidth}px`;
+    debugBadge.textContent = `📐 ${window.innerWidth}px`;
   }
   updateWidth();
   window.addEventListener("resize", updateWidth);
 }
-
-// Ancien script pour afficher la largeur de la fenêtre dans l'onglet du navigateur (visible pour tous)
-// document.addEventListener("DOMContentLoaded", () => {
-//   function showWidth() {
-//     document.title = `Largeur : ${window.innerWidth}px`;
-//   }
-//   showWidth(); // Affiche dès le chargement
-//   window.addEventListener("resize", showWidth);
-// });

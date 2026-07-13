@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,20 +13,19 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- HEADER AVEC NAVBAR -->
     <header>
-      <!-- NAV BAR DESKTOP -->
       <nav id="navbar" class="navbar">
         <ul class="navbarul">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <!-- <li><a href="cv.html">CV</a></li> -->
           <li>
             <a
               href="https://www.linkedin.com/in/eva-tharrats"
               target="_blank"
               class="icon-link"
+              aria-label="LinkedIn"
             >
-              <!-- SVG LinkedIn intégré -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -43,8 +42,8 @@
               href="https://github.com/EvaTP"
               target="_blank"
               class="icon-link"
+              aria-label="GitHub"
             >
-              <!-- SVG GitHub intégré -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -59,21 +58,20 @@
               </svg>
             </a>
           </li>
+          <li class="lang-switch"><a href="en/index.html">EN</a></li>
         </ul>
       </nav>
     </header>
 
-    <div id="accueil-container" class="container">
+    <!-- Conteneur global en Grid CSS -->
+    <div id="accueil-container" class="portfolio-grid">
+      <!-- Colonne Principale (Gauche sur PC) -->
       <main class="main-content">
-        <section id="second" class="">
-          <h1>Eva Tharrats</h1>
+        <!-- 1. En-tête accrocheuse -->
+        <section id="hero-section">
+          <h1>Bienvenu.e,<br />je suis Eva Tharrats</h1>
           <div class="intro-box">
-            <p
-              class="intro-top"
-              data-aos="fade-right"
-              data-aos-duration="1500"
-              data-aos-easing="ease-out-cubic"
-            >
+            <p class="intro-top" data-aos="fade-right" data-aos-duration="1500">
               Développeuse web full-stack<br />
               Apprenante chez Ada Tech School
             </p>
@@ -81,390 +79,221 @@
               class="intro-bottom"
               data-aos="fade-left"
               data-aos-duration="1500"
-              data-aos-easing="ease-out-cubic"
             >
               En recherche d’alternance
             </p>
           </div>
+        </section>
 
-          <div
-            id="apropostitre"
-            class="flex-column"
-            data-aos="fade-right"
-            data-aos-duration="1900"
-            data-aos-easing="ease-out-cubic"
-          >
-            <h2>A propos</h2>
+        <!-- 2. Section Bio Interactive -->
+        <section id="bio-section">
+          <div class="bio-actions">
+            <button id="toggle-bio-btn" class="btn-primary">
+              Découvrir mon parcours
+            </button>
           </div>
 
-          <div id="photo-mobile">
-            <img src="img/Eva-cercle-fond-cyan.png" alt="photoEva-mobile" />
-          </div>
-
-          <div
-            class="apropos flex-row"
-            data-aos="fade-right"
-            data-aos-duration="1900"
-            data-aos-easing="ease-out-cubic"
-          >
-            <div class="apropos" id="photo-desktop">
-              <img src="img/Eva-cercle-fond-goldenrod.png" alt="photoEva" />
-            </div>
-            <div class="apropos" id="texteapropos">
-              <img
-                src="img/quotes-cyan.png"
-                alt="quotes-pixel"
-                width="40"
-                height="40"
-              />
-              <p>
-                Après plus de 30 ans d'expérience professionnelle en tant
-                qu'assistante et assistante de direction trilingue, mon attrait
-                pour l’informatique et la technologie et l'envie d'apprendre
-                m’ont guidée vers une
-                <strong
-                  >reconversion professionnelle dans le développement
-                  web.</strong
-                >
-                <br /><br />
-                Forte d'un premier titre de
-                <strong>Concepteur Intégrateur Web</strong> (IFOCOP) et de 8
-                mois de formation intensive chez <span>ADA TECH SCHOOL</span>,
-                je maîtrise aujourd'hui les bases de la conception
-                d'applications. Ma double compétence est ma force : j'associe la
-                rigueur et le sens de l'organisation de mon parcours
-                d'assistante à mes nouvelles compétences techniques.
-                <br /><br />
-                Pour clore ce parcours et obtenir mon titre de
-                <strong>Concepteur Développeur d'Applications</strong>, je
-                recherche une
-                <strong
-                  ><span>
-                    alternance de 12 mois en contrat de
-                    professionnalisation</span
-                  ></strong
-                >
-                (rythme : 4 jours en entreprise / 1 jour en formation).
-                <br /><br />
-                Je serais ravie d'échanger avec vous et de mettre mon énergie et
-                mon expertise au service de vos projets.
-              </p>
-              <br /><br />
-              <div class="contact-block">
+          <!-- Contenu de la bio masqué par défaut -->
+          <div id="bio-content" class="is-hidden">
+            <div class="apropos-flex">
+              <div id="photo-avatar">
+                <img src="img/Eva-deux-cercles.png" alt="Eva Tharrats" />
+              </div>
+              <div id="texteapropos">
+                <img
+                  src="img/quotes-purple-neon.png"
+                  alt="citations"
+                  width="40"
+                  height="40"
+                />
                 <p>
-                  Vous pouvez me contacter par email :<br />
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=tharratseva@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  Après plus de 30 ans d'expérience professionnelle en tant
+                  qu'assistante et assistante de direction trilingue, mon
+                  attrait pour l’informatique et la technologie et l'envie
+                  d'apprendre m’ont guidée vers une
+                  <strong
+                    >reconversion professionnelle dans le développement
+                    web.</strong
                   >
-                    tharratseva@gmail.com
-                  </a>
+                  <br /><br />
+                  Forte d'un premier titre de
+                  <strong>Concepteur Intégrateur Web</strong> (IFOCOP) et de 8
+                  mois de formation intensive chez ADA TECH SCHOOL, je maîtrise
+                  aujourd'hui les bases de la conception d'applications. Ma
+                  double compétence est ma force. <br /><br />
+                  Pour clore ce parcours et obtenir mon titre de
+                  <strong>Concepteur Développeur d'Applications</strong>, je
+                  recherche une
+                  <strong
+                    ><span
+                      >alternance de 12 mois en contrat de
+                      professionnalisation</span
+                    ></strong
+                  >
+                  (rythme : 4 jours en entreprise / 1 jour en formation).
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Portfolio & CV + VIDEO -->
-        <section
-          id="third"
-          data-aos="fade-right"
-          data-aos-duration="1500"
-          data-aos-easing="ease-out-cubic"
-        >
-          <!-- Colonne 1 : Boutons -->
-          <div class="buttons-desktop-column">
-            <!-- Bloc Portfolio -->
-            <div class="bloc-action">
-              <h2>
-                <img
-                  src="icones/deux-chevrons-rose-cyan.png"
-                  alt="chevrons"
-                  width="25"
-                  height="15"
-                />
-                Portfolio
-              </h2>
-              <button
-                class="action-button"
-                onclick="window.open('portfolio.html', '_blank')"
+        <!-- 3. Liens d'action principaux (Portfolio / CV) -->
+        <section id="action-links">
+          <div class="bloc-action">
+            <h2>Portfolio</h2>
+            <a href="portfolio.html" class="btn-primary action-btn-layout">
+              <!-- Icône Flèche Droite Épurée -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="btn-icon"
               >
-                <img src="img_portfolio/start.png" alt="bouton-portfolio" />
-              </button>
-            </div>
-
-            <!-- Bloc CV  -->
-            <div class="bloc-action">
-              <h2>
-                <img
-                  src="icones/deux-chevrons-rose-cyan.png"
-                  alt="chevrons"
-                  width="25"
-                  height="15"
-                />
-                CV
-              </h2>
-              <button
-                class="action-button"
-                onclick="window.open('CV-Eva_Tharrats.pdf', '_blank')"
-              >
-                <img
-                  src="img_portfolio/download-CV.png"
-                  alt="bouton-download-cv"
-                />
-              </button>
-            </div>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+              Accéder au Portfolio
+            </a>
           </div>
 
-          <!-- Colonne 2 : Vidéo DESKTOP-->
-          <!-- <div class="video-column video-desktop">
-            <h2>
-              <img
-                src="icones/deux-chevrons-rose-cyan.png"
-                alt="chevrons"
-                width="25"
-                height="15"
-              />
-              Vidéo LinkedIn
-            </h2>
-            <iframe
-              src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7432819287259607041"
-              height="625"
-              width="425"
-              frameborder="0"
-              allowfullscreen=""
-              title="Post intégré"
-            ></iframe>
-          </div> -->
+          <div class="bloc-action">
+            <h2>Mon CV</h2>
+            <a
+              href="mon-cv.pdf"
+              download="Eva_Tharrats_CV.pdf"
+              class="btn-primary action-btn-layout"
+            >
+              <!-- Icône Flèche Bas Épurée (Même style) -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="btn-icon"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+              Télécharger le CV
+            </a>
+          </div>
         </section>
 
-        <!-- aside hidden visible en format MOBILE -->
-        <div class="aside-mobile">
-          <div class="">
-            <h3>Compétences Front-end</h3>
-            <ul class="ulaside">
-              <li>JavaScript, TypeScript</li>
-              <li>HTML5, CSS3</li>
-              <li>Responsive Design, UX/UI</li>
-              <li>
-                Frameworks/librairies : React, Next.js, NextAuth, TailwindCSS,
-                Bootstrap
-              </li>
-            </ul>
+        <!-- 4. Bloc de Contact (Toujours visible car en dehors de la bio) -->
+        <div class="contact-block" data-aos="fade-up" data-aos-duration="1500">
+          <p>
+            Me contacter par email :<br />
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=tharratseva@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              tharratseva@gmail.com
+            </a>
+          </p>
+        </div>
+      </main>
+      <!-- Fin du contenu principal -->
 
-            <h3>Compétences Back-end</h3>
-            <ul class="ulaside">
-              <li>Bases de données</li>
-              <li>Node.js</li>
-              <li>PHP</li>
-              <li>Langage SQL</li>
-              <li>SQL, MySQL, PostgreSQL, SQLite, phpMyAdmin</li>
-              <li>Framework : Express.js</li>
-              <li>ORM Prisma</li>
-            </ul>
+      <!-- Barre Latérale Droite : Compétences (Sert pour mobile ET desktop) -->
+      <aside class="skills-sidebar">
+        <h2>Compétences</h2>
 
-            <h3>Outils et Méthodes</h3>
-            <ul class="ulaside">
-              <li>API REST, Postman</li>
-              <li>Git / GitHub</li>
-              <li>Tests unitaires : Vitest</li>
-              <li>No-code : CMS WordPress</li>
-              <li>Méthodes Agiles</li>
-              <li>Analyse des besoins client & cahier des charges</li>
-            </ul>
-
-            <h3>Langues</h3>
-            <ul class="ulaside">
-              <li>Langues maternelles : français, espagnol</li>
-              <li>Bilingue anglais</li>
-            </ul>
-          </div>
+        <div class="skill-category">
+          <h3>Front-end</h3>
+          <ul class="ulaside">
+            <li>JavaScript (ES6+), TypeScript</li>
+            <li>HTML5, CSS3</li>
+            <li>Responsive Design / Intégration</li>
+            <li>UX / UI</li>
+            <li>React, Next.js, NextAuth, TailwindCSS, Bootstrap</li>
+            <li><i>En apprentissage : Python, React Native</i></li>
+          </ul>
         </div>
 
-        <!-- SECTION BOUTONS + VIDÉO (Mobile uniquement) -->
-        <section class="buttons-video-section">
-          <div class="buttons-video-container">
-            <!-- Colonne Boutons -->
-            <div class="buttons-column">
-              <button
-                class="portfolio-button-mobile"
-                onclick="location.href = 'portfolio.html'"
-              >
-                Portfolio
-              </button>
-              <button
-                class="portfolio-button-mobile"
-                onclick="location.href = 'CV-Eva_Tharrats.pdf'"
-              >
-                CV
-              </button>
-            </div>
+        <div class="skill-category">
+          <h3>Back-end</h3>
+          <ul class="ulaside">
+            <li>Node.js</li>
+            <li>Frameworks : Express.js, PHP</li>
+            <li>SQL / Bases de données : PostgreSQL, MySQL</li>
+            <li>PHPMyAdmin, ORM Prisma</li>
+            <li>Conception d'API REST</li>
+          </ul>
+        </div>
 
-            <!-- Colonne Vidéo  -->
-            <!-- <div class="video-column video-mobile">
-              <h3 class="video-title">Vidéo LinkedIn</h3>
-              <iframe
-                src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7432819287259607041"
-                height="625"
-                width="425"
-                frameborder="0"
-                allowfullscreen=""
-                title="Post intégré"
-              ></iframe>
-            </div> -->
-          </div>
-        </section>
-      </main>
+        <div class="skill-category">
+          <h3>Outils & Méthodes</h3>
+          <ul class="ulaside">
+            <li>Méthodes Agiles</li>
+            <li>Git / GitHub / GitHub Actions (CI/CD)</li>
+            <li>Tests : Vitest, Postman</li>
+            <li>CMS WordPress, WooCommerce</li>
+            <li>IA Générative : GitHub Copilot, Cursor, Claude</li>
+          </ul>
+        </div>
 
-      <!-- ASIDE DESKTOP -->
-      <aside class="sidebar aside-desktop">
-        <section class="aside-section flex-column">
-          <div class="flex-column">
-            <div class="flex-column">
-              <h2>Compétences</h2>
-              <br /><br />
+        <div class="skill-category">
+          <h3>Autres</h3>
+          <ul class="ulaside">
+            <li>Microsoft SharePoint / GED</li>
+            <li>Analyse des besoins / Cahier des charges</li>
+          </ul>
+        </div>
 
-              <h4>
-                <img
-                  src="icones/deux-chevrons-rose-cyan.png"
-                  alt="chevrons"
-                  width="25"
-                  height="15"
-                />Front-end
-              </h4>
-            </div>
-            <div>
-              <ul class="ulaside">
-                <li>JavaScript, TypeScript</li>
-                <li>HTML5, CSS3</li>
-                <li>Responsive Design, UX/UI</li>
-                <li>
-                  Frameworks/librairies : React, Next.js, NextAuth, TailwindCSS,
-                  Bootstrap
-                </li>
-              </ul>
-              <br />
-            </div>
-          </div>
-        </section>
-
-        <section class="aside-section flex-column">
-          <div class="">
-            <div class="flex-column">
-              <div class="titre-container flex-row">
-                <br />
-                <h4>
-                  <img
-                    src="icones/deux-chevrons-rose-cyan.png"
-                    alt="chevrons"
-                    width="25"
-                    height="15"
-                  />
-                  Back-end
-                </h4>
-                <br />
-              </div>
-            </div>
-            <div>
-              <ul class="ulaside">
-                <li>Bases de données</li>
-                <li>Node.js</li>
-                <li>PHP</li>
-                <li>Langage SQL</li>
-                <li>SQL, MySQL, PostgreSQL, SQLite, phpMyAdmin</li>
-                <li>Framework : Express.js</li>
-                <li>ORM Prisma</li>
-              </ul>
-              <br />
-            </div>
-          </div>
-        </section>
-
-        <section class="aside-section flex-column">
-          <div class="">
-            <div class="flex-column">
-              <div class="titre-container flex-row">
-                <br />
-                <h4>
-                  <img
-                    src="icones/deux-chevrons-rose-cyan.png"
-                    alt="chevrons"
-                    width="25"
-                    height="15"
-                  />
-                  Outils & Méthodes
-                </h4>
-                <br />
-              </div>
-            </div>
-            <div>
-              <ul class="ulaside">
-                <li>API REST, Postman</li>
-                <li>Git / GitHub</li>
-                <li>Tests unitaires : Vitest</li>
-                <li>No-code : CMS WordPress</li>
-                <li>Méthodes Agiles</li>
-                <li>Analyse des besoins client & cahier des charges</li>
-              </ul>
-              <br /><br />
-            </div>
-          </div>
-        </section>
-
-        <section class="aside-section flex-column">
-          <div class="">
-            <div class="flex-column">
-              <div class="titre-container flex-row">
-                <br />
-                <h4>
-                  <img
-                    src="icones/deux-chevrons-rose-cyan.png"
-                    alt="chevrons"
-                    width="25"
-                    height="15"
-                  />
-                  Langues
-                </h4>
-              </div>
-            </div>
-            <div>
-              <ul class="ulaside">
-                <li>Français, espagnol : langues maternelles</li>
-                <li>Anglais : bilingue</li>
-              </ul>
-              <br /><br />
-            </div>
-          </div>
-        </section>
+        <div class="skill-category">
+          <h3>Langues</h3>
+          <ul class="ulaside">
+            <li>Français, Espagnol (langues maternelles)</li>
+            <li>Anglais (bilingue)</li>
+          </ul>
+        </div>
       </aside>
     </div>
+    <!-- Fin du conteneur grid -->
 
     <!-- FOOTER -->
     <footer>
       <div id="copyrightDiv">
-        <p id="copyright"></p>
+        <p id="copyright">&copy; 2026 Eva Tharrats. Tous droits réservés.</p>
       </div>
       <div id="hautpageDiv">
-        <a id="hautpage" href="#navbar" aria-label="Retour en haut de page">
-          <img
-            src="/icones/chevron-up-ffc412.svg"
-            alt=""
-            width="35"
-            height="35"
-          />
+        <a
+          id="hautpage"
+          href="#navbar"
+          aria-label="Retour en haut de page"
+          class="btn-rose-up"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="40"
+            height="40"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="16 12 12 8 8 12"></polyline>
+            <line x1="12" y1="16" x2="12" y2="8"></line>
+          </svg>
         </a>
       </div>
     </footer>
 
     <script src="script.js"></script>
-    <!-- animation AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-        once: true, // animation une seule fois
-        disable: "mobile", // désactive AOS sur mobile
-      });
+      AOS.init({ once: true, disable: "mobile" });
     </script>
   </body>
 </html>
