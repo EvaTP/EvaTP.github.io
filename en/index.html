@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <!-- 1. Modification de la langue de la page pour le SEO et l'accessibilité -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eva | Web Developer</title>
+    <!-- 2. Traduction du titre de l'onglet dans le navigateur -->
+    <link rel="stylesheet" href="../style.css" />
+    <!-- 3. AJOUT DE "../" pour l'accès au CSS global -->
+    <link rel="icon" type="image/png" href="../favicon-portfolio.png" />
+    <!-- 4. AJOUT DE "../" pour le favicon (ou garde / si c'est géré à la racine absolue) -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- HEADER WITH NAVBAR -->
+    <header>
+      <nav id="navbar" class="navbar">
+        <ul class="navbarul">
+          <!-- 5. Mise en place de la classe "active" sur l'accueil EN, et mise à jour des liens vers le dossier parent -->
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/eva-tharrats"
+              target="_blank"
+              class="icon-link"
+              aria-label="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="linkedin-icon"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.5h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-5V15.2c0-2.1-.04-4.9-3-4.9-3 0-3.5 2.3-3.5 4.7V24h-5V8z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/EvaTP"
+              target="_blank"
+              class="icon-link"
+              aria-label="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="40"
+                height="40"
+                class="github-icon"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="lang-switch"><a href="../index.html">FR</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Global Container (CSS Grid) -->
+    <div id="accueil-container" class="portfolio-grid">
+      <!-- Main Column (Left on PC) -->
+      <main class="main-content">
+        <!-- 1. Eye-catching Hero Section -->
+        <section id="hero-section">
+          <h1>Welcome,<br />I am Eva Tharrats</h1>
+          <div class="intro-box">
+            <p class="intro-top" data-aos="fade-right" data-aos-duration="1500">
+              Full-Stack Web Developer<br />
+              Student at Ada Tech School
+            </p>
+            <p
+              class="intro-bottom"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+            >
+              Looking for an Apprenticeship
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. Interactive Bio Section -->
+        <section id="bio-section">
+          <div class="bio-actions">
+            <button id="toggle-bio-btn" class="btn-primary">
+              Discover my background
+            </button>
+          </div>
+
+          <!-- Bio content hidden by default -->
+          <div id="bio-content" class="is-hidden">
+            <div class="apropos-flex">
+              <!-- Added ../ to fix the image path from the /en/ folder -->
+              <div id="photo-avatar">
+                <img src="../img/Eva-deux-cercles.png" alt="Eva Tharrats" />
+              </div>
+              <div id="texteapropos">
+                <!-- Added ../ to fix the image path from the /en/ folder -->
+                <img
+                  src="../img/quotes-purple-neon.png"
+                  alt="quotes"
+                  width="40"
+                  height="40"
+                />
+                <p>
+                  After more than 30 years of professional experience as a
+                  trilingual Executive Assistant, my passion for computing and
+                  technology, combined with a continuous desire to learn, guided
+                  me toward a
+                  <strong>career transition into web development.</strong>
+                  <br /><br />
+                  Backed by an initial certification as a
+                  <strong>Web Designer & Integrator</strong> (IFOCOP) and 8
+                  months of intensive training at ADA TECH SCHOOL, I now master
+                  the fundamentals of application design. My dual competence is
+                  my greatest strength. <br /><br />
+                  To finalize this path and graduate with my
+                  <strong>Application Developer</strong> degree, I am actively
+                  looking for a
+                  <strong><span>12-month apprenticeship contract</span></strong>
+                  (schedule: 4 days in the company / 1 day in training).
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Main Action Links (Portfolio / CV) -->
+        <section id="action-links">
+          <div class="bloc-action">
+            <h2>Portfolio</h2>
+            <!-- Le lien reste portfolio.html car le fichier anglais sera dans le même sous-dossier /en/ -->
+            <a href="portfolio.html" class="btn-primary action-btn-layout">
+              <!-- Sleek Right Arrow Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="btn-icon"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+              View Portfolio
+            </a>
+          </div>
+
+          <div class="bloc-action">
+            <h2>My Resume</h2>
+            <!-- Ajout de "../" pour remonter d'un dossier et trouver le fichier PDF -->
+            <a
+              href="../mon-cv.pdf"
+              download="RESUME_Eva-Tharrats.pdf"
+              class="btn-primary action-btn-layout"
+            >
+              <!-- Sleek Down Arrow Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="btn-icon"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+              Download Resume
+            </a>
+          </div>
+        </section>
+
+        <!-- 4. Contact Block (Always visible) -->
+        <div class="contact-block" data-aos="fade-up" data-aos-duration="1500">
+          <p>
+            Contact me by email:<br />
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=tharratseva@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              tharratseva@gmail.com
+            </a>
+          </p>
+        </div>
+      </main>
+      <!-- End of main content -->
+
+      <!-- Right Sidebar: Skills (For both mobile AND desktop) -->
+      <aside class="skills-sidebar">
+        <h2>Skills</h2>
+
+        <div class="skill-category">
+          <h3>Front-end</h3>
+          <ul class="ulaside">
+            <li>JavaScript (ES6+), TypeScript</li>
+            <li>HTML5, CSS3</li>
+            <li>Responsive Design / Integration</li>
+            <li>UX / UI</li>
+            <li>React, Next.js, NextAuth, TailwindCSS, Bootstrap</li>
+            <li><i>Currently learning: Python, React Native</i></li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Back-end</h3>
+          <ul class="ulaside">
+            <li>Node.js</li>
+            <li>Frameworks: Express.js, PHP</li>
+            <li>SQL / Databases: PostgreSQL, MySQL</li>
+            <li>PHPMyAdmin, Prisma ORM</li>
+            <li>REST API Design</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Tools & Methodologies</h3>
+          <ul class="ulaside">
+            <li>Agile Methodologies</li>
+            <li>Git / GitHub / GitHub Actions (CI/CD)</li>
+            <li>Testing: Vitest, Postman</li>
+            <li>WordPress CMS, WooCommerce</li>
+            <li>Generative AI: GitHub Copilot, Cursor, Claude</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Other</h3>
+          <ul class="ulaside">
+            <li>Microsoft SharePoint / Document Management System (DMS)</li>
+            <li>Requirements Analysis / Specifications</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <ul class="ulaside">
+            <li>French, Spanish (Native speaker)</li>
+            <li>English (Bilingual)</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <!-- End of grid container -->
+
+    <footer>
+      <div id="copyrightDiv">
+        <p id="copyright">&copy; 2026 Eva Tharrats. All rights reserved.</p>
+      </div>
+      <div id="hautpageDiv">
+        <a
+          id="hautpage"
+          href="#navbar"
+          aria-label="Retour en haut de page"
+          class="btn-rose-up"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="40"
+            height="40"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="16 12 12 8 8 12"></polyline>
+            <line x1="12" y1="16" x2="12" y2="8"></line>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Added ../ to load the script from the parent directory -->
+    <script src="../script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, disable: "mobile" });
+    </script>
+  </body>
+</html>
