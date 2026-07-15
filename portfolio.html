@@ -20,13 +20,13 @@
       :root {
         --primary-color: #a855f7;
         --accent-pink: #ff69b4;
+        --text-light: #ffffff;
         --golden-color: #ffd700;
         --dark-bg: #120f2a;
         --card-bg: #1d193b;
 
         --color-cobalt-blue: #0a59d4;
-        --neon-purple: rgba(168, 85, 247, 0.3);
-        --neon-purple-hover: rgba(168, 85, 247, 0.6);
+        --color-purple-neon: #a855f7;
         --font-body: "Roboto", sans-serif;
         --font-captions: "Montserrat", sans-serif;
       }
@@ -62,42 +62,29 @@
         padding: 0 20px;
       }
 
-      .navbarul li a {
-        display: flex;
-        align-items: center;
+      /* liens et liens visités : blancs par défaut */
+      .navbar li a,
+      .navbar li a.visited {
+        font-size: 1.25em;
+        color: var(--text-light);
+        font-family: var(--font-body);
+        padding: 8px 16px;
+        border-bottom: 2px solid transparent; /* on prépare l'espace invisible */
+        transition:
+          color 0.3s ease,
+          border-color 0.3s ease;
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 1.1em;
-        font-family: var(--font-captions);
-        font-weight: 500;
-        padding: 8px 16px;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s ease;
       }
 
-      .navbarul li a:hover {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
+      .navbar li a:hover {
+        color: var(--color-purple-neon);
+        border-bottom: 2px solid var(--color-purple-neon);
       }
 
-      /* Onglet Portfolio actif -> Violet et souligné */
       .navbarul li a.active {
-        color: var(--primary-color);
-        font-weight: 700;
-        border-bottom: 2px solid var(--primary-color);
-      }
-
-      /* Bouton de langue EN */
-      .navbarul li a.lang-link {
-        font-size: 1.1em; /* Même taille que les autres liens */
-        padding: 8px 16px;
-        border: none;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .navbarul li a.lang-link:hover {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
+        color: var(--color-purple-neon);
+        font-weight: bold;
+        border-bottom: 2px solid transparent; /* On maintient l'espace pour éviter le saut au hover (layout shift) */
       }
 
       /* Icônes Réseaux Sociaux */
@@ -105,7 +92,7 @@
       .github-icon {
         width: 22px;
         height: 22px;
-        fill: rgba(255, 255, 255, 0.7);
+        fill: var(--text-light);
         transition: fill 0.3s ease;
       }
 
@@ -626,7 +613,7 @@
               le pourcentage de réussite. <br /><br />
 
               <strong>Défi Relevé :</strong> Maîtriser l'asynchronisme et le
-              cycle de vie de React ! J'ai volontairement banni Next.js pour
+              cycle de vie de React. J'ai volontairement banni Next.js pour
               consolider les fondamentaux de React en utilisant une large
               palette de hooks natifs (<code>useState</code>,
               <code>useEffect</code>) et avancés (<code>useMemo</code> et
@@ -708,11 +695,11 @@
 
             <p class="project-description-second">
               <strong>Fonctionnalités :</strong> Carte interactive des spots
-              mondiaux, favoris, responsive design, authentification sécurisée,
-              et tableau de bord d'administration à trois niveaux de droits :
-              Utilisateur, Administrateur complet, et un profil "Démo" innovant
-              en lecture seule pour permettre d'explorer l'interface
-              d'administration en toute sécurité. <br /><br />
+              mondiaux, favoris, responsive design, authentification sécurisée
+              par tokens (JWT), et tableau de bord d'administration à trois
+              niveaux de droits : Utilisateur, Administrateur complet, et un
+              profil "Démo" innovant en lecture seule pour permettre d'explorer
+              l'interface d'administration en toute sécurité. <br /><br />
               <strong>Défi Relevé :</strong> Gérer une architecture découplée
               (Front/Back séparés) et optimiser la performance. Le temps de
               chargement initial de la page d'accueil avec la carte était mon
@@ -1034,7 +1021,6 @@
               questions à choix multiples avec un calcul dynamique des scores en
               fin de parcours.
             </p>
-
             <p class="project-description">
               <strong>Stack & Outils :</strong> HTML5, CSS3, JavaScript (ES6),
               Canvas-Confetti (CDN), Canva, Trello.
@@ -1102,7 +1088,6 @@
       </div>
 
       <!-- SECTION AUTRES PROJETS -->
-
       <h2 class="h2portfolio">Autres <span>projets</span></h2>
       <div class="projects-grid">
         <!-- ARTSQUARE -->
@@ -1191,22 +1176,24 @@
             </p>
 
             <p class="project-description">
-              <strong>Stack :</strong> PHP 8 (POO), Architecture MVC, MySQL, CSS
-              Bootstrap, GitHub Actions.
+              <strong>Stack & Outils :</strong> PHP 8 (POO), Architecture MVC,
+              MySQL, CSS Bootstrap, GitHub Actions.
             </p>
-
             <p class="project-description-second">
               <strong>Fonctionnalités :</strong> Gestion complète du CRUD
               (annonces, catégories, commentaires, utilisateurs), espace client
               sécurisé, espace d'administration et modération des commentaires.
               <br /><br />
               <strong>Défi Relevé :</strong> Refactorisation complète d'un
-              projet d'école initialement conçu en PHP Procédural. J'ai migré
-              tout le code vers une architecture MVC propre et orientée objet
-              (POO) pour le sécuriser (requêtes SQL préparées) et le rendre
-              évolutif, puis configuré un pipeline CI/CD avec GitHub Actions
-              pour automatiser le déploiement sur mon serveur Nuxit dans un
-              sous-domaine.
+              projet d'école Ifocop initialement conçu en PHP Procédural. J'ai
+              migré tout le code vers une architecture MVC propre et orientée
+              objet (POO) pour le sécuriser (requêtes SQL préparées) et le
+              rendre évolutif. <br />Le plus grand défi a ensuite été de gérer
+              l'intégralité de la mise en production sur un hébergement
+              mutualisé Nuxit : j'ai configuré un sous-domaine dédié, créé et
+              lié la base de données MySQL distante, puis mis en place un
+              pipeline CI/CD automatisé avec GitHub Actions pour s'affranchir
+              des déploiements manuels par FTP.
             </p>
             <div class="project-buttons">
               <a

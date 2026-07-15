@@ -2,26 +2,37 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🚀 Portfolio Script chargé !");
 
-  /* ==========================================
-     1. GESTION DE LA NAV ACTIVE (Garder & Optimiser)
-     ========================================== */
+  /* =================================
+     1. GESTION DE LA NAV ACTIVE
+     ================================= */
   const currentPage = window.location.pathname;
   // Gère le cas où l'on est à la racine "/" ou dans un sous-dossier comme "/en/"
   const currentFile = currentPage.split("/").pop() || "index.html";
 
-  document.querySelectorAll(".navbar a").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (href) {
-      const linkFile = href.split("/").pop() || "index.html";
+  // On sélectionne tous les liens de la navbar, SAUF ceux dans .lang-switch
+  document
+    .querySelectorAll(".navbarul li:not(.lang-switch) a")
+    .forEach((link) => {
+      const linkFile =
+        link.getAttribute("href").split("/").pop() || "index.html";
+
       if (currentFile === linkFile) {
         link.classList.add("active");
       }
-    }
-  });
 
-  /* ==========================================
-     2. OUVERTURE DE LA BIO INTERACTIVE (Nouveau & Fluide)
-     ========================================== */
+      // document.querySelectorAll(".navbar a").forEach((link) => {
+      //   const href = link.getAttribute("href");
+      //   if (href) {
+      //     const linkFile = href.split("/").pop() || "index.html";
+      //     if (currentFile === linkFile) {
+      //       link.classList.add("active");
+      //     }
+      // }
+    });
+
+  /* =======================================
+     2. OUVERTURE DE LA BIO INTERACTIVE
+     ======================================= */
   const toggleBioBtn = document.getElementById("toggle-bio-btn");
   const bioContent = document.getElementById("bio-content");
 
@@ -46,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ==========================================
-     3. ANIMATION DU BLOC CONTACT AU SCROLL (Garder)
-     ========================================== */
+  /* =========================================
+     3. ANIMATION DU BLOC CONTACT AU SCROLL
+     ========================================= */
   const contactBlock = document.querySelector(".contact-block");
 
   if (contactBlock) {
@@ -66,9 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
     revealOnScroll(); // Lancement immédiat au cas où le bloc est déjà visible sans scroller
   }
 
-  /* ==========================================
-     4. AUTOMATISATION DU COPYRIGHT (Garder)
-     ========================================== */
+  /* ===================================
+     4. AUTOMATISATION DU COPYRIGHT
+     =================================== */
   const year = new Date().getFullYear();
   const copyright = document.getElementById("copyright");
   if (copyright) {

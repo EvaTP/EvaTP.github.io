@@ -20,13 +20,13 @@
       :root {
         --primary-color: #a855f7;
         --accent-pink: #ff69b4;
+        --text-light: #ffffff;
         --golden-color: #ffd700;
         --dark-bg: #120f2a;
         --card-bg: #1d193b;
 
         --color-cobalt-blue: #0a59d4;
-        --neon-purple: rgba(168, 85, 247, 0.3);
-        --neon-purple-hover: rgba(168, 85, 247, 0.6);
+        --color-purple-neon: #a855f7;
         --font-body: "Roboto", sans-serif;
         --font-captions: "Montserrat", sans-serif;
       }
@@ -62,41 +62,29 @@
         padding: 0 20px;
       }
 
-      .navbarul li a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 1.1em;
-        font-family: var(--font-captions);
-        font-weight: 500;
+      /* liens et liens visités : blancs par défaut */
+      .navbar li a,
+      .navbar li a.visited {
+        font-size: 1.25em;
+        color: var(--text-light);
+        font-family: var(--font-body);
         padding: 8px 16px;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent; /* on prépare l'espace invisible */
+        transition:
+          color 0.3s ease,
+          border-color 0.3s ease;
+        text-decoration: none;
       }
 
       .navbarul li a:hover {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
+        color: var(--color-purple-neon);
+        border-bottom: 2px solid var(--color-purple-neon);
       }
 
       .navbarul li a.active {
-        color: var(--primary-color);
-        font-weight: 700;
-        border-bottom: 2px solid var(--primary-color);
-      }
-
-      /* Bouton de langue EN */
-      .navbarul li a.lang-link {
-        font-size: 1.1em;
-        padding: 8px 16px;
-        border: none;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .navbarul li a.lang-link:hover {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
+        color: var(--color-purple-neon);
+        font-weight: bold;
+        border-bottom: 2px solid transparent; /* On maintient l'espace pour éviter le saut au hover (layout shift) */
       }
 
       /* Social media icons */
@@ -104,7 +92,7 @@
       .github-icon {
         width: 22px;
         height: 22px;
-        fill: rgba(255, 255, 255, 0.7);
+        fill: var(--text-light);
         transition: fill 0.3s ease;
       }
 
@@ -437,7 +425,7 @@
     <header>
       <nav id="navbar" class="navbar">
         <ul class="navbarul">
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li>
             <a
@@ -531,7 +519,7 @@
             </p>
 
             <p class="project-description-second">
-              <strong>Key Features:</strong> Dual-interface (volunteers and
+              <strong>Key Features:</strong> Dual interface (volunteers and
               administrators), interactive waste collection mapping, analytics
               dashboard, volunteer leaderboard, and a gamification engine that
               converts the weight of collected litter into points, then into
@@ -585,86 +573,55 @@
           </div>
         </div>
 
-        <!-- THE WAVE -->
-        <div class="project-card-bigger">
-          <div class="project-image">
-            <div class="tech-tag">
-              React, Next.js, Express, Prisma, Tailwind, API + React Leaflet,
-              PostgreSQL
-            </div>
-            <img src="../img_portfolio/TheWave-440x327.png" alt="The Wave" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">🏄‍♂️ The Wave</h3>
-            <p class="project-description">
-              A web application designed for surf enthusiasts to discover and
-              share surf spots worldwide. Features include an interactive map,
-              favorites management, authentication, an admin dashboard, and a
-              fully responsive design.
-            </p>
-            <p class="project-description-second">
-              🚧 Project currently being refactored: adding a "demo" mode,
-              search filters, and an Admin dashboard.
-            </p>
-            <div class="project-buttons">
-              <a
-                href="https://the-wave-eight.vercel.app/"
-                target="_blank"
-                class="btn btn-primary"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                View Project
-              </a>
-              <a
-                href="https://github.com/EvaTP/the-wave.git"
-                target="_blank"
-                class="btn btn-github"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
-                  />
-                </svg>
-                Source Code
-              </a>
-            </div>
-          </div>
-        </div>
-
         <!-- FONDU AU NOIR -->
         <div class="project-card-bigger">
           <div class="project-image">
             <div class="tech-tag">
               React, Vite, TypeScript, PWA, Vanilla CSS
             </div>
-            <!-- Added ../ to fix image path -->
             <img
               src="../img_portfolio/fondu-au-noir-440x327.png"
               alt="Project in progress"
             />
           </div>
           <div class="project-content">
-            <h3 class="project-title">🎬 Fondu au noir</h3>
+            <h3 class="project-title">🎬 Fade to Black</h3>
             <p class="project-description">
-              Fondu au noir is an interactive quiz Progressive Web App (PWA)
-              using flashcards to explore the history of Noir Cinema in a
-              playful way along a chronological timeline, featuring a final
-              score and personalized recommendations.
+              Fondu au noir is an interactive and educational Progressive Web
+              App (PWA) quiz that combines a chronological timeline with
+              animated flashcards to explore the history of Film Noir. As my
+              first independent post-school project, it allowed me to master
+              Vanilla React. A true cinephile, I built this application to
+              capture and translate the dark atmosphere and unique aesthetic of
+              this cinematic era, while diving deep into React's core concepts.
+              <br />
+            </p>
+            <p class="project-description">
+              <strong>Stack & Data:</strong> React (Vite), TypeScript, Local
+              JSON (static data structure), Framer Motion, Canvas-Confetti,
+              Vanilla CSS, LocalStorage.
+            </p>
+            <p class="project-description-second">
+              <strong>Key Features:</strong> Interactive movie cards with a
+              "Learn More" modal, historical timeline navigation, persistent
+              score history, and a dynamic recommendation engine based on the
+              user's success rate. <br /><br />
+
+              <strong>Challenge Solved:</strong> Mastering React's asynchronous
+              nature and component lifecycle. I intentionally bypassed Next.js
+              to consolidate my React fundamentals. This involved using a wide
+              range of native hooks (<code>useState</code>,
+              <code>useEffect</code>) as well as advanced ones (<code
+                >useMemo</code
+              >
+              and <code>useCallback</code> for performance optimization, and
+              <code>useRef</code> to handle modal accessibility and focus). I
+              also designed a custom <code>useScore</code> hook paired with the
+              Context API for centralized state management. My biggest hurdles
+              were crafting a smooth, fluid CSS layout for the interactive
+              timeline, optimizing and exporting movie posters from Canva, and
+              configuring a Service Worker from scratch to turn the application
+              into an installable PWA.
             </p>
             <div class="project-buttons">
               <a
@@ -705,6 +662,87 @@
             </div>
           </div>
         </div>
+
+        <!-- THE WAVE -->
+        <div class="project-card-bigger">
+          <div class="project-image">
+            <div class="tech-tag">
+              React, Next.js, Express, Prisma, Tailwind, API + React Leaflet,
+              PostgreSQL
+            </div>
+            <img src="../img_portfolio/TheWave-440x327.png" alt="The Wave" />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">🏄‍♂️ The Wave</h3>
+            <p class="project-description">
+              A community platform connecting surfers worldwide. Developed solo
+              as a final graduation project and presented to a panel of industry
+              professionals during the school's "Demo Days". Curious to explore
+              an unfamiliar universe, I chose this school-suggested topic to
+              tackle both a thematic and technical challenge. Built entirely in
+              English.
+            </p>
+            <p class="project-description">
+              <strong>Stack:</strong> Next.js, Express.js (REST API), PostgreSQL
+              (Neon), Prisma (ORM), JWT, Bcrypt, React Leaflet (Lazy Loading),
+              Tailwind CSS.
+            </p>
+            <p class="project-description-second">
+              <strong>Key Features:</strong> Interactive map of global surf
+              spots, favorites, responsive design, secure token-based
+              authentication (JWT), and a three-tier admin dashboard featuring
+              User, Full Admin, and an innovative read-only "Demo" profile to
+              safely explore the administration interface. <br /><br />
+              <strong>Challenge Solved:</strong> Managing a decoupled
+              architecture (separated frontend and backend) and optimizing
+              performance. The initial load time of the map-heavy homepage was
+              my main bottleneck. Using Chrome DevTools and Lighthouse, I
+              analyzed key metrics such as CLS (Cumulative Layout Shift). By
+              implementing lazy loading on the map components and optimizing
+              backend queries, I raised the Lighthouse performance score to 82.
+            </p>
+            <p class="project-description-third">
+              🚧 In progress: optimizing load times, creating search filters.
+            </p>
+            <div class="project-buttons">
+              <a
+                href="https://the-wave-eight.vercel.app/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                View Project
+              </a>
+              <a
+                href="https://github.com/EvaTP/the-wave.git"
+                target="_blank"
+                class="btn btn-github"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
+                  />
+                </svg>
+                Source Code
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- ADA TECH SCHOOL PROJECTS SECTION -->
@@ -718,7 +756,6 @@
               TypeScript, React, Full-stack Next.js, Prisma, NextAuth,
               PostgreSQL, TailwindCSS
             </div>
-            <!-- Added ../ for image relative path -->
             <img src="../img_portfolio/Passages-440x327.png" alt="PassAges" />
           </div>
           <div class="project-content">
@@ -726,15 +763,34 @@
               💟 Pass<span style="color: hotpink">Ages</span>
             </h3>
             <p class="project-description">
-              An intergenerational matchmaking and networking web application.
-              This is a complete, modernized overhaul of "Adaence," built on a
-              full-stack Next.js monorepo architecture.
+              An intergenerational matchmaking application designed to combat
+              isolation among seniors. This is a complete and modernized
+              overhaul of Adaence, rebuilt as a dynamic and secure web
+              application featuring advanced filters, secure token-based
+              authentication (JWT), and a functional admin dashboard.
+            </p>
+            <p class="project-description">
+              <strong>Stack:</strong> Next.js (Full-Stack Monorepo), React,
+              TypeScript, PostgreSQL (Neon), Prisma (ORM), NextAuth, Bcrypt,
+              Tailwind CSS, Lucide-react.
+              <strong>Methodology:</strong> Developed in a two-person team using
+              Agile practices.
             </p>
             <p class="project-description-second">
-              Features advanced filtering, secure user authentication, and a
-              functional admin dashboard.
+              <strong>Key Features:</strong> Advanced search filters (by
+              activities and cities), interactive application forms, secure
+              authentication, and an administrator dashboard featuring a full
+              CRUD system to approve, reject, or create volunteer profiles.
+              <br /><br />
+              <strong>Challenge Solved:</strong> My first major full-stack
+              project. Beyond learning Prisma ORM and Next.js, the greatest
+              challenge was our introduction to TypeScript. During our first
+              deployment on Vercel, the lack of strict typing triggered dozens
+              of complex compilation errors in the build logs. We had to analyze
+              every error message, understand the compiler's strict logic, and
+              systematically refactor our types to successfully push the
+              application to production.
             </p>
-            <br />
 
             <div class="project-buttons">
               <a
@@ -776,80 +832,45 @@
           </div>
         </div>
 
-        <!-- SPACE QUIZ -->
-        <div class="project-card">
-          <div class="project-image">
-            <div class="tech-tag">HTML, CSS, JavaScript</div>
-            <!-- Added ../ for image relative path -->
-            <img src="../img_portfolio/quiz-espace.png" alt="Space Quiz" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">🚀 Space Quiz</h3>
-            <p class="project-description">
-              An interactive web quiz focused on space exploration. It includes
-              multiple-choice questions with dynamic score tracking displayed at
-              the end of the round.
-            </p>
-            <p class="project-description-second">
-              Features extensive DOM manipulation and native event handling.
-            </p>
-            <div class="project-buttons">
-              <a
-                href="https://space-quiz-gray.vercel.app"
-                target="_blank"
-                class="btn btn-primary"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                View Project
-              </a>
-              <a
-                href="https://github.com/EvaTP/SpaceQuiz.git"
-                target="_blank"
-                class="btn btn-github"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
-                  />
-                </svg>
-                Source Code
-              </a>
-            </div>
-          </div>
-        </div>
-
         <!-- A VOS MUSEES -->
         <div class="project-card">
           <div class="project-image">
             <div class="tech-tag">HTML, CSS, JavaScript, Public APIs</div>
-            <!-- Added ../ to fix image relative path -->
             <img src="../img_portfolio/A-vos-musees.png" alt="À vos musées" />
           </div>
           <div class="project-content">
-            <h3 class="project-title">🎨 À vos musées !</h3>
+            <h3 class="project-title">🎨 To the Museums!</h3>
             <p class="project-description">
-              A search and discovery engine for French national museums. It
-              aggregates data from the official "Musées de France" and
-              "Architecture Remarquable" open APIs.
+              A search and exploration engine for French national museums. This
+              application aggregates open-source data from the data.gouv.fr APIs
+              ("Musées de France" and "Architecture Remarquable"), developed in
+              partnership with the non-profit organization Latitudes. It
+              features data visualization (Dataviz) with interactive charts and
+              maps.
+            </p>
+            <p class="project-description">
+              <strong>Stack & Tools:</strong> JavaScript (ES6), HTML5/CSS3, Open
+              Data APIs (Muséofile & ACR), Leaflet.js, Vercel, Jira.
+            </p>
+            <p class="project-description">
+              <strong>Methodology:</strong> Socially impactful educational
+              project, developed in a team of 4 using Jira and daily stand-up
+              meetings.
             </p>
             <p class="project-description-second">
-              Features data visualization with dynamic charts and interactive
-              mapping.
+              <strong>Key Features:</strong> Multi-criteria search (by region
+              and theme), interactive map, data visualization charts, and
+              automatic suggestions of 3 nearby landmarks certified as
+              "Architecture Contemporaine Remarquable" based on the selected
+              museum. <br /><br />
+              <strong>Challenge Solved:</strong> Our first project manipulating
+              external APIs. The main challenge was adapting to the diverse
+              nature of Open Data. We had to learn how to extract data from two
+              distinct platforms whose querying methods, formats, and data
+              structures differed completely. We then had to clean, parse, and
+              cross-reference these data streams to calculate geospatial
+              proximity, all while managing dynamic map rendering using
+              Leaflet.js.
             </p>
             <div class="project-buttons">
               <a
@@ -901,11 +922,28 @@
           <div class="project-content">
             <h3 class="project-title">👵🏻 Adaence</h3>
             <p class="project-description">
-              A social platform connecting seniors and volunteers to combat
-              isolation by sharing activities, hobbies, and social interactions.
+              A social platform connecting seniors with volunteers to combat
+              isolation through shared activities and social interactions. This
+              is the historical V1 of the project, which served as the
+              foundation for PassAges.
+            </p>
+            <p class="project-description">
+              <strong>Stack & Tools:</strong> Semantic HTML5, CSS3
+              (Flexbox/Grid), JavaScript (ES6), PostgreSQL (Neon), DrawSQL,
+              Lucide Icons.
             </p>
             <p class="project-description-second">
-              🌱 Legacy V1 of the project (the initial foundation for PassAges).
+              <strong>Key Features:</strong> Dynamic profile filtering (via
+              URLSearchParams), results pagination, an interactive volunteer
+              application form with client-side error handling, and dynamic DOM
+              manipulation. <br /><br />
+              <strong>Challenge Solved:</strong> My very first comprehensive
+              integration project and introduction to databases. Beyond building
+              a responsive layout with CSS Grid, I designed my first relational
+              SQL schema from scratch by visually modeling it on DrawSQL
+              (designing tables, primary keys, and foreign keys). I then wrote
+              the creation and insertion scripts to link the application to a
+              PostgreSQL database hosted on Neon.
             </p>
             <div class="project-buttons">
               <a
@@ -946,6 +984,82 @@
             </div>
           </div>
         </div>
+
+        <!-- SPACE QUIZ -->
+        <div class="project-card">
+          <div class="project-image">
+            <div class="tech-tag">HTML, CSS, JavaScript</div>
+            <img src="../img_portfolio/quiz-espace.png" alt="Space Quiz" />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">🚀 Space Quiz</h3>
+            <p class="project-description">
+              An interactive quiz focused on space exploration, featuring
+              multiple-choice questions and a dynamic score calculation at the
+              end of the game.
+            </p>
+            <p class="project-description">
+              <strong>Stack & Tools:</strong> HTML5, CSS3, JavaScript (ES6),
+              Canvas-Confetti (CDN), Canva, Trello.
+            </p>
+            <p class="project-description">
+              Advanced DOM manipulation and precise handling of native events.
+            </p>
+            <p class="project-description-second">
+              <strong>Key Features:</strong> Multiple-choice questions, an
+              interactive progress bar driven by an animated rocket, dynamic
+              score management, a 10-second countdown timer per question with
+              automatic transition to the next, and a confetti blast celebration
+              (Canvas-Confetti) for perfect scores. <br /><br />
+              <strong>Challenge Solved:</strong> Our very first group project at
+              Ada Tech School. The primary technical hurdles involved intensive,
+              dynamic DOM manipulation in pure JavaScript to link question
+              progression with the rocket animation, alongside managing
+              asynchronous flows using a countdown timer for response windows.
+              <br /><strong>Methodology:</strong> We worked using
+              <span style="font-style: normal">mob programming</span>
+              (collaborative coding on a shared screen) and structured our daily
+              workflows via Trello to monitor project advancement.
+            </p>
+            <div class="project-buttons">
+              <a
+                href="https://space-quiz-gray.vercel.app"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                View Project
+              </a>
+              <a
+                href="https://github.com/EvaTP/SpaceQuiz.git"
+                target="_blank"
+                class="btn btn-github"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.654 1.649.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.803 5.624-5.475 5.921.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"
+                  />
+                </svg>
+                Source Code
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- OTHER PROJECTS SECTION -->
@@ -955,7 +1069,6 @@
         <div class="project-card">
           <div class="project-image">
             <div class="tech-tag">WordPress, Elementor, WooCommerce</div>
-            <!-- Added ../ to fix image relative path -->
             <img
               src="../img_portfolio/artsquare-440x327.png"
               alt="Art'Square"
@@ -963,15 +1076,24 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">🖼️ Art'Square Gallery</h3>
+
             <p class="project-description">
-              An e-commerce storefront and online art gallery developed using
-              WordPress, WooCommerce, and Elementor.<br />
-              Features artwork sales, promotional campaigns, exhibitions,
-              detailed artist biographies, an editorial blog, and user accounts.
+              Independent creation and deployment of an e-commerce platform and
+              online art gallery. Features include artwork sales, promotional
+              discounts, exhibitions, detailed artist biographies, an editorial
+              blog, user accounts, and a shopping cart.
+            </p>
+            <p class="project-description">
+              <strong>Stack:</strong> WordPress, Elementor, WooCommerce, CSS.
             </p>
             <p class="project-description-second">
-              Full management of the WooCommerce product catalog, client space,
-              and editorial content.
+              <strong>Key Features:</strong> WooCommerce catalog management,
+              secure client space, blogging system, and product filtering.
+              <br /><br /><strong>Challenge Solved:</strong> My very first live
+              deployment. I independently managed the domain name purchase,
+              shared hosting configuration (Nuxit), HTTPS implementation (SSL
+              certificate), SQL database creation, and the full migration from a
+              local environment to production.
             </p>
             <div class="project-buttons">
               <a
@@ -1023,16 +1145,31 @@
             />
           </div>
           <div class="project-content">
-            <h3 class="project-title">📣 Petites Annonces</h3>
+            <h3 class="project-title">📣 Classified Ads</h3>
             <p class="project-description">
-              An online classified ads website (similar to LeBonCoin) developed
-              in OOP PHP (Object-Oriented Programming) using an MVC
-              architecture. Migrated and refactored from a legacy procedural PHP
-              project. Deployed on a Nuxit shared server with a MySQL database.
-              CI/CD: GitHub Actions for automated deployment.
+              An online classified advertisements website. Adaptation and
+              refactoring of an older legacy project written in Procedural PHP.
+              Deployed on a Nuxit shared server with a MySQL database. CI/CD:
+              Automated deployment using GitHub Actions.
             </p>
+            <p class="project-description">
+              <strong>Stack & Tools:</strong> PHP 8 (OOP), MVC Architecture,
+              MySQL, Bootstrap CSS, GitHub Actions.
+            </p>
+
             <p class="project-description-second">
-              Features management of ads, categories, users, and comments.
+              <strong>Key Features:</strong> Full CRUD management (ads,
+              categories, users, comments), secure client area, administration
+              dashboard and comment moderation. <br /><br />
+              <strong>Challenge Solved:</strong> Complete refactoring of an
+              Ifocop school project originally built with Procedural PHP. I
+              migrated the entire codebase to a clean, Object-Oriented (OOP) MVC
+              architecture to secure it (using prepared SQL statements) and make
+              it scalable. <br />The main hurdle was managing the full
+              production release on a Nuxit shared server: I configured an
+              isolated subdomain, provisioned and linked the remote MySQL
+              database, and set up an automated CI/CD pipeline with GitHub
+              Actions, successfully eliminating manual FTP deployments.
             </p>
             <div class="project-buttons">
               <a
