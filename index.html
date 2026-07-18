@@ -295,7 +295,14 @@
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({ once: true, disable: "mobile" });
+      // AOS.init({ once: true, disable: "mobile" });
+      AOS.init({
+        duration: 1200, // Durée de l'animation
+        once: true, // L'animation ne se joue qu'une fois
+        offset: 30, // Déclenche l'animation même si l'élément n'est qu'à 30px dans l'écran (crucial pour mobile)
+        disable: "mobile", // OPTION B : Si les animations de côté (équerres) buggent trop sur petit écran,
+        // cette option désactive AOS UNIQUEMENT sur mobile pour garder un site fluide.
+      });
     </script>
   </body>
 </html>

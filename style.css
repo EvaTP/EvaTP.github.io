@@ -139,6 +139,15 @@ p,
   }
 }
 
+/* ======================================================================
+   4b. SÉCURITÉ ENFANT DE GRILLE (Pour empêcher le débordement sur petit mobile)
+   ====================================================================== */
+.main-content {
+  min-width: 0; /* Force le main à accepter de faire moins que la taille de son texte */
+  width: 100%;
+  overflow: hidden; /* Coupe tout pixel fantôme qui voudrait pousser l'équerre dehors */
+}
+
 /* ==========================================
    5. BARRE DE NAVIGATION (Navbar)
    ========================================== */
@@ -590,14 +599,15 @@ p,
 }
 
 /* ==========================================
-   15. FOOTER
+   15. FOOTER (Design mobile par défaut)
    ========================================== */
 footer {
   display: flex;
-  flex-direction: column; /* En colonne sur mobile pour éviter les chevauchements */
-  gap: 1.5rem;
+  flex-direction: row;
+  gap: 1rem;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  justify-content: center;
   /* background-color: #120f2a; */
   /* Un gris très léger teinté de violet */
   background-color: rgba(180, 180, 200, 0.08);
@@ -606,21 +616,24 @@ footer {
   padding: 1.5rem 0;
   margin-top: 4rem;
 }
-
+#copyrightDiv {
+  margin-left: 0; /* Pas de décalage sur mobile pour garantir le centrage */
+}
 #copyright {
   text-align: center;
+  font-weight: normal;
   font-size: 1.1em;
   color: rgba(255, 255, 255, 0.6);
   text-align: center;
+  padding: 0;
 }
-
 #hautpageDiv .btn-rose-up {
   color: var(--accent-pink);
   transition: opacity 0.3s ease;
+  display: flex;
 }
-
 .btn-rose-up:hover {
-  opacity: 0.7; /* Petit effet de survol discret et élégant */
+  opacity: 0.7;
 }
 .btn-rose-up {
   color: var(--accent-pink);
@@ -637,7 +650,11 @@ footer {
 @media (min-width: 768px) {
   footer {
     flex-direction: row; /* Remise en ligne sur grand écran */
+    justify-content: space-around;
     padding: 1rem 4rem;
+  }
+  #copyrightDiv {
+    margin-left: 3em; /* Rétablit l'alignement desktop de ton portfolio */
   }
 }
 
@@ -715,6 +732,24 @@ footer {
   }
 }
 
+/* ======================================================================
+   AJUSTEMENTS POUR ÉCRANS ÉTROITS (Mobiles < 410px)
+   ====================================================================== */
+@media (max-width: 410px) {
+  .contact-block {
+    padding: 1rem; /* Réduit un peu l'espace interne si nécessaire */
+  }
+
+  .contact-block p {
+    font-size: 1rem; /* Réduit le texte "Me contacter par email :" */
+  }
+
+  .contact-block a {
+    font-size: 0.9rem; /* Réduit spécifiquement l'adresse email */
+    word-break: break-all; /* Sécurité : permet à l'email de se couper si l'écran fait moins de 320px */
+  }
+}
+
 /* ==========================================
    21. COMPORTEMENTS COMPLÉMENTAIRES GLOBAUX
    ========================================== */
@@ -732,4 +767,9 @@ h4 {
 /* Uniformisation de la police des boutons */
 button {
   font-family: var(--font-body);
+}
+
+/* TEST TEMPORAIRE : À enlever après le debug */
+* {
+  outline: 1px solid red !important;
 }
