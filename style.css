@@ -730,20 +730,26 @@ footer {
     font-size: 2.3rem;
     text-align: center;
   }
+  #toggle-bio-btn {
+    margin: 80px auto 0; /* 80px en haut, et centrage automatique à gauche/droite */
+    display: block; /* Force le bouton à se comporter comme un bloc pour écouter le 'auto' */
+  }
 }
 
 /* ======================================================================
    AJUSTEMENTS POUR ÉCRANS ÉTROITS (Mobiles < 410px)
    ====================================================================== */
 @media (max-width: 410px) {
+  #toggle-bio-btn {
+    margin: 80px auto 0;
+    display: block;
+  }
   .contact-block {
     padding: 1rem; /* Réduit un peu l'espace interne si nécessaire */
   }
-
   .contact-block p {
     font-size: 1rem; /* Réduit le texte "Me contacter par email :" */
   }
-
   .contact-block a {
     font-size: 0.9rem; /* Réduit spécifiquement l'adresse email */
     word-break: break-all; /* Sécurité : permet à l'email de se couper si l'écran fait moins de 320px */
@@ -769,7 +775,8 @@ button {
   font-family: var(--font-body);
 }
 
-/* TEST TEMPORAIRE : À enlever après le debug */
-* {
+/* TEST TEMPORAIRE : À enlever après le debug CSS */
+/* 
+ {
   outline: 1px solid red !important;
-}
+} */
