@@ -496,52 +496,61 @@
       <h2 class="h2portfolio">Derniers <span>projets personnels</span></h2>
 
       <div class="projects-grid">
-        <!-- WASTE4GOOD -->
+        <!-- THE WAVE -->
         <div class="project-card-bigger">
           <div class="project-image">
             <div class="tech-tag">
-              React, Next.js, Expresss, bcrypt, API REST, Leaflet, Serverless
+              React, Next.js, Express, Prisma, Tailwind, API + React Leaflet,
+              PostgreSQL
             </div>
-            <img
-              src="img_portfolio/waste4good-440x327.png"
-              alt="Projet en cours"
-            />
+            <img src="img_portfolio/TheWave-440x327.png" alt="The Wave" />
           </div>
           <div class="project-content">
-            <h3 class="project-title">💚 Waste4Good</h3>
-
+            <h3 class="project-title">🏄‍♂️ The Wave</h3>
             <p class="project-description">
-              WASTE4GOOD est une association de bénévoles qui sensibilise aux
-              ramassages des déchets sauvages (mégots de cigarette, plastiques
-              d’emballages, etc). Les déchets ramassés sont valorisés en points
-              qui font l'objet de dons à des associations.
+              Plateforme communautaire connectant les surfeurs du monde entier.
+              Développé en solo comme projet de fin d'études et présenté devant
+              un jury de professionnels lors des "Demo Days" de l'école.
+              Curieuse d'explorer un univers qui m'était totalement inconnu,
+              j'ai choisi ce sujet suggéré par l'écolepour relever un double
+              défi thématique et technique. Entièrememt en anglais.
             </p>
             <p class="project-description">
-              Refactorisation d'un projet école existant : ajout de
-              fonctionnalités, authentification, gamification, et amélioration
-              globale de l'UX/UI.
-            </p>
-            <p class="project-description">
-              <strong>Stack :</strong> Next.js, Express.js (déployé en
-              Serverless sur Vercel), PostgreSQL (Neon), React Leaflet, Tailwind
-              CSS, Bcrypt.
+              <strong>Stack :</strong> Next.js, Express.js (API REST),
+              PostgreSQL (Neon), Prisma (ORM), JWT, Bcrypt, React Leaflet (Lazy
+              Loading), Tailwind CSS.
             </p>
 
             <p class="project-description-second">
-              <strong>Fonctionnalités :</strong> Double interface (bénévoles et
-              administrateurs), cartographie des collectes, dashboard de
-              statistiques, leaderboard des bénévoles et système de gamification
-              permettant de convertir le poids des déchets collectés en points,
-              puis en dons financiers reversés à des associations. <br /><br />
-              <strong>Défi Relevé :</strong> Concevoir un système de
-              gamification cohérent (calcul et conversion dynamique des points).
+              <strong>Fonctionnalités :</strong> Carte interactive des spots
+              mondiaux, favoris, responsive design, authentification sécurisée
+              par tokens (JWT), et tableau de bord d'administration à trois
+              niveaux de droits : Utilisateur, Administrateur complet, et un
+              profil "Démo" innovant en lecture seule pour permettre d'explorer
+              l'interface d'administration en toute sécurité. <br /><br />
+              <strong>Défi Relevé :</strong> Gérer une architecture découplée
+              (Front/Back séparés) et optimiser la performance. Le temps de
+              chargement initial de la page d'accueil avec la carte était mon
+              principal point de blocage. En utilisant les DevTools de Chrome et
+              Lighthouse, j'ai analysé les métriques clés comme le CLS
+              (Cumulative Layout Shift). Grâce à la mise en place du lazy
+              loading sur les composants de la carte et à l'optimisation des
+              requêtes, j'ai optimisé le score de performance Lighthouse.
             </p>
+            <p class="project-description-third"></p>
 
-            <p class="project-description-third">🚧 Projet en cours.</p>
+            <!-- <p class="project-description">
+             <strong>🔐 Pour tester :</strong><br>
+              • Créez votre compte personnel<br>
+              • Ou utilisez le compte démo : <strong>demo / demo123</strong>
+              <br><br>
+              <em>Note : Le compte démo permet d'explorer l'interface admin 
+              en mode lecture seule pour des raisons de sécurité.</em>
+            </p> -->
 
             <div class="project-buttons">
               <a
-                href="https://waste4-good.vercel.app/"
+                href="https://the-wave-eight.vercel.app/"
                 target="_blank"
                 class="btn btn-primary"
               >
@@ -563,7 +572,7 @@
                 Voir le projet
               </a>
               <a
-                href="https://github.com/EvaTP/Waste4Good.git"
+                href="https://github.com/EvaTP/the-wave.git"
                 target="_blank"
                 class="btn btn-github"
               >
@@ -671,64 +680,52 @@
           </div>
         </div>
 
-        <!-- THE WAVE -->
+        <!-- WASTE4GOOD -->
         <div class="project-card-bigger">
           <div class="project-image">
             <div class="tech-tag">
-              React, Next.js, Express, Prisma, Tailwind, API + React Leaflet,
-              PostgreSQL
+              React, Next.js, Expresss, bcrypt, API REST, Leaflet, Serverless
             </div>
-            <img src="img_portfolio/TheWave-440x327.png" alt="The Wave" />
+            <img
+              src="img_portfolio/waste4good-440x327.png"
+              alt="Projet en cours"
+            />
           </div>
           <div class="project-content">
-            <h3 class="project-title">🏄‍♂️ The Wave</h3>
+            <h3 class="project-title">💚 Waste4Good</h3>
+
             <p class="project-description">
-              Plateforme communautaire connectant les surfeurs du monde entier.
-              Développé en solo comme projet de fin d'études et présenté devant
-              un jury de professionnels lors des "Demo Days" de l'école.
-              Curieuse d'explorer un univers qui m'était totalement inconnu,
-              j'ai choisi ce sujet suggéré par l'écolepour relever un double
-              défi thématique et technique. Entièrememt en anglais.
+              WASTE4GOOD est une association de bénévoles qui sensibilise aux
+              ramassages des déchets sauvages (mégots de cigarette, plastiques
+              d’emballages, etc). Les déchets ramassés sont valorisés en points
+              qui font l'objet de dons à des associations.
             </p>
             <p class="project-description">
-              <strong>Stack :</strong> Next.js, Express.js (API REST),
-              PostgreSQL (Neon), Prisma (ORM), JWT, Bcrypt, React Leaflet (Lazy
-              Loading), Tailwind CSS.
+              Refactorisation d'un projet école existant : ajout de
+              fonctionnalités, authentification, gamification, et amélioration
+              globale de l'UX/UI.
+            </p>
+            <p class="project-description">
+              <strong>Stack :</strong> Next.js, Express.js (déployé en
+              Serverless sur Vercel), PostgreSQL (Neon), React Leaflet, Tailwind
+              CSS, Bcrypt.
             </p>
 
             <p class="project-description-second">
-              <strong>Fonctionnalités :</strong> Carte interactive des spots
-              mondiaux, favoris, responsive design, authentification sécurisée
-              par tokens (JWT), et tableau de bord d'administration à trois
-              niveaux de droits : Utilisateur, Administrateur complet, et un
-              profil "Démo" innovant en lecture seule pour permettre d'explorer
-              l'interface d'administration en toute sécurité. <br /><br />
-              <strong>Défi Relevé :</strong> Gérer une architecture découplée
-              (Front/Back séparés) et optimiser la performance. Le temps de
-              chargement initial de la page d'accueil avec la carte était mon
-              principal point de blocage. En utilisant les DevTools de Chrome et
-              Lighthouse, j'ai analysé les métriques clés comme le CLS
-              (Cumulative Layout Shift). Grâce à la mise en place du lazy
-              loading sur les composants de la carte et à l'optimisation des
-              requêtes, j'ai hissé le score de performance Lighthouse à 82.
-            </p>
-            <p class="project-description-third">
-              🚧 En cours : amélioration du chargement, création de filtres de
-              recherche.
+              <strong>Fonctionnalités :</strong> Double interface (bénévoles et
+              administrateurs), cartographie des collectes, dashboard de
+              statistiques, leaderboard des bénévoles et système de gamification
+              permettant de convertir le poids des déchets collectés en points,
+              puis en dons financiers reversés à des associations. <br /><br />
+              <strong>Défi Relevé :</strong> Concevoir un système de
+              gamification cohérent (calcul et conversion dynamique des points).
             </p>
 
-            <!-- <p class="project-description">
-             <strong>🔐 Pour tester :</strong><br>
-              • Créez votre compte personnel<br>
-              • Ou utilisez le compte démo : <strong>demo / demo123</strong>
-              <br><br>
-              <em>Note : Le compte démo permet d'explorer l'interface admin 
-              en mode lecture seule pour des raisons de sécurité.</em>
-            </p> -->
+            <p class="project-description-third">🚧 Projet en cours.</p>
 
             <div class="project-buttons">
               <a
-                href="https://the-wave-eight.vercel.app/"
+                href="https://waste4-good.vercel.app/"
                 target="_blank"
                 class="btn btn-primary"
               >
@@ -750,7 +747,7 @@
                 Voir le projet
               </a>
               <a
-                href="https://github.com/EvaTP/the-wave.git"
+                href="https://github.com/EvaTP/Waste4Good.git"
                 target="_blank"
                 class="btn btn-github"
               >
